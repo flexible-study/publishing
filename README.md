@@ -8,8 +8,9 @@
   ```
 - root에 개인 Branch 같은 이름의 폴더를 만들고 그곳에 미션 코딩을 진행합니다.
   ```
-  ex) /KimTaeYoung/week1/index.html
-   /KimTaeYoung/week2/index.html
+  ex)
+  /KimTaeYoung/week1/index.html
+  /KimTaeYoung/week2/index.html
   ```
 - 미션이 완료되면 PR을 올려 코드 리뷰를 받습니다.
 - 코드 리뷰가 완료되면 메인 브랜치에 PR을 merge합니다.
