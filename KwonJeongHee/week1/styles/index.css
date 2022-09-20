@@ -4,8 +4,9 @@
 }
 
 .wrap {
-  width: 960px;
+  max-width: 960px;
   margin: 0 auto;
+  padding: 0px 016px;
 }
 
 header,
@@ -13,6 +14,7 @@ aside,
 main,
 footer {
   background-color: #d9d9d9;
+  font-size: 17px;
 }
 
 header {
@@ -30,7 +32,7 @@ footer {
 .content {
   margin-top: 16px;
   display: flex;
-  width: 100%;
+  max-width: 100%;
   gap: 16px;
   height: 668px;
 }
@@ -39,19 +41,54 @@ footer {
   width: 200px;
   padding: 32px 0px 0px 32px;
 }
+
 .content .posting-container {
   flex: 1 1 0;
+  padding: 32px;
 }
 
 .content .posting-container .posting-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 32px;
+  height: 100%;
 }
 
 .content .posting-container .posting-list .posting-item {
   background-color: white;
-  height: 139px;
-  padding: 32px 0px 0px 32px;
+  min-block-size: 139px;
+  padding: 32px;
+}
+
+@media only screen and (max-width: 769px) {
+  .content .posting-container .posting-list {
+    flex-flow: row wrap;
+  }
+
+  .content .posting-container .posting-list .posting-item {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media only screen and (max-width: 321px) {
+  header,
+  footer {
+    padding-left: 16px;
+  }
+
+  .content .posting-container {
+    padding: 16px;
+  }
+
+  .content .sidebar {
+    display: none;
+  }
+
+  .content .posting-container .posting-list {
+    flex-flow: column nowrap;
+  }
+
+  .content .posting-container .posting-list .posting-item {
+    padding: 32px 16px;
+  }
 }
