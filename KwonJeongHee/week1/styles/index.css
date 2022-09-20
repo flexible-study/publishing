@@ -1,3 +1,57 @@
+* {
+  box-sizing: border-box;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header,
+aside,
+main,
+footer {
+  background-color: #d9d9d9;
+}
+
+header {
+  height: 100px;
+  margin-top: 30px;
+  padding: 32px 0px 0px 32px;
+}
+
+footer {
+  height: 100px;
+  margin-top: 16px;
+  padding: 32px 0px 0px 32px;
+}
+
 .content {
+  margin-top: 16px;
   display: flex;
+  width: 100%;
+  gap: 16px;
+  height: 668px;
+}
+
+.content .sidebar {
+  width: 200px;
+  padding: 32px 0px 0px 32px;
+}
+.content .posting-container {
+  flex: 1 1 0;
+}
+
+.content .posting-container .posting-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+}
+
+.content .posting-container .posting-list .posting-item {
+  background-color: white;
+  height: 139px;
+  padding: 32px 0px 0px 32px;
 }
