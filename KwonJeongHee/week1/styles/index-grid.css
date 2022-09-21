@@ -9,12 +9,12 @@
     "header header"
     "sidebar main"
     "footer footer";
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: minmax(1fr, 200px) 1fr;
   grid-template-rows: auto 668px auto;
   gap: 16px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0px 06px;
+  padding: 0px 16px;
 }
 
 header,
@@ -61,8 +61,7 @@ footer {
 
 @media only screen and (max-width: 769px) {
   .posting-container .posting-list {
-    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
-    grid-template-rows: 1fr 1fr;
+    grid-template: repeat(2, minmax(auto, 1fr)) / 1fr 1fr;
   }
 }
 
