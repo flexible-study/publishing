@@ -10,10 +10,11 @@
     "sidebar main"
     "footer footer";
   grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 668px auto;
   gap: 16px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0px 016px;
+  padding: 0px 06px;
 }
 
 header,
@@ -48,22 +49,20 @@ footer {
 }
 
 .posting-container .posting-list {
+  height: 100%;
   display: grid;
   gap: 16px;
-  height: 100%;
 }
 
 .posting-container .posting-list .posting-item {
   background-color: white;
-  min-block-size: 139px;
   padding: 32px;
 }
 
 @media only screen and (max-width: 769px) {
   .posting-container .posting-list {
-  }
-
-  .posting-container .posting-list .posting-item {
+    grid-template-columns: minmax(auto, 1fr) minmax(auto, 1fr);
+    grid-template-rows: 1fr 1fr;
   }
 }
 
@@ -71,6 +70,13 @@ footer {
   header,
   footer {
     padding-left: 16px;
+  }
+
+  .wrap {
+    grid-template-areas:
+      "header header"
+      "main main"
+      "footer footer";
   }
 
   .posting-container {
@@ -82,6 +88,7 @@ footer {
   }
 
   .posting-container .posting-list {
+    grid-template: repeat(4, 1fr) / 1fr;
   }
 
   .posting-container .posting-list .posting-item {
