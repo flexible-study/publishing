@@ -13,15 +13,19 @@
 .layout {
   display: grid;
   grid-template-areas:
-    "header header header header"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
-    "sidebar main main main"
-    "footer footer footer footer";
+    "header header"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px auto;
   gap: 16px;
   margin: 30px auto 0px;
-  width: 960px;
+  padding: 0 16px;
+  max-width: calc(960px + 16px + 16px);
+  max-width: 960px;
+  width: 100%;
 }
 
 .header {
@@ -38,7 +42,7 @@
   display: grid;
   gap: 16px;
   grid-template: repeat(4, 1fr) / repeat(2, 1fr);
-  padding: 32px;
+  /* padding: 32px; */
 }
 
 .section {
@@ -52,10 +56,6 @@
 }
 
 @media (max-width: 1023px) {
-  .layout {
-    width: 736px;
-  }
-
   .section {
     grid-row: span 2;
     grid-column: span 1;
@@ -64,12 +64,8 @@
 }
 
 @media (max-width: 767px) {
-  .layout {
-    width: 288px;
-  }
-
   .main {
-    grid-column: span 4;
+    grid-column: span 2;
     padding: 16px;
   }
 
