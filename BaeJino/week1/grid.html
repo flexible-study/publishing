@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1주차 미션 (GRID)</title>
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -95,11 +99,11 @@
       }
 
       .grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: 
-          "header"
-          "main"
-          "footer";
+        display: block;
+      }
+
+      .grid > :not(*:last-child) {
+        margin-bottom: 16px;;
       }
 
       .main {

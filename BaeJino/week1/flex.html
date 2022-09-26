@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1주차 미션 (FLEX)</title>
   <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -18,7 +22,6 @@
       width: 960px;
       margin: 30px auto;
       padding: 0 16px;
-      box-sizing: border-box;
     }
 
     .flex {
@@ -50,7 +53,6 @@
     
     .sidebar {
       width: 200px;
-      box-sizing: border-box;
     }
 
     .main {
@@ -76,7 +78,7 @@
 
     @media (max-width: 1024px) {
       .articles li {
-        width: calc(50% - 32px * 2 - 8px);
+        width: calc(50% - 8px);
         min-height: 294px;
       }
     }
@@ -116,19 +118,19 @@
     <header class="header">
       <h1>Header</h1>
     </header>
-    <div class="split">
+    <main class="split">
       <aside class="sidebar">
         Sidebar
       </aside>
-      <main class="main">
+      <section class="main">
         <ul class="articles">
           <li>Posting 1</li>
           <li>Posting 2</li>
           <li>Posting 3</li>
           <li>Posting 4</li>
         </ul>
-      </main>
-    </div>
+      </section>
+    </main>
     <footer class="footer">Footer</footer>
   </div>
 </body>
