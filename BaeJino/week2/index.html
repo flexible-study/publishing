@@ -459,13 +459,13 @@
       return photos;
     }
 
-    Promise.all([getPhotos()]).then((data) => {
+    getPhotos().then(photos => {
       const sourceSets = [
         ['(max-width: 1024px)', 'small'],
         ['(max-width: 768px)', 'thumb'],
       ];
       document.querySelector('.gallery .grid').innerHTML = (
-        data.reduce((acc, cur) => acc.concat(cur), []).map((photo) => {
+        photos.map((photo) => {
           return `
             <figure>
               <picture>
