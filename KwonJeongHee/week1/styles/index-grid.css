@@ -5,62 +5,57 @@
 
 .wrap {
   display: grid;
-  grid-template-areas:
-    "header header"
-    "sidebar main"
-    "footer footer";
-  grid-template-columns: minmax(1fr, 200px) 1fr;
-  grid-template-rows: auto 668px auto;
   gap: 16px;
   max-width: 960px;
   margin: 0 auto;
-  padding: 0px 16px;
+  padding: 0 16px;
 }
 
 header,
 aside,
-main,
 footer {
   background-color: #d9d9d9;
   font-size: 17px;
 }
 
 header {
-  grid-area: header;
   height: 100px;
   margin-top: 30px;
-  padding: 32px 0px 0px 32px;
+  padding: 32px 0 0 32px;
 }
 
 footer {
-  grid-area: footer;
   height: 100px;
-  padding: 32px 0px 0px 32px;
+  padding: 32px 0 0 32px;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  padding: 32px 0px 0px 32px;
+.main {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  height: 668px;
 }
 
-.posting-container {
-  grid-area: main;
-  padding: 32px;
+.main .sidebar {
+  padding: 32px 0 0 32px;
+  background-color: #d9d9d9;
 }
 
-.posting-container .posting-list {
+.main .posting-list {
   height: 100%;
   display: grid;
   gap: 16px;
+  padding: 32px;
+  background-color: #d9d9d9;
 }
 
-.posting-container .posting-list .posting-item {
+.main .posting-list .posting-item {
   background-color: white;
   padding: 32px;
 }
 
 @media only screen and (max-width: 769px) {
-  .posting-container .posting-list {
+  .main .posting-list {
     grid-template: repeat(2, minmax(auto, 1fr)) / 1fr 1fr;
   }
 }
@@ -71,26 +66,23 @@ footer {
     padding-left: 16px;
   }
 
-  .wrap {
-    grid-template-areas:
-      "header header"
-      "main main"
-      "footer footer";
+  .main {
+    display: block;
   }
 
-  .posting-container {
+  .main .posting-list {
     padding: 16px;
   }
 
-  .sidebar {
+  .main .sidebar {
     display: none;
   }
 
-  .posting-container .posting-list {
+  .main .posting-list {
     grid-template: repeat(4, 1fr) / 1fr;
   }
 
-  .posting-container .posting-list .posting-item {
+  .main .posting-list .posting-item {
     padding: 32px 16px;
   }
 }

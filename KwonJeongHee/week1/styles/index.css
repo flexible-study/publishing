@@ -6,7 +6,7 @@
 .wrap {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0px 016px;
+  padding: 0 016px;
 }
 
 header,
@@ -19,13 +19,13 @@ footer {
 header {
   height: 100px;
   margin-top: 30px;
-  padding: 32px 0px 0px 32px;
+  padding: 32px 0 0 32px;
 }
 
 footer {
   height: 100px;
   margin-top: 16px;
-  padding: 32px 0px 0px 32px;
+  padding: 32px 0 0 32px;
 }
 
 .main {
@@ -39,7 +39,7 @@ footer {
 .main .sidebar {
   max-width: 200px;
   flex: 1 1 0;
-  padding: 32px 0px 0px 32px;
+  padding: 32px 0 0 32px;
   background-color: #d9d9d9;
 }
 
