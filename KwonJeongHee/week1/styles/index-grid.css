@@ -54,13 +54,13 @@ footer {
   padding: 32px;
 }
 
-@media only screen and (max-width: 769px) {
+@media only screen and (max-width: 1023px) {
   .main .posting-list {
     grid-template: repeat(2, minmax(auto, 1fr)) / 1fr 1fr;
   }
 }
 
-@media only screen and (max-width: 321px) {
+@media only screen and (max-width: 767px) {
   header,
   footer {
     padding-left: 16px;
