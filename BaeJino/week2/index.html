@@ -455,8 +455,7 @@
           'Authorization': 'Client-ID ueWyTRJYwlGr5C3ce9iwNvoNQrWvDDHrJZ_6DhgccCA',
         },
       })
-      const photos = await res.json();
-      return photos;
+      return await res.json();
     }
 
     getPhotos().then(photos => {
