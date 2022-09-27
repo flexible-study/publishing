@@ -9,7 +9,7 @@ body {
 .wrap {
   max-width: 960px;
   margin: 0 auto;
-  padding: 0 016px;
+  padding: 0 16px;
 }
 
 header,
@@ -40,19 +40,18 @@ footer {
 }
 
 .main .sidebar {
-  max-width: 200px;
-  flex: 1 1 0;
+  flex: 0 0 auto;
+  width: 200px;
   padding: 32px 0 0 32px;
   background-color: #d9d9d9;
 }
 
 .main .posting-list {
-  padding: 32px;
-  height: 100%;
-  flex: 1 1 0;
+  flex: 1 1 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 32px;
   background-color: #d9d9d9;
 }
 
