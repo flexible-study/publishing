@@ -33,7 +33,7 @@ footer {
   display: flex;
   max-width: 100%;
   gap: 16px;
-  height: 668px;
+  min-height: 668px;
 }
 
 .main .sidebar {

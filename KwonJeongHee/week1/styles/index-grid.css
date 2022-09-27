@@ -33,7 +33,7 @@ footer {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 16px;
-  height: 668px;
+  min-height: 668px;
 }
 
 .main .sidebar {
