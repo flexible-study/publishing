@@ -11,7 +11,6 @@
 
 header,
 aside,
-main,
 footer {
   background-color: #d9d9d9;
   font-size: 17px;
@@ -29,7 +28,7 @@ footer {
   padding: 32px 0px 0px 32px;
 }
 
-.content {
+.main {
   margin-top: 16px;
   display: flex;
   max-width: 100%;
@@ -37,35 +36,35 @@ footer {
   height: 668px;
 }
 
-.content .sidebar {
+.main .sidebar {
   max-width: 200px;
   flex: 1 1 0;
   padding: 32px 0px 0px 32px;
+  background-color: #d9d9d9;
 }
 
-.content .posting-container {
-  flex: 1 1 0;
+.main .posting-list {
   padding: 32px;
-}
-
-.content .posting-container .posting-list {
+  height: 100%;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: 100%;
+  background-color: #d9d9d9;
 }
 
-.content .posting-container .posting-list .posting-item {
+.main .posting-list .posting-item {
+  flex: 1 1 0;
   background-color: white;
   padding: 32px;
 }
 
 @media only screen and (max-width: 769px) {
-  .content .posting-container .posting-list {
+  .main .posting-list {
     flex-flow: row wrap;
   }
 
-  .content .posting-container .posting-list .posting-item {
+  .main .posting-list .posting-item {
     flex: 1 1 calc(50% - 8px);
   }
 }
@@ -76,19 +75,16 @@ footer {
     padding-left: 16px;
   }
 
-  .content .posting-container {
-    padding: 16px;
-  }
-
-  .content .sidebar {
+  .main .sidebar {
     display: none;
   }
 
-  .content .posting-container .posting-list {
+  .main .posting-list {
     flex-flow: column nowrap;
+    padding: 16px;
   }
 
-  .content .posting-container .posting-list .posting-item {
+  .main .posting-list .posting-item {
     padding: 32px 16px;
   }
 }
