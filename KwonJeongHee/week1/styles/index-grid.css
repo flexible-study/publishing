@@ -79,7 +79,7 @@ footer {
   }
 
   .main .posting-list {
-    grid-template: repeat(4, 1fr) / 1fr;
+    grid-template: auto / 1fr;
   }
 
   .main .posting-list .posting-item {
