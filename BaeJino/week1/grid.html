@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1주차 미션 (GRID)</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 20px;
+      line-height: 25px;
+    }
+
+    .container {
+      max-width: 100%;
+      width: 960px;
+      margin: 30px auto;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      grid-gap: 16px;
+      grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    }
+
+    .header,
+    .sidebar,
+    .main,
+    .footer {
+      background-color: #D9D9D9;
+      min-height: 100px;
+      padding: 32px;
+    }
+    
+    .header h1 {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 25px;
+      margin: 0;
+    }
+
+    .header {
+      grid-area: header;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+
+    .main {
+      grid-area: main;
+    }
+
+    .footer {
+      grid-area: footer;
+    }
+
+    .articles {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 16px;
+    }
+
+    .articles li {
+      background: #FFFFFF;
+      padding: 32px;
+      min-height: 139px;
+    }
+
+    @media (max-width: 1024px) {
+      .articles {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .articles li {
+        min-height: 294px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      html, body {
+        font-size: 17px;
+        line-height: 21px;
+      }
+
+      .grid {
+        display: block;
+      }
+
+      .grid > :not(*:last-child) {
+        margin-bottom: 16px;;
+      }
+
+      .main {
+        padding: 16px;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .header,
+      .footer {
+        padding: 32px 16px;
+      }
+      
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .articles li {
+        min-height: 147px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container grid">
+    <header class="header">
+      <h1>Header</h1>
+    </header>
+    <aside class="sidebar">
+      Sidebar
+    </aside>
+    <main class="main">
+      <ul class="articles">
+        <li>Posting 1</li>
+        <li>Posting 2</li>
+        <li>Posting 3</li>
+        <li>Posting 4</li>
+      </ul>
+    </main>
+    <footer class="footer">Footer</footer>
+  </div>
+</body>
+</html>
