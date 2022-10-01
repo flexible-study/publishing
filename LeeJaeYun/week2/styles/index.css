@@ -6,7 +6,12 @@
   margin: 88.5px auto;
 }
 
+#main {
+  display: flex;
+}
+
 .tab-navigation {
+  order: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,9 +22,29 @@
   background-color: rgba(99, 110, 114, 0.1);
 }
 
-.tab-btn img {
-  display: block;
-  width: 100%;
+.thumbnail {
+  width: 500px;
+  position: relative;
+}
+
+.thumbnail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.thumbnail-content .name {
+  font-size: 30px;
+}
+
+.thumbnail-content .sub-description {
+  font-size: 18px;
 }
 
 /* 테블릿 */
