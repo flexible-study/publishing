@@ -11,21 +11,11 @@
   <body>
     <div class="wrap">
       <main id="main">
-        <div class="tab-navigation">
-          <button class="tab-btn">
-            <img src="./assets/person_default.png" alt="내 프로필 탭" />
-          </button>
-          <button class="tab-btn">
-            <img src="./assets/gallery_default.png" alt="내 갤러리 탭" />
-          </button>
-        </div>
-
         <div class="thumbnail">
           <div class="thumbnail-content">
             <h2 class="name">이재윤</h2>
             <p class="sub-description">Frontend Developer</p>
           </div>
-
           <picture>
             <img
               src="./assets/profile_background_desktop.png"
@@ -34,7 +24,45 @@
           </picture>
         </div>
 
-        <article id="tab-1"></article>
+        <div class="tab-side">
+          <div class="tab-navigation">
+            <button class="tab-btn">
+              <img src="./assets/person_default.png" alt="내 프로필 탭" />
+            </button>
+            <button class="tab-btn">
+              <img src="./assets/gallery_default.png" alt="내 갤러리 탭" />
+            </button>
+          </div>
+
+          <article id="tab-1" class="tab">
+            <div class="inner">
+              <div class="tab-1-content">
+                <div class="tab-title">
+                  <h3>ABOUT ME</h3>
+                  <div class="dummy-line"></div>
+                </div>
+                <ul class="tab1-content">
+                  <li class="description-item">
+                    <span class="description-title">Name.</span>
+                    <span class="decription">이재윤</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">Email.</span>
+                    <span class="decription">ag502@naver.com</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">Phone.</span>
+                    <span class="decription">010-1234-5678</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">GitHub.</span>
+                    <span class="decription">https://github.com/kty0529</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </div>
       </main>
     </div>
   </body>
