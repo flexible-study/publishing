@@ -2,8 +2,12 @@ html,
 body,
 * {
   box-sizing: border-box;
-  height: 100%;
   margin: 0;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 div,
@@ -127,4 +131,10 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
 }
