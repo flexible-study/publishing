@@ -144,3 +144,7 @@ img {
   height: 100%;
   display: block;
 }
+
+svg {
+  display: block;
+}

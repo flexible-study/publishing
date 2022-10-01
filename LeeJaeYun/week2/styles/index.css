@@ -1,3 +1,7 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
 .dummy-line {
   border-bottom: 1px solid #636e72;
   flex-grow: 1;
@@ -9,10 +13,17 @@
   gap: 16px;
 }
 
-.tab-btn img {
-  width: 40px;
-  height: 40px;
+.tab-btn {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tab-btn svg {
   margin: 0 auto;
+}
+
+.tab-btn.active {
+  background-color: #636e72;
 }
 
 .wrap {
@@ -46,10 +57,12 @@
 
 .thumbnail-content .name {
   font-size: 30px;
+  font-weight: 700;
 }
 
 .thumbnail-content .sub-description {
   font-size: 18px;
+  font-weight: 500;
 }
 
 .tab-side {
@@ -67,6 +80,14 @@
   width: 72px;
   padding: 32px 16px;
   background-color: rgba(99, 110, 114, 0.1);
+}
+
+.tab-btn.active svg {
+  background-color: #636e72;
+}
+
+.tab-btn.active svg path {
+  fill: #ffffff;
 }
 
 .tab {
