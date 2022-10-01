@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./styles/normalize.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <link rel="stylesheet" href="./styles/tab1.css" />
+    <link rel="stylesheet" href="./styles/tab2.css" />
     <title>비동기로 랜덤 사용자 정보 가져오기</title>
   </head>
   <body>
@@ -35,15 +36,15 @@
 
         <div class="tab-side">
           <div class="tab-navigation">
-            <button class="tab-btn">
+            <button class="tab-btn my-profile active">
               <img src="./assets/person_default.png" alt="내 프로필 탭" />
             </button>
-            <button class="tab-btn">
+            <button class="tab-btn my-gallery">
               <img src="./assets/gallery_default.png" alt="내 갤러리 탭" />
             </button>
           </div>
 
-          <article id="tab-1" class="tab">
+          <article id="tab-1" class="tab my-profile active">
             <div class="inner">
               <div class="tab-1-content">
                 <div class="tab-title">
@@ -71,8 +72,21 @@
               </div>
             </div>
           </article>
+
+          <article id="tab-2" class="tab my-gallery">
+            <div class="inner">
+              <div class="tab-2-content">
+                <div class="tab-title">
+                  <h3>GALLERY</h3>
+                  <div class="dummy-line"></div>
+                </div>
+                <ul class="tab2-content"></ul>
+              </div>
+            </div>
+          </article>
         </div>
       </main>
     </div>
+    <script src="./src/index.js"></script>
   </body>
 </html>

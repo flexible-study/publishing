@@ -20,7 +20,7 @@
   max-width: calc(var(--max-width) + 32px + 32px);
   padding: 0 32px;
   width: 100%;
-  margin: 88.5px auto;
+  margin: 88.5px auto 0;
 }
 
 #main {
@@ -70,12 +70,19 @@
 }
 
 .tab {
+  display: none;
   flex: 1 1 auto;
   min-width: 300px;
 }
 
+.tab.active {
+  display: block;
+}
+
 .inner {
   padding: 32px;
+  max-width: 648px;
+  max-height: 783px;
 }
 
 /* 테블릿 */
@@ -102,6 +109,7 @@
 @media (max-width: 767px) {
   .wrap {
     padding: 0;
+    margin: 0 auto;
   }
 
   #main {
@@ -115,5 +123,10 @@
 
   .tab-btn {
     flex: 1 1 0;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: none;
   }
 }
