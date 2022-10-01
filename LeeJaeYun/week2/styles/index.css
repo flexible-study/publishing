@@ -9,6 +9,10 @@
   gap: 16px;
 }
 
+.tab-btn {
+  width: 40px;
+}
+
 .wrap {
   --max-width: 1200px;
   max-width: calc(var(--max-width) + 32px + 32px);
@@ -29,7 +33,7 @@
 .thumbnail-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   gap: 8px;
   position: absolute;
   top: 50%;
@@ -65,7 +69,7 @@
 
 .tab {
   flex: 1 1 auto;
-  min-width: 500px;
+  min-width: 300px;
 }
 
 .inner {
@@ -106,6 +110,22 @@
 
 /* 테블릿 */
 @media (max-width: 1023px) {
+  .thumbnail {
+    width: 250px;
+  }
+
+  .tab-side {
+    flex-direction: column;
+  }
+
+  .tab-navigation {
+    flex-direction: row;
+    justify-content: flex-end;
+    order: 0;
+    width: 100%;
+    height: 56px;
+    padding: 8px;
+  }
 }
 
 /* 모바일 */
