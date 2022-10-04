@@ -8,369 +8,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    /* reset styles */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
-    html, body, h1, h2, h3, h4, h5, h6, p, div, figure {
-      padding: 0;
-      margin: 0;
-    }
-
-    body {
-      padding: 0 32px;
-      font-family: 'Inter', sans-serif;
-      background: #FAFAFA;
-    }
-
-    .root {
-      width: 1200px;
-      height: 783px;
-      margin: 88.5px auto 0;
-      max-width: 100%;
-      background: #fff;
-      display: flex;
-    }
-
-    @media (max-width: 768px) {
-      .root {
-        margin: 0 auto;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 768px) {
-      body {
-        padding: 0; 
-      }
-    }
-
-    /* common styles */
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 17px;
-      letter-spacing: 0.5em;
-    }
-
-    .section-title::after {
-      content: '';
-      flex-grow: 1;
-      height: 1px;
-      background: #000;
-    }
-
-    /* main styles */
-    .main {
-      display: flex;
-      width: 100%;
-    }
-
-    .main section {
-      flex: 1 1 auto;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    @media (max-width: 1024px) {
-      .main {
-        flex-direction: column;
-      }
-    }
-
-    /* header styles */
-    .header {
-      position: relative;
-      flex: 0 0 500px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      z-index: 2;
-    }
-
-    .site-title,
-    .site-description {
-      position: relative;
-      z-index: 3;
-    }
-
-    .header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      background-image: url(./assets/background.jpeg);
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      filter: grayscale(1);
-    }
-
-    .header::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 2;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .site-title {
-      font-weight: 700;
-      font-size: 30px;
-      line-height: 36px;
-      margin-bottom: 8px;
-    }
-
-    .site-description {
-      font-weight: 300;
-      font-size: 18px;
-      line-height: 22px;
-    }
-
-    .site-description b {
-      font-weight: 500;
-    }
-
-    @media (max-width: 1024px) {
-      .header {
-        flex: 0 0 250px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .header {
-        flex: 0 0 200px;
-      }
-
-      .site-title {
-        font-size: 20px;
-        line-height: 24px;
-      }
-
-      .site-description {
-        font-size: 16px;
-        line-height: 19.36px;
-      }
-    }
-
-    /* about styles */
-    .about {
-      padding: 0 32px;
-      height: 100%;
-      display: flex;
-      gap: 32px;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .link-list {
-      gap: 16px;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      list-style: none;
-    }
-
-    .link-list li {
-      display: flex;
-      align-items: center;
-      color: #636E72;
-    }
-
-    .link-list li,
-    .link-list h3 {
-      font-size: 13px;
-      line-height: 150%;
-      letter-spacing: 0.1em;
-    }
-
-    .link-list a {
-      color: inherit;
-      text-decoration: none;
-    }
-    
-    .link-list h3 {
-      font-weight: 700;
-      flex: 0 0 100px;
-      letter-spacing: 0.3em;
-    }
-
-    @media (max-width: 768px) {
-      .about {
-        padding: 32px;
-        justify-content: flex-start;
-      }
-      
-      .link-list li {
-        gap: 4px;
-      }
-
-      .link-list li,
-      .link-list h3 {
-        font-size: 12px;
-      }
-
-      .link-list h3 {
-        flex: 0 0 20px;
-      }
-      
-      .link-list h3 span {
-        display: none;
-      }
-    }
-
-    /* gallery styles */
-    .gallery {
-      padding: 32px;
-      height: 100%;
-      display: flex;
-      gap: 16px;
-      flex-direction: column;
-      overflow-y: auto;
-    }
-
-    .gallery .grid {
-      display: grid;
-      grid-template: 1fr / repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .gallery figure {
-      position: relative;
-      width: 100%;
-      height: 250px;
-      overflow: hidden;
-    }
-
-    .gallery figure figcaption {
-      transition: opacity 0.1s ease-in;
-      opacity: 0;
-      position: absolute;
-      bottom: 10px;
-      left: 10.32px;
-      right: 10.32px;
-      background: #fff;
-      font-size: 12px;
-      line-height: 150%;
-      letter-spacing: 0.1em;
-      padding: 10.5px 10px;
-      gap: 4px;
-      font-weight: 700;
-      font-size: 11px;
-      line-height: 13px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .gallery figure:hover figcaption {
-      opacity: 1;
-    }
-
-    .gallery figure figcaption time {
-      display: block;
-      color: #AAA;
-      font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
-    }
-
-    .gallery .grid figure img {
-      width: 100%;
-      height: 250px;
-      filter: grayscale(1);
-      object-fit: cover;
-    }
-
-    @media (max-width: 1024px) {
-      .gallery .grid {
-        grid-template: 1fr / repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .gallery {
-        overflow-y: unset;
-      }
-
-      .gallery .grid {
-        grid-template: 1fr / 1fr;
-      }
-    }
-    
-    /* sidebar styles */
-    .sidebar {
-      flex: 0 0 72px;
-      background: rgba(99, 110, 114, 0.1);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      padding-top: 32px;
-    }
-
-    .sidebar button {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-radius: 4px;
-      padding: 12px;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      color: #636E72;
-    }
-
-    .sidebar button.active {
-      background: #636E72;
-    }
-
-    .sidebar button svg {
-      height: 24px;
-      width: 24px;
-    }
-
-    .sidebar button.active svg {
-      color: #fff;
-    }
-
-    @media (max-width: 1024px) {
-      .sidebar {
-        order: -1;
-        padding-top: 0;
-        padding-right: 8px;
-        flex-direction: row;
-        justify-content: flex-end;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .sidebar {
-        order: -1;
-        padding: 8px;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-      }
-
-      .sidebar button {
-        flex: 1 0 auto;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/styles/week2-layout.css">
+  <link rel="stylesheet" href="./assets/styles/week3-form.css">
+  <link rel="stylesheet" href="./assets/styles/week3-modal.css">
+  <link rel="stylesheet" href="./assets/styles/week3-common.css">
 </head>
 <body>
   <div class="root">
@@ -419,76 +60,51 @@
             </g>
           </svg>
         </button>
+        <button type="button" data-modal="email" aria-label="email send button">
+          <svg viewBox="0 0 24 25" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M4 20.5C3.45 20.5 2.97933 20.3043 2.588 19.913C2.196 19.521 2 19.05 2 18.5V6.5C2 5.95 2.196 5.47933 2.588 5.088C2.97933 4.696 3.45 4.5 4 4.5H20C20.55 4.5 21.021 4.696 21.413 5.088C21.8043 5.47933 22 5.95 22 6.5V18.5C22 19.05 21.8043 19.521 21.413 19.913C21.021 20.3043 20.55 20.5 20 20.5H4ZM12 13.5L4 8.5V18.5H20V8.5L12 13.5ZM12 11.5L20 6.5H4L12 11.5ZM4 8.5V6.5V18.5V8.5Z" />
+            </g>
+          </svg>            
+        </button>
       </aside>
     </main>
   </div>
-  <script type="text/javascript">
-    const $section = Array.from(document.querySelectorAll('main section')).reduce((acc, cur) => {
-      acc[cur.dataset.tab] = cur;
-      return acc;
-    }, {});
-    const $sidebarButtons = document.querySelectorAll('.sidebar button');
-
-    $sidebarButtons.forEach($button => {
-      $button.addEventListener('click', (e) => {
-        const { tab }  = e.currentTarget.dataset
-
-        Object.keys($section).forEach((key) => {
-          $section[key].style.display = 'none';
-          $section[key].style.opacity = 0;
-        });
-
-        $sidebarButtons.forEach($button => {
-          $button.classList.remove('active');
-        });
-
-        e.currentTarget.classList.add('active');
-        $section[tab].style.display = 'flex';
-        setTimeout(() => {
-          $section[tab].style.opacity = 1;
-        }, 0);
-      });
-    });
-
-    async function getPhotos() {
-      const photos = JSON.parse(localStorage.getItem('__photos'));
-      if (photos) return photos;
-
-      const res = await fetch('https://api.unsplash.com/photos/random?count=30', {
-        method: 'GET',
-        headers: {
-          'Authorization': 'Client-ID wgKhdtstUibcCkhkSt2ZES1whAr8ZO_ndoAN6ybeHNQ',
-        },
-      })
-      const data = await res.json();
-      localStorage.setItem('__photos', JSON.stringify(data));
-      return data;
-    }
-
-    getPhotos().then(photos => {
-      const sourceSets = [
-        ['(max-width: 768px)', 'thumb'],
-        ['(max-width: 1024px)', 'small'],
-      ];
-      document.querySelector('.gallery .grid').innerHTML = (
-        photos.map((photo) => {
-          return `
-            <figure>
-              <picture>
-                ${sourceSets.map(([media, size]) => (
-                  `<source media="${media}" srcset="${photo.urls[size]}">`
-                )).join('')}
-                <img src="${photo.urls.regular}" alt="${photo.alt_description ? photo.alt_description : ''}">
-              </picture>
-              <figcaption>
-                ${photo.description ? photo.description : ''}
-                <time>${photo.created_at}</time>
-              </figcaption>
-            </figure>
-          `;
-        }).join('')
-      )
-    });
-  </script>
+  <div class="modal" data-modal="email">
+    <div class="modal-overlay">
+      <div class="modal-content">
+        <button class="modal-close">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"/>
+            </g>
+          </svg>
+        </button>
+        <div class="modal-body">
+          <h3 class="section-title">GET IN TOUCH</h2>
+          <form id="sendMail" class="h-100" novalidate>
+            <div class="row h-100">
+              <div class="last-extended">
+                <div class="input-group mb-1">
+                  <input required class="input" type="text" placeholder="Name">
+                  <i class="error-icon"></i>
+                </div>
+                <div class="input-group mb-1">
+                  <input required class="input" type="email" placeholder="Email">
+                  <i class="error-icon"></i>
+                </div>
+                <textarea required class="input" name="message" placeholder="Message"></textarea>
+              </div>
+              <div class="first-extended">
+                <img class="w-100 mb-1 mobile-hidden" src="./assets/images/mail.png" alt="mail">
+                <button class="button block" type="submit">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./assets/scripts/main.js"></script>
 </body>
 </html>
