@@ -5,8 +5,8 @@
   justify-content: center;
   padding: 0 18px;
   height: 50px;
-  background: #FFFFFF;
-  border: 1px solid #DDDDDD;
+  background: #fff;
+  border: 1px solid #ddd;
   border-radius: 2px;
   font-size: 16px;
   line-height: 180%;
@@ -15,12 +15,12 @@
 
 .input:hover {
   background: #FAFAFA;
-  border: 1px solid #555555;
+  border: 1px solid #555;
 }
 
 .input:focus {
   outline: none;
-  border: 1px solid #000000;
+  border: 1px solid #000;
 }
 
 .input ~ .error-icon {
@@ -37,7 +37,7 @@
 }
 
 .validation-detected .input:valid {
-  border: 1px solid #000000;
+  border: 1px solid #000;
 }
 
 .validation-detected .input:invalid {
@@ -54,7 +54,7 @@
 }
 
 .input::placeholder {
-  color: #888888;
+  color: #888;
 }
 
 .input-group {
@@ -82,7 +82,7 @@ textarea.input {
   font-size: 16px;
   line-height: 180%;
   letter-spacing: 0.05em;
-  color: #FFFFFF;
+  color: #fff;
 }
 
 .button:hover {
