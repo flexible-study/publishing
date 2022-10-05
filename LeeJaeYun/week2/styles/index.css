@@ -39,7 +39,7 @@
 }
 
 .thumbnail {
-  width: 500px;
+  flex: 0 0 500px;
   position: relative;
 }
 
@@ -67,7 +67,7 @@
 
 .tab-side {
   display: flex;
-  flex-grow: 1;
+  flex: 1 1 auto;
 }
 
 .tab-navigation {
@@ -109,7 +109,7 @@
 /* 테블릿 */
 @media (max-width: 1023px) {
   .thumbnail {
-    width: 250px;
+    flex-basis: 250px;
   }
 
   .tab-side {
