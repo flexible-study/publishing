@@ -160,3 +160,59 @@ svg {
   letter-spacing: 0.1em;
   color: #636E72;
 }
+
+
+#main .gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  overflow: auto;
+  
+}
+
+#main .gallery-section .gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+#main .gallery-section .photo {
+  position: relative;
+  cursor: pointer;
+}
+
+#main .gallery-section .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+}
+
+#main .gallery-section .photo .info {
+  display: none;
+}
+
+#main .gallery-section .photo:hover .info {
+  position: absolute;
+  display: block;
+  width: calc(100% - 20px);
+  bottom: 10px;
+  left: 10px;
+  background-color: white;
+  z-index: 10;
+  padding: 10px 10.5px;
+}
+
+#main .gallery-section .photo:hover .photo-description {
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+#main .gallery-section .photo:hover .photo-date {
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #AAAAAA;
+}

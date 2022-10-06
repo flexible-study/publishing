@@ -72,6 +72,7 @@
         </section>
         <section class="tab-content gallery-section hide" data-id="gallery">
           <h2 class="title">Gallery</h2>
+          <div class="gallery"></div>
         </section>
       </main>
     </div>
@@ -115,14 +116,16 @@
       if(res.status !== 200) return;
 
       const data = await res.json();
-      const gallerySection = document.querySelector('.gallery-section');
+      const gallery = document.querySelector('.gallery');
 
-      const images = [];
-      data.forEach((image) => {
-        images.push(`<img src="${image.urls.regular}" alt="${image.alt_description}" loading="lazy">`);
-      });
-
-      gallerySection.innerHTML = images.join('');
+      gallery.innerHTML =  data.map((image) => `
+          <div class="photo">
+            <img src="${image.urls.regular}" alt="${image.alt_description}" loading="lazy">
+            <div class="info">
+              <p class="photo-description">${image.alt_description || 'no description'}</p>
+              <p class="photo-date">${image.updated_at}</p>
+            </div>
+          </div>`).join('');
     }
 
     const mount = () => {
