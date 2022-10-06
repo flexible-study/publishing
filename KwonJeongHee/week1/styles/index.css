@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+header,
+aside,
+footer {
+  background-color: #d9d9d9;
+  font-size: 17px;
+}
+
+header {
+  height: 100px;
+  margin-top: 30px;
+  padding: 32px 0 0 32px;
+}
+
+footer {
+  height: 100px;
+  margin-top: 16px;
+  padding: 32px 0 0 32px;
+}
+
+.main {
+  margin-top: 16px;
+  display: flex;
+  max-width: 100%;
+  gap: 16px;
+  min-height: 668px;
+}
+
+.main .sidebar {
+  flex: 0 0 auto;
+  width: 200px;
+  padding: 32px 0 0 32px;
+  background-color: #d9d9d9;
+}
+
+.main .posting-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  background-color: #d9d9d9;
+}
+
+.main .posting-list .posting-item {
+  flex: 1 1 0;
+  background-color: white;
+  padding: 32px;
+}
+
+@media only screen and (max-width: 1023px) {
+  .main .posting-list {
+    flex-flow: row wrap;
+  }
+
+  .main .posting-list .posting-item {
+    flex: 1 1 calc(50% - 8px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header,
+  footer {
+    padding-left: 16px;
+  }
+
+  .main .sidebar {
+    display: none;
+  }
+
+  .main .posting-list {
+    flex-flow: column nowrap;
+    padding: 16px;
+  }
+
+  .main .posting-list .posting-item {
+    padding: 32px 16px;
+  }
+}
