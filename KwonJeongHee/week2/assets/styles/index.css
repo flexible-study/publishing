@@ -31,6 +31,7 @@ svg {
 }
 
 #header {
+  flex-shrink: 1;
   order: 1;
   height: 100%;
   display: flex;
@@ -71,7 +72,8 @@ svg {
 }
 
 #main .featured-image-section {
-  min-width: 500px;
+  flex: 1 1 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,8 +105,12 @@ svg {
   display: none;
 }
 
+#main .tab-content {
+  flex: 1 1 700px;
+  width: 700px;
+}
+
 #main .info-section {
-  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
