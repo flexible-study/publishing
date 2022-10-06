@@ -60,7 +60,31 @@ button {
 #main .featured-image {
   min-width: 500px;
   flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-image: url('../images/background.png');
+}
+
+#main .featured-image .name {
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#main .featured-image .job {
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+#main .featured-image .job .role {
+  font-weight: 500;
 }
 
 #main .info {
