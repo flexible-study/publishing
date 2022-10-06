@@ -12,10 +12,18 @@ button {
 }
 
 #wrap {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrap .container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 783px;
+  width: 1200px;
 }
 
 #header {
@@ -53,13 +61,13 @@ button {
 
 
 #main {
+  flex: 1 1 0;
   display: flex;
   height: 100%;
 }
 
 #main .featured-image {
   min-width: 500px;
-  flex: 1 1 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
