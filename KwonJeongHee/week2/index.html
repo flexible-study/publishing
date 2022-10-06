@@ -20,7 +20,7 @@
     <div class="container">
       <header id="header">
         <h1>header</h1>
-        <button class="tab-btn selected" aria-label="개인 정보">
+        <button class="tab-btn selected" aria-label="개인 정보" value="info">
           <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
             <mask id="mask0_415_115" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
             <rect y="0.5" width="24" height="24" fill="currentColor"/>
@@ -30,7 +30,7 @@
             </g>
           </svg>          
         </button>
-        <button class="tab-btn" aria-label="갤러리">
+        <button class="tab-btn" aria-label="갤러리" value="gallery">
           <svg width="24" height="25" viewBox="0 0 24 25" fill="none">
             <mask id="mask0_415_109" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="25">
             <rect y="0.5" width="24" height="24" fill="currentColor"/>
@@ -46,7 +46,7 @@
           <h2 class="name">Hanna</h2>
           <p class="job">Grepp Inc. <span class="role">FRONTEND</span></p>
         </section>
-        <section class="info-section">
+        <section class="tab-content info-section" data-id="info">
           <h2 class="title">ABOUT ME</h2>
           <dl class="info-list">
             <div class="info-item">
@@ -70,21 +70,46 @@
             </div>
           </dl>      
         </section>
+        <section class="tab-content gallery-section hide" data-id="gallery">
+          <h2 class="title">Gallery</h2>
+        </section>
       </main>
     </div>
   </div>
 
 
   <script>
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    tabBtns.forEach((tabBtn) => {
-      tabBtn.addEventListener('click', () => {
-        tabBtns.forEach((tabBtn) => {
-          tabBtn.classList.remove('selected');
+    const bindTabBtnsEvent = () => {
+      const showSelectedContent = (value) => {
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabContents.forEach((tabContent) => {
+          const { id } = tabContent.dataset;
+
+          id === value ? tabContent.classList.remove('hide') : tabContent.classList.add('hide');
+        })
+      }
+
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      
+      tabBtns.forEach((tabBtn) => {
+        tabBtn.addEventListener('click', (e) => {          
+          tabBtns.forEach((tabBtn) => {
+            tabBtn.classList.remove('selected');
+          });
+          tabBtn.classList.add('selected');
+
+          const { value } = e.target;
+          showSelectedContent(value);
         });
-        tabBtn.classList.add('selected');
       });
-    });
+    }
+
+    const mount = () => {
+      bindTabBtnsEvent();
+    }
+
+    mount();
   </script>
 </body>
 </html>

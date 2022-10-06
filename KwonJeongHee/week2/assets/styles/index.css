@@ -11,6 +11,10 @@ button {
   cursor: pointer;
 }
 
+svg {
+  pointer-events: none;
+}
+
 #wrap {
   height: 100vh;
   display: flex;
@@ -95,6 +99,10 @@ button {
   font-weight: 500;
 }
 
+#main .tab-content.hide {
+  display: none;
+}
+
 #main .info-section {
   flex: 1 1 0;
   display: flex;
@@ -104,7 +112,7 @@ button {
   padding: 32px;
 }
 
-#main .info-section .title {
+#main .tab-content .title {
   font-weight: 700;
   font-size: 14px;
   line-height: 17px;
@@ -115,7 +123,7 @@ button {
   gap: 16px;
 }
 
-#main .info-section .title::after {
+#main .tab-content .title::after {
   content: '';
   flex: 1 1 0;
   display: block;
