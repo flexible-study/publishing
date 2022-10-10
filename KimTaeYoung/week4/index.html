@@ -21,24 +21,36 @@
   <div id="wrap">
     <header id="header">
       <div class="container">
-        <h1 class="title">Casper</h1>
+        <h1 class="title"><a href="./index.html">Casper</a></h1>
 
         <nav class="navigation">
           <h2 class="screen-reader-text">사이트 메뉴</h2>
 
           <ul>
-            <li><a href="#">Intro</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Timeline</a></li>
-            <li><a href="#">Get in Touch</a></li>
+            <li><a href="#wrap">Intro</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Get in Touch</a></li>
           </ul>
 
-          <a class="move-to-contact" href="#">
+          <a class="move-to-contact" href="#contact">
             <img src="./assets/svgs/contact_mail.svg" alt="프로필 아이콘">
           </a>
         </nav>
       </div>
+      <script>
+        const navItems = document.querySelectorAll('#header .navigation a');
+
+        Array.from(navItems, (item) => {
+          item.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const uid = item.getAttribute('href'); // #intro
+            document.querySelector(uid).scrollIntoView({behavior: 'smooth'});
+          });
+        });
+      </script>
     </header>
 
     <main id="main">
@@ -66,58 +78,111 @@
           </header>
 
           <div class="section-content">
-            <ul>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 1
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 2
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 3
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 4
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 5
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button" style="background-image: url('./assets/images/item.jpg');">
-                  <span class="name">
-                    Project Name 6
-                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
-                  </span>
-                </button>
-              </li>
-            </ul>
+            <ul id="portfolio-lists"></ul>
           </div>
         </div>
+
+        <div class="modal" aria-hidden="true">
+          <div class="modal-inner">
+            <button class="close" aria-label="모달 닫기" onclick="modalClose();" autofocus>
+              <img src="./assets/svgs/icon_close.svg" alt="닫기 아이콘">
+            </button>
+
+            <div class="thumbnail">
+              <img src="./assets/images/portfilio-item03.png" alt="포트폴리오 대표 이미지">
+            </div>
+
+            <div class="content">
+              <div class="head">
+                <h3 class="title"></h3>
+
+                <div class="languages">
+                  <img src="./assets/svgs/icon_terminal.svg" alt="터미널 아이콘">
+                  <span></span>
+                </div>
+
+                <div class="date">
+                  <img src="./assets/svgs/icon_calendar_today.svg" alt="캘린더 아이콘">
+                  <span></span>
+                </div>
+              </div>
+
+              <p class="description"></p>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          // 눌린 버튼 저장하기
+          let activeButton = '';
+
+          async function getPortfilio() {
+            const getData = await fetch('./assets/json/portfolio.json');
+            const response = await getData.json();
+
+            return response;
+          }
+
+          getPortfilio().then((data) => {
+            const listsElement = document.querySelector('#portfolio-lists');
+            let item = '';
+
+            data.forEach((element) => {
+              item += `<li>
+                <button class="button" type="button" style="background-image: url('./assets/images/${element.thumbnail}');" onclick="modalOpen(this, ${element.id});">
+                  <span class="name">
+                    ${element.title}
+                    <img class="icon" src="./assets/svgs/arrow_outward.svg" alt="화살표 아이콘">
+                  </span>
+                </button>
+              </li>`
+            });
+
+            listsElement.innerHTML = item;
+          });
+
+          function modalOpen(button, index) {
+            // 현재 눌린 버튼 기억하기
+            activeButton = button;
+
+            // 데이터 가져오기
+            getPortfilio().then((data) => {
+              const item = data[index];
+
+              // 모달 가져와서 영역 찾기
+              const modal = document.querySelector('.modal');
+              const titleArea = modal.querySelector('.title');
+              const thumbnailArea = modal.querySelector('.thumbnail img');
+              const languagesArea = modal.querySelector('.languages span');
+              const dateArea = modal.querySelector('.date span');
+              const descriptionArea = modal.querySelector('.description');
+
+              // 데이터 입력
+              titleArea.innerHTML = item.title;
+              thumbnailArea.setAttribute('src', `./assets/images/${item.thumbnail}`);
+              languagesArea.innerHTML = item.languages.map((item) => {
+                return item;
+              }).join(', ');
+              dateArea.innerHTML = item.date;
+              descriptionArea.innerHTML = item.description;
+
+              // 모달 호출
+              modal.style.display = 'flex';
+              document.documentElement.classList.add('scroll-lock');
+
+              modal.querySelector('[autofocus]').focus();
+            });
+          }
+
+          function modalClose() {
+            const modal = document.querySelector('.modal');
+            modal.style.display = 'none';
+            document.documentElement.classList.remove('scroll-lock');
+
+            // 기존 버튼에 focus
+            activeButton.focus();
+          }
+        </script>
       </section>
 
       <section id="skills">
@@ -126,6 +191,43 @@
             <small class="subtitle">Skills</small>
             <h2 class="title">보유 기술</h2>
           </header>
+
+          <div class="section-content">
+            <ul>
+              <li>
+                <div class="item">
+                  <div class="logo"><img src="./assets/svgs/lang_html5.svg" alt="HTML5 로고 아이콘"></div>
+                  <h3 class="language">HTML5</h3>
+                  <div class="percent">95%</div>
+                  <progress class="progress html5" max="100" value="95">95%</progress>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="logo"><img src="./assets/svgs/lang_css3.svg" alt="CSS3 로고 아이콘"></div>
+                  <h3 class="language">CSS3</h3>
+                  <div class="percent">80%</div>
+                  <progress class="progress css3" max="100" value="80">80%</progress>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="logo"><img src="./assets/svgs/lang_js.svg" alt="JavaScript 로고 아이콘"></div>
+                  <h3 class="language">JavaScript</h3>
+                  <div class="percent">80%</div>
+                  <progress class="progress javascript" max="100" value="80">80%</progress>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="logo"><img src="./assets/svgs/lang_figma.svg" alt="Figma 로고 아이콘"></div>
+                  <h3 class="language">Figma</h3>
+                  <div class="percent">30%</div>
+                  <progress class="progress figma" max="100" value="30">30%</progress>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -135,6 +237,53 @@
             <small class="subtitle">Timeline</small>
             <h2 class="title">지나온 길</h2>
           </header>
+
+          <div class="section-content">
+            <ul>
+              <li>
+                <div class="item">
+                  <div class="date">2022-10</div>
+                  <div class="content">
+                    <h3 class="title">[1기] 만들면서 배우는 퍼블리싱 수료</h3>
+                    <p class="description">프로그래머스의 만들면서 배우는 퍼블리싱 강의를 수료하고 UI 개발의 심화를 학습했습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="date">2022-01 ~</div>
+                  <div class="content">
+                    <h3 class="title">(주) 그렙</h3>
+                    <p class="description">그렙 UI 개발자로 근무하고있습니다.</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="date">2019-12 ~<br>2021-12</div>
+                  <div class="content">
+                    <h3 class="title">에스제이더블유인터네셔널</h3>
+                    <p class="description">
+                      1. 개발자와 협업하여 공통 모듈 통합, 수강생 강의실 리뉴얼 등 전사 웹서비스 내의 다양한 UI를 개발했습니다.
+                      <br>2. 제2외국어 중 9개 언어의 사이트 유지보수를 담당했습니다.(스페인어, 프랑스어, 독일어, 러시아어, 아랍어, 이탈리아어, 히브리어, 한국어능력시험, 한국어)
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item">
+                  <div class="date">2015</div>
+                  <div class="content">
+                    <h3 class="title">티스토리 반응형 웹 스킨 공모전 대상</h3>
+                    <p class="description">
+                      <a href="https://notice.tistory.com/2256" target="_blank">https://notice.tistory.com/2256</a>
+                      <br>디자인부터 스킨 개발까지 단독으로 진행했습니다.
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -144,7 +293,78 @@
             <small class="subtitle">Get in Touch</small>
             <h2 class="title">연락하기</h2>
           </header>
+
+          <div class="section-content">
+            <div class="infomation">
+              <div class="item">
+                <div class="icon"><img src="./assets/svgs/icon_mail.svg" alt="메일 아이콘"></div>
+                <div class="value"><a href="mailto:kty0529@gmail.com">kty0529@gmail.com</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon"><img src="./assets/svgs/icon_phone.svg" alt="전화 아이콘"></div>
+                <div class="value"><a href="tel:010-6512-5882">010-6512-5882</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon"><img src="./assets/svgs/icon_github.svg" alt="깃헙 아이콘"></div>
+                <div class="value"><a href="https://github.com/kty0529" target="_blank">https://github.com/kty0529</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon"><img src="./assets/svgs/icon_location_on.svg" alt="장소 아이콘"></div>
+                <div class="value">서울시 관악구</div>
+              </div>
+            </div>
+
+            <div class="form">
+              <form novalidate onsubmit="return saveForm(this);">
+                <div class="input text">
+                  <input class="field" name="name" type="text" placeholder="Name" required>
+                </div>
+
+                <div class="input email">
+                  <input class="field" name="email" type="email" placeholder="Email" required>
+                </div>
+
+                <div class="textarea">
+                  <textarea class="field" name="message" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="buttons">
+                  <button type="submit">Submit <img src="./assets/svgs/icon_arrow_forward.svg" alt="오른쪽 화살표 아이콘" aria-hidden="true"></button>
+                </div>
+              </form>
+            </div>
+
+            <div class="form-icon">
+              <img src="./assets/svgs/icon_local_post_office.svg" alt="포스트박스 아이콘" aria-hidden="true">
+            </div>
+          </div>
         </div>
+        <script>
+          function saveForm(form) {
+            const requiredItems = form.querySelectorAll('[required]');
+            let detectValidationItems = [];
+
+            // Array.from()을 사용해 NodeList를 Array로 변환
+            Array.from(requiredItems, (item) => {
+              if ( ! item.checkValidity() ) {
+                detectValidationItems.push(item);
+              }
+
+              form.classList.add('validation-detect');
+            });
+
+            if ( detectValidationItems.length > 0 ) {
+              console.log(detectValidationItems);
+              return false;
+            } else {
+              alert('submit!');
+              return false;
+            }
+          }
+        </script>
       </section>
     </main>
 
