@@ -1,0 +1,152 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.dummy-line {
+  border-bottom: 1px solid #636e72;
+  flex-grow: 1;
+}
+
+.tab-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.tab-btn {
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.tab-btn svg {
+  margin: 0 auto;
+}
+
+.tab-btn.active {
+  background-color: #636e72;
+}
+
+.wrap {
+  --max-width: 1200px;
+  max-width: calc(var(--max-width) + 32px + 32px);
+  padding: 0 32px;
+  width: 100%;
+  margin: 88.5px auto 0;
+}
+
+#main {
+  display: flex;
+}
+
+.thumbnail {
+  flex: 0 0 500px;
+  position: relative;
+}
+
+.thumbnail-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+}
+
+.thumbnail-content .name {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.thumbnail-content .sub-description {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.tab-side {
+  display: flex;
+  flex: 1 1 auto;
+}
+
+.tab-navigation {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 72px;
+  padding: 32px 16px;
+  background-color: rgba(99, 110, 114, 0.1);
+}
+
+.tab-btn.active svg {
+  background-color: #636e72;
+}
+
+.tab-btn.active svg path {
+  fill: #ffffff;
+}
+
+.tab {
+  display: none;
+  flex: 1 1 auto;
+  min-width: 300px;
+}
+
+.tab.active {
+  display: block;
+}
+
+.inner {
+  padding: 32px;
+  max-height: 783px;
+}
+
+/* 테블릿 */
+@media (max-width: 1023px) {
+  .thumbnail {
+    flex-basis: 250px;
+  }
+
+  .tab-side {
+    flex-direction: column;
+  }
+
+  .tab-navigation {
+    flex-direction: row;
+    justify-content: flex-end;
+    order: 0;
+    width: 100%;
+    height: 56px;
+    padding: 8px;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .wrap {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  #main {
+    flex-direction: column;
+  }
+
+  .thumbnail {
+    width: 100%;
+    height: 200px;
+  }
+
+  .tab-btn {
+    flex: 1 1 0;
+  }
+
+  .inner {
+    width: 100%;
+    max-width: none;
+  }
+}

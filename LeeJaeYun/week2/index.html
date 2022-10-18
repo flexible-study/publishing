@@ -4,9 +4,141 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/tab1.css" />
+    <link rel="stylesheet" href="./styles/tab2.css" />
     <title>비동기로 랜덤 사용자 정보 가져오기</title>
   </head>
   <body>
-    <div class="wrap"></div>
+    <div class="wrap">
+      <main id="main">
+        <div class="thumbnail">
+          <div class="thumbnail-content">
+            <h2 class="name">이재윤</h2>
+            <p class="sub-description">Frontend Developer</p>
+          </div>
+          <picture>
+            <source
+              media="(max-width: 767px)"
+              srcset="./assets/profile_background_mobile.png"
+            />
+            <source
+              media="(max-width: 1023px)"
+              srcset="./assets/profile_background_tablet.png"
+            />
+            <img
+              src="./assets/profile_background_desktop.png"
+              alt="프로필 이미지"
+            />
+          </picture>
+        </div>
+
+        <div class="tab-side">
+          <div class="tab-navigation">
+            <button class="tab-btn my-profile active">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <mask
+                  id="mask0_109_77"
+                  style="mask-type: alpha"
+                  maskUnits="userSpaceOnUse"
+                  x="8"
+                  y="8"
+                  width="24"
+                  height="24"
+                >
+                  <rect x="8" y="8" width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_109_77)">
+                  <path
+                    d="M20 20C18.9 20 17.9583 19.6083 17.175 18.825C16.3917 18.0417 16 17.1 16 16C16 14.9 16.3917 13.9583 17.175 13.175C17.9583 12.3917 18.9 12 20 12C21.1 12 22.0417 12.3917 22.825 13.175C23.6083 13.9583 24 14.9 24 16C24 17.1 23.6083 18.0417 22.825 18.825C22.0417 19.6083 21.1 20 20 20ZM12 28V25.2C12 24.6333 12.146 24.1123 12.438 23.637C12.7293 23.1623 13.1167 22.8 13.6 22.55C14.6333 22.0333 15.6833 21.6457 16.75 21.387C17.8167 21.129 18.9 21 20 21C21.1 21 22.1833 21.129 23.25 21.387C24.3167 21.6457 25.3667 22.0333 26.4 22.55C26.8833 22.8 27.2707 23.1623 27.562 23.637C27.854 24.1123 28 24.6333 28 25.2V28H12Z"
+                    fill="#636E72"
+                  />
+                </g>
+              </svg>
+            </button>
+            <button class="tab-btn my-gallery">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <mask
+                  id="mask0_223_416"
+                  style="mask-type: alpha"
+                  maskUnits="userSpaceOnUse"
+                  x="8"
+                  y="8"
+                  width="24"
+                  height="24"
+                >
+                  <rect x="8" y="8" width="24" height="24" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_223_416)">
+                  <path
+                    d="M13 30C12.1667 30 11.4583 29.7083 10.875 29.125C10.2917 28.5417 10 27.8333 10 27V13C10 12.1667 10.2917 11.4583 10.875 10.875C11.4583 10.2917 12.1667 10 13 10H27C27.8333 10 28.5417 10.2917 29.125 10.875C29.7083 11.4583 30 12.1667 30 13V27C30 27.8333 29.7083 28.5417 29.125 29.125C28.5417 29.7083 27.8333 30 27 30H13ZM13 28H27C27.2833 28 27.5207 27.904 27.712 27.712C27.904 27.5207 28 27.2833 28 27V13C28 12.7167 27.904 12.479 27.712 12.287C27.5207 12.0957 27.2833 12 27 12H13C12.7167 12 12.479 12.0957 12.287 12.287C12.0957 12.479 12 12.7167 12 13V27C12 27.2833 12.0957 27.5207 12.287 27.712C12.479 27.904 12.7167 28 13 28ZM14 26L18 22L19.8 23.775L22 21L26 26H14ZM16 18C15.45 18 14.9793 17.804 14.588 17.412C14.196 17.0207 14 16.55 14 16C14 15.45 14.196 14.9793 14.588 14.588C14.9793 14.196 15.45 14 16 14C16.55 14 17.021 14.196 17.413 14.588C17.8043 14.9793 18 15.45 18 16C18 16.55 17.8043 17.0207 17.413 17.412C17.021 17.804 16.55 18 16 18Z"
+                    fill="#636E72"
+                  />
+                </g>
+              </svg>
+            </button>
+          </div>
+
+          <article id="tab-1" class="tab my-profile active">
+            <div class="inner">
+              <div class="tab-1-content">
+                <div class="tab-title">
+                  <h3>ABOUT ME</h3>
+                  <div class="dummy-line"></div>
+                </div>
+                <ul class="tab1-content">
+                  <li class="description-item">
+                    <span class="description-title">Name.</span>
+                    <span class="decription">이재윤</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">Email.</span>
+                    <span class="decription">ag502@naver.com</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">Phone.</span>
+                    <span class="decription">010-1234-5678</span>
+                  </li>
+                  <li class="description-item">
+                    <span class="description-title">GitHub.</span>
+                    <span class="decription">https://github.com/kty0529</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article id="tab-2" class="tab my-gallery">
+            <div class="inner">
+              <div class="tab-2-content">
+                <div class="tab-title">
+                  <h3>GALLERY</h3>
+                  <div class="dummy-line"></div>
+                </div>
+                <ul class="tab2-content"></ul>
+              </div>
+            </div>
+          </article>
+        </div>
+      </main>
+    </div>
+    <script src="./src/index.js"></script>
   </body>
 </html>
