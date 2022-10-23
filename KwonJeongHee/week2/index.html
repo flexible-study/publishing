@@ -23,7 +23,7 @@
     <div id="wrap">
       <div class="container">
         <header id="header">
-          <h1>Hanna Profile</h1>
+          <h1 class="screen-reader-text">Hanna Profile</h1>
           <button
             class="nav-btn tab-btn selected"
             aria-label="개인 정보"
@@ -71,7 +71,7 @@
             </svg>
           </button>
           <button
-            class="nav-btn contact-btn"
+            class="nav-btn modal-btn"
             aria-label="연락하기"
             value="contact"
           >
@@ -140,6 +140,71 @@
       </div>
     </div>
 
+    <div class="modal-overlay hide">
+      <div class="modal">
+        <button class="close-btn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask
+              id="mask0_131_108"
+              style="mask-type: alpha"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="24"
+              height="24"
+            >
+              <rect width="24" height="24" fill="white" />
+            </mask>
+            <g mask="url(#mask0_131_108)">
+              <path
+                d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                fill="white"
+              />
+            </g>
+          </svg>
+        </button>
+        <div class="modal-header">
+          <h2 class="modal-title">GET IN TOUCH</h2>
+        </div>
+        <div class="modal-body">
+          <form id="contact-form">
+            <fieldset>
+              <legend class="screen-reader-text">GET IN TOUCH</legend>
+              <div class="form-controls">
+                <input
+                  type="text"
+                  placeholder="Name"
+                  required
+                  aria-label="name"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  aria-label="email"
+                />
+                <textarea
+                  placeholder="Message"
+                  required
+                  aria-label="message"
+                ></textarea>
+              </div>
+              <div class="form-submit">
+                <img src="./assets/images/contact.png" alt="mail" />
+                <button type="submit" class="submit-btn">Send Message</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script>
       const initNavBtns = () => {
         const navBtns = document.querySelectorAll(".nav-btn");
@@ -191,25 +256,70 @@
         gallery.innerHTML = data
           .map(
             (image) => `
-          <div class="photo">
-            <img src="${image.urls.regular}" alt="${
+                <div class="photo">
+                  <img src="${image.urls.regular}" alt="${
               image.alt_description
             }" loading="lazy">
-            <div class="info">
-              <p class="photo-description">${
-                image.alt_description || "no description"
-              }</p>
-              <p class="photo-date">${image.updated_at}</p>
-            </div>
-          </div>`
+                  <div class="info">
+                    <p class="photo-description">${
+                      image.alt_description || "no description"
+                    }</p>
+                    <p class="photo-date">${image.updated_at}</p>
+                  </div>
+                </div>`
           )
           .join("");
+      };
+
+      const initModal = () => {
+        const modalBtn = document.querySelector(".modal-btn");
+        const modalOverlay = document.querySelector(".modal-overlay");
+        const closeBtn = document.querySelector(".close-btn");
+
+        modalBtn.addEventListener("click", () => {
+          modalOverlay.classList.remove("hide");
+        });
+
+        closeBtn.addEventListener("click", () => {
+          modalOverlay.classList.add("hide");
+        });
+
+        modalOverlay.addEventListener("click", (e) => {
+          if (e.target === modalOverlay) {
+            modalOverlay.classList.add("hide");
+          }
+        });
+      };
+
+      const checkContactFormValidity = () => {
+        let isValid = true;
+        const form = document.querySelector("#contact-form");
+        const formControls = form.querySelectorAll("[required]");
+
+        for (el of formControls) {
+          if (!el.checkValidity()) {
+            el.classList.add("invalid");
+            isValid = false;
+          }
+        }
+
+        return isValid;
+      };
+
+      const initForm = () => {
+        const submitBtn = document.querySelector("#contact-form button");
+
+        submitBtn.addEventListener("click", (e) => {
+          checkContactFormValidity();
+        });
       };
 
       const mount = () => {
         initNavBtns();
         initTabBtns();
         initGallery();
+        initModal();
+        initForm();
       };
 
       mount();
