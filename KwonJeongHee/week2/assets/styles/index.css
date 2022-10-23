@@ -108,6 +108,8 @@ svg {
   justify-content: center;
   align-items: center;
   background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   padding: 0 10px;
 }
 
