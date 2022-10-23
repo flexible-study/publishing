@@ -2,7 +2,6 @@
 
 ## 🏫 스터디 진행
 스터디는 **매주 목요일 20시**에 온라인 Zoom을 통해 시작됩니다.
-<br>**[[Zoom 회의 입장하기](https://zoom.us/j/2762346698?pwd=VUcxcU1uM0V4L0UycDVKcTQwZituQT09)]** (입장 비밀번호 : `casper`)
 
 ## 🎯 미션 제출
 1. 저장소를 [GitHub Desktop 프로그램](https://desktop.github.com/)이나 자신의 방식대로 로컬로 클론합니다.
