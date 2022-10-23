@@ -130,7 +130,7 @@ img {
   align-items: center;
   background-image: url("../images/background.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   padding: 0 10px;
 }
 
@@ -329,6 +329,12 @@ img {
   padding: 32px;
 }
 
+@media (max-width: 787px) {
+  .modal {
+    padding: 16px;
+  }
+}
+
 .modal .close-btn {
   position: absolute;
   top: -10px;
@@ -362,12 +368,24 @@ img {
   gap: 16px;
 }
 
+@media (max-width: 787px) {
+  .modal .modal-body #contact-form fieldset {
+    flex-direction: column;
+  }
+}
+
 .modal .modal-body #contact-form .form-controls {
   flex: 1 1 0;
-  min-width: 320px;
+  width: 320px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+@media (max-width: 787px) {
+  .modal .modal-body #contact-form .form-controls {
+    width: 256px;
+  }
 }
 
 .modal .modal-body #contact-form .form-controls input,
@@ -426,8 +444,39 @@ textarea:valid {
   resize: none;
 }
 
+@media (max-width: 787px) {
+  .modal .modal-body #contact-form .form-controls textarea {
+    min-height: 170px;
+  }
+}
+
 .modal .modal-body #contact-form .form-submit {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 300px;
+}
+
+@media (max-width: 1023px) {
+  .modal .modal-body #contact-form .form-submit {
+    width: 200px;
+  }
+
+  .modal .modal-body #contact-form .form-submit img {
+    height: 271px;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 787px) {
+  .modal .modal-body #contact-form .form-submit img {
+    display: none;
+  }
+
+  .modal .modal-body #contact-form .form-submit {
+    width: 100%;
+  }
 }
 
 .modal .modal-body #contact-form .form-submit .submit-btn {
