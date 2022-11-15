@@ -12,17 +12,17 @@
 3. 저장소 루트 경로에 앞서 생성한 개인 브랜치와 같은 이름의 폴더를 만들고 그곳에 주차별 미션의 코드를 올립니다.
   ```
   ex)
-  /KimTaeYoung/week1/index.html
-  /KimTaeYoung/week2/index.html
+  1기/KimTaeYoung/week1/index.html
+  1기/KimTaeYoung/week2/index.html
   ```
 4. 미션이 완료되면 PR을 올려 코드 리뷰를 받습니다.
 5. 코드 리뷰가 완료되면 메인 브랜치에 PR을 merge하고 브랜치를 폐기합니다.
 6. 새로운 주차가 시작되면 2번 항목부터 반복합니다.
 
 ## 📝 PR 작성 규칙
-- PR 제목은 **[이름] 1주차 미션 제출**을 규칙으로 합니다.
+- PR 제목은 **[기수/이름] 1주차 미션 제출**을 규칙으로 합니다.
   ```
-  ex) [김태영] 1주차 미션 제출
+  ex) [1기/김태영] 1주차 미션 제출
   ```
 - PR 내용은 자유롭게 작성하셔도 좋으나, 어려웠던점이나 헷갈리는점 등을 많이 적을 수록 더 많은 피드백을 받으실 수 있습니다.
 
@@ -32,6 +32,5 @@
 - 코드 리뷰가 완료된 PR은 메인 브랜치와 병합하고 종료합니다.
 
 ## 💬 커뮤니케이션
-- 기타 질문은 Slack을 통해 진행하고 질문의 내용이 길 경우 클래스룸의 [질문답변 게시판](https://school.programmers.co.kr/app/courses/14716/questions/)을 이용해서 질문하셔도 좋습니다.
-  <br>**[[Slack 참여하기](https://join.slack.com/t/flexible-study/shared_invite/zt-1fxkwd6hi-2lKYVsufXEGjICILEswlbA)]**
+- 기타 질문은 Slack을 통해 진행하고 질문의 내용이 길 경우 클래스룸의 질문답변 게시판을 이용해서 질문하셔도 좋습니다.
 - 부담갖지 마시고 언제든 편안하게 작성해주세요!
