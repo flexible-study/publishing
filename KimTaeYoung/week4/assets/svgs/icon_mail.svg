@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 31 31">
+  <mask id="a" width="31" height="31" x="0" y="0" maskUnits="userSpaceOnUse" style="mask-type:alpha">
+    <path fill="coral" d="M.25.5h30v30h-30z"/>
+  </mask>
+  <g mask="url(#a)">
+    <path fill="#2D3436" d="M5.25 25.5a2.407 2.407 0 0 1-1.765-.734A2.408 2.408 0 0 1 2.75 23V8c0-.688.245-1.276.735-1.765A2.404 2.404 0 0 1 5.25 5.5h20c.687 0 1.276.245 1.766.735S27.75 7.312 27.75 8v15a2.41 2.41 0 0 1-.734 1.766 2.41 2.41 0 0 1-1.766.734h-20Zm10-8.75-10-6.25V23h20V10.5l-10 6.25Zm0-2.5 10-6.25h-20l10 6.25Zm-10-3.75V8v15-12.5Z"/>
+  </g>
+</svg>
