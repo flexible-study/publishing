@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플렉스박스 기본</title>
+
+  <link rel="stylesheet" href="./common.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .flex {
+      width: 1000px;
+      height: 500px;
+      background-color: #fff;
+      border: 1px solid #000;
+
+      /* flexbox 선언 */
+      display: flex;
+
+      /* 가로 축 정렬 */
+      justify-content: flex-start;
+      /* justify-content: flex-end; */
+      /* justify-content: center; */
+      /* justify-content: space-between; */
+      /* justify-content: space-around; */
+      /* justify-content: space-evenly; */
+
+      /* 세로 축 정렬 */
+      align-items: stretch;
+      /* align-items: flex-start; */
+      /* align-items: flex-end; */
+      /* align-items: center; */
+      /* align-items: baseline; */
+
+      /* 축 변경 */
+      /* flex-direction: column; */
+
+      /* 자식의 개행 허용 */
+      /* flex-wrap: wrap; */
+    }
+
+    .item {
+      background-color: #ddd;
+      padding: 20px;
+
+      /* 자식 요소 정의 */
+      /*
+        flex-grow: 0; 늘어나는 것을 허용 (팽창)
+        flex-shrink: 1; 줄어드는 것을 허용 (수축)
+        flex-basis: auto; 크기 정의 (===width)
+      */
+    }
+
+    /* 폰트 크기를 변경하고 세로 축 정렬을 바꿔보세요. */
+    .item:nth-child(1) {
+      /* font-size: 50px; */
+    }
+
+    .item:nth-child(2) {
+      /* font-size: 70px; */
+      background-color: #FFDADA;
+    }
+
+    .item:nth-child(3) {
+      /* font-size: 25px; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</body>
+</html>
