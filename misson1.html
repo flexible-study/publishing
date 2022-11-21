@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MISSON 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 960px;
+        width: 100%;
+        height: 100vh;
+        gap: 16px;
+        margin: 30px auto;
+
+        font-size: 20px;
+      }
+
+      header {
+        background-color: #d9d9d9;
+        width: 100%;
+        height: 5em;
+        padding: 1.6em;
+      }
+      main {
+        display: flex;
+        gap: 0.8em;
+        width: 100%;
+        height: 100%;
+      }
+      aside {
+        background-color: #d9d9d9;
+        width: 10em;
+        height: 100%;
+        padding: 1.6em;
+      }
+      footer {
+        background-color: #d9d9d9;
+        width: 100%;
+        height: 5em;
+        padding: 1.6em;
+      }
+      .text-hide {
+        display: none;
+      }
+      .post {
+        background-color: #d9d9d9;
+        padding: 1.6em;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.8em;
+      }
+      .post-edit {
+        background-color: #fff;
+        height: 6.95em;
+        padding: 1.6em;
+        height: 100%;
+      }
+      @media (max-width: 1023px) {
+        .flex {
+          margin: 1.5em;
+          width: 100%;
+        }
+        .post {
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        .post-edit {
+          flex: 1 1 40%;
+          height: 49%;
+        }
+      }
+      @media (max-width: 767px) {
+        .flex {
+          margin: 1.5em;
+          width: 100%;
+        }
+        .post {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          padding: 0.8em;
+        }
+        aside {
+          display: none;
+        }
+        .post-edit {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <header>
+        <h1 class="text-hide">header</h1>
+        <text>header</text>
+      </header>
+      <main>
+        <aside>
+          <h2 class="text-hide">Sidebar</h2>
+          <text>Sidebar</text>
+        </aside>
+        <section class="post">
+          <h2 class="text-hide">Posting</h2>
+          <article class="post-edit">
+            <h3 class="text-hide">Posting 1</h3>
+            <text>Posting 1</text>
+          </article>
+          <article class="post-edit">
+            <h3 class="text-hide">Posting 2</h3>
+            <text>Posting 2</text>
+          </article>
+          <article class="post-edit">
+            <h3 class="text-hide">Posting 3</h3>
+            <text>Posting 3</text>
+          </article>
+          <article class="post-edit">
+            <h3 class="text-hide">Posting 4</h3>
+            <text>Posting 4</text>
+          </article>
+        </section>
+      </main>
+      <footer>
+        <h2 class="text-hide">Footer</h2>
+        <text>Foooter</text>
+      </footer>
+    </div>
+  </body>
+</html>
