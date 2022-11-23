@@ -87,11 +87,10 @@ html {
   .posts {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
   }
 
   .post {
-    flex: 1 1 calc(50% - 8rem);
+    flex: 1 1 calc(50% - 4rem);
     height: 50%;
   }
 }
