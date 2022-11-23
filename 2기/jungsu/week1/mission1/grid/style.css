@@ -112,7 +112,7 @@ html {
   z-index: 100000; /* Above WP toolbar. */
 }
 
-@media screen and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .container {
     max-width: 36.8rem;
   }
@@ -125,14 +125,14 @@ html {
   }
 }
 
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .container {
     max-width: 14.4rem;
     grid-template-columns: auto;
     grid-template-rows: minmax(2.5rem, 5rem) auto minmax(2.5rem, 5rem);
   }
 
-  header {
+  #header {
     padding-left: 0.8rem;
     grid-row: span 1;
   }
