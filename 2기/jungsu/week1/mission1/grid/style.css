@@ -5,7 +5,8 @@
   padding: 0;
 }
 
-html {
+html,
+body {
   font-family: "Spoqa Han Sans Neo";
   font-style: normal;
   font-weight: 400;
@@ -139,6 +140,7 @@ html {
 
   .posts {
     padding: 0.8rem;
+    display: block;
   }
 
   .post {
@@ -146,9 +148,9 @@ html {
     padding-left: 0.8rem;
   }
 
-  .post:nth-child(2) {
+  /* .post:nth-child(2) {
     grid-row: 1 / span 3;
-  }
+  } */
 
   .post:not(:nth-child(2)) {
     display: none;
