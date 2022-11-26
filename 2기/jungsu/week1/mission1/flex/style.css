@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Spoqa Han Sans Neo";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+:root {
+  --bg-color: #d9d9d9;
+  --post-bg-color: #fff;
+}
+
+.container {
+  max-width: 48rem;
+  min-height: 45rem;
+  height: 100%;
+  width: 100%;
+  margin: 30px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+#header {
+  min-height: 5rem;
+  padding: 1.6rem;
+  background-color: var(--bg-color);
+}
+
+#main {
+  min-height: 33.4rem;
+  /* height: 100%; */
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.8rem;
+}
+
+.sidebar {
+  padding: 1.6rem;
+  width: 10rem;
+  background-color: var(--bg-color);
+}
+
+.posts {
+  padding: 1.6rem;
+  width: 100%;
+  background-color: var(--bg-color);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.post {
+  padding: 1.6rem;
+  height: 100%;
+  background-color: var(--post-bg-color);
+}
+
+#footer {
+  width: 100%;
+  min-height: 5rem;
+  padding: 1.6rem;
+
+  background-color: var(--bg-color);
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.sr-only:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 36.8rem;
+  }
+
+  .posts {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .post {
+    flex: 1 1 calc(50% - 4rem);
+    height: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding-left: 0.8rem;
+  }
+
+  .container {
+    max-width: 14.4rem;
+  }
+
+  .posts {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 0.8rem;
+  }
+
+  .post {
+    height: 100%;
+    padding-left: 0.8rem;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  #footer {
+    padding-left: 0.8rem;
+  }
+}
