@@ -1,0 +1,132 @@
+#main {
+  flex: 1 1 70rem;
+}
+
+@media (max-width: 1023px) {
+  #main {
+    flex: 1 1 45.3rem;
+  }
+}
+
+.tab-container {
+  display: flex;
+  height: 100%;
+}
+
+/* tab-navigation */
+.tab-navigation {
+  order: 2;
+
+  padding: 3.2rem 0;
+  min-width: 7.2rem;
+  background-color: rgba(99, 110, 114, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.tab-navigation > button {
+  width: 4rem;
+  height: 4rem;
+  outline: none;
+  border: none;
+}
+
+.tab-navigation > button.active {
+  background-color: #636e72;
+}
+
+.tab-navigation > button.active > img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1023px) {
+  .tab-container {
+    flex-direction: column;
+  }
+
+  .tab-navigation {
+    order: 1;
+    padding: 0.8rem;
+
+    height: 5.6rem;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 767px) {
+  .tab-navigation {
+    max-height: 5.6rem;
+  }
+
+  .tab-navigation button {
+    flex: 1 1 50%;
+  }
+}
+
+.tab-wrapper {
+  order: 1;
+  padding: 3.2rem;
+  width: 100%;
+  height: 100%;
+  color: #636e72;
+
+  display: flex;
+  align-items: center;
+
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.5em;
+}
+
+.tab-wrapper > .tab-content {
+  display: none;
+}
+
+.tab-wrapper > .tab-content.active {
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .tab-wrapper {
+    align-items: flex-start;
+    min-height: 32rem;
+  }
+}
+
+/* porfile */
+#profile > .main-title {
+  margin-bottom: 3.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile > .main-title > hr {
+  flex: 1 1 auto;
+  height: 0.1rem;
+}
+
+.profile-content {
+  height: 2rem;
+  font-size: 1.3rem;
+  line-height: 150%;
+  margin-bottom: 1.6rem;
+}
+
+.profile-head {
+  display: inline-block;
+  min-width: 100px;
+  letter-spacing: 0.3em;
+}
+
+.profile-data {
+  font-weight: 400;
+  letter-spacing: 0.1em;
+}

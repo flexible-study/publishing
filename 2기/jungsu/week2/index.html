@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정정수는요</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="./style/common.css" />
+    <link rel="stylesheet" href="./style/tab.css" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <header id="header">
+        <h1 class="screen-reader-text">자기소개 페이지</h1>
+        <div class="background-wrap">
+          <div class="header-content">
+            <div class="name">감자</div>
+            <div class="position">Frontend Developer</div>
+          </div>
+        </div>
+      </header>
+      <main id="main">
+        <div class="tab-container">
+          <nav class="tab-navigation">
+            <button
+              data-tab-target="#profile"
+              type="button"
+              class="button active"
+            >
+              <img src="./images/person.png" alt="about me" />
+            </button>
+            <button data-tab-target="#tab2" type="button" class="button">
+              <img src="./images/imagesmode.png" alt="gallery" />
+            </button>
+          </nav>
+
+          <div class="tab-wrapper">
+            <article id="profile" class="tab-content active">
+              <h2 class="screen-reader-text">ABOUT ME</h2>
+              <div class="main-title">
+                <div>ABOUT ME</div>
+                <hr />
+              </div>
+              <div class="profile-content">
+                <span class="profile-head">Name.</span>
+                <span class="profile-data">감자</span>
+              </div>
+              <div class="profile-content">
+                <span class="profile-head">Email.</span>
+                <span class="profile-data">wjdwjdtn92@naver.com</span>
+              </div>
+              <div class="profile-content">
+                <span class="profile-head">Phone.</span>
+                <span class="profile-data">010-9566-9697</span>
+              </div>
+              <div class="profile-content">
+                <span class="profile-head">GitHub.</span>
+                <span class="profile-data">https://github.com/wjdwjdtn92</span>
+              </div>
+            </article>
+            <article id="tab2" class="tab-content">
+              <div class="content">
+                <h2>GALLERY</h2>
+                <div class="image-area"></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+  <script type="module" src="script.js"></script>
+</html>
