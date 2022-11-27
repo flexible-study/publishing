@@ -1,0 +1,19 @@
+.placeholder {
+  overflow: hidden;
+  box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder:empty {
+  animation: 2s loadingAnimation forwards infinite linear;
+  background: linear-gradient(to right, #eeeeee 10%, #dddddd 28%, #eeeeee 53%);
+  background-size: 100%;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    background-position: -20rem 0;
+  }
+  100% {
+    background-position: 20rem 0;
+  }
+}

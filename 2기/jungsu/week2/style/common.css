@@ -30,6 +30,12 @@ button {
   align-items: stretch;
 }
 
+@media (max-width: 767px) {
+  .wrap {
+    overflow-y: scroll;
+  }
+}
+
 /* header */
 #header {
   flex: 1 1 50rem;
