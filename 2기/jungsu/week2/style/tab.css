@@ -117,20 +117,22 @@
   background: #636e72;
 }
 
-.profile-content {
+#profile .profile-content {
   height: 2rem;
   font-size: 1.3rem;
   line-height: 150%;
   margin-bottom: 1.6rem;
+  list-style: none;
 }
 
-.profile-head {
+#profile .profile-content .profile-head {
   display: inline-block;
-  min-width: 100px;
+  font-weight: 700;
   letter-spacing: 0.3em;
+  min-width: 100px;
 }
 
-.profile-data {
+#profile .profile-content .profile-data {
   font-weight: 400;
   letter-spacing: 0.1em;
 }
