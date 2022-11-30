@@ -117,7 +117,7 @@
   background: #636e72;
 }
 
-#profile .profile-content {
+#profile .profile-content > li {
   height: 2rem;
   font-size: 1.3rem;
   line-height: 150%;
