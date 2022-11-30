@@ -40,7 +40,7 @@ async function renderGallery() {
     const pictureObj = {
       thumb: randomImage.urls.thumb,
       small: randomImage.urls.small,
-      full: randomImage.urls.full,
+      full: randomImage.urls.regular,
       alt: randomImage.alt_description,
       date: randomImage.created_at,
       description: randomImage.description,
@@ -53,7 +53,7 @@ async function renderGallery() {
 }
 
 //스칼렛톤
-function loadImg({ full, thumb, samll, alt, date, description, $placeholder }) {
+function loadImg({ full, thumb, small, alt, date, description, $placeholder }) {
   const $picture = document.createElement("picture");
 
   const $tabletSource = document.createElement("source");
@@ -61,7 +61,7 @@ function loadImg({ full, thumb, samll, alt, date, description, $placeholder }) {
   $tabletSource.media = "(max-width: 1023px)";
 
   const $mobileSource = document.createElement("source");
-  $mobileSource.srcset = samll;
+  $mobileSource.srcset = small;
   $mobileSource.media = "(max-width: 575px)";
 
   const $img = document.createElement("img");
