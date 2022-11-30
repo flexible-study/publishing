@@ -129,12 +129,36 @@
   display: inline-block;
   font-weight: 700;
   letter-spacing: 0.3em;
-  min-width: 100px;
+  min-width: 10rem;
+}
+
+#profile .profile-content .profile-head i {
+  font-style: normal;
 }
 
 #profile .profile-content .profile-data {
   font-weight: 400;
   letter-spacing: 0.1em;
+}
+
+@media (max-width: 767px) {
+  #profile .profile-content {
+    height: 1.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 1.9rem;
+  }
+
+  #profile .profile-content .profile-head {
+    min-width: 2rem;
+  }
+
+  #profile .profile-content .profile-head i {
+    display: none;
+  }
+
+  #profile .profile-content .profile-data {
+    font-size: 1.4rem;
+  }
 }
 
 /* gallery */
