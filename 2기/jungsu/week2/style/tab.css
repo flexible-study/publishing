@@ -168,12 +168,12 @@
 
 #gallery {
   max-height: calc(78.3rem - 3.2rem - 3.2rem);
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 @media (max-width: 767px) {
   #gallery {
-    overflow-y: unset;
+    overflow-y: initial;
   }
 }
 

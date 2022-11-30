@@ -33,7 +33,7 @@ button {
 
 @media (max-width: 767px) {
   .wrap {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 
