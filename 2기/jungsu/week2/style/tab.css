@@ -65,7 +65,7 @@
   }
 
   .tab-navigation button {
-    flex: 1 1 50%;
+    flex: 1 1 auto;
   }
 }
 
@@ -192,6 +192,7 @@
 @media (max-width: 767px) {
   #image-area {
     grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 20rem;
   }
 }
 
