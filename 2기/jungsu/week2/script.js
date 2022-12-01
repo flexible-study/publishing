@@ -22,7 +22,6 @@ $tabNavigation.addEventListener("click", (event) => {
 
   if (tabId === "#gallery") {
     renderGallery();
-    // renderGallery2();
   }
 });
 
@@ -47,7 +46,6 @@ async function renderGallery() {
       $placeholder: $placeholders[index],
     };
 
-    console.log(randomImage);
     loadImg(pictureObj);
   });
 }

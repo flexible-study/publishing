@@ -34,14 +34,19 @@
   height: 4rem;
   outline: none;
   border: none;
+  border-radius: 0.4rem;
+  line-height: 0;
+  color: #636e72;
 }
 
 .tab-navigation > button.active {
   background-color: #636e72;
+  color: #fff;
 }
 
-.tab-navigation > button.active > img {
-  filter: brightness(0) invert(1);
+.tab-navigation > button svg {
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 @media (max-width: 1023px) {
