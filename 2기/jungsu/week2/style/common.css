@@ -21,9 +21,9 @@ button {
 }
 
 .wrap {
-  max-width: calc(120rem + 12rem + 12rem);
-  min-height: calc(78.3rem + 8.85rem + 8.85rem);
-  padding: 8.85rem 12rem;
+  max-width: calc(120rem + 3.2rem + 3.2rem);
+  min-height: 78.3rem;
+  padding: 8.85rem 3.2rem;
   margin: 0 auto;
 
   display: flex;
@@ -64,8 +64,8 @@ button {
 
 @media (max-width: 1023px) {
   .wrap {
-    max-width: calc(70.4rem + 3.2rem + 3.2em);
-    min-height: calc(78.3rem + 12.05rem + 12.05rem);
+    max-width: calc(70.4rem+ 3.2rem + 3.2rem);
+    min-height: 78.3rem;
     padding: 12.05rem 3.2rem;
   }
 
