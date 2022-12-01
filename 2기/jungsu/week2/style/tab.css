@@ -37,6 +37,7 @@
   border-radius: 0.4rem;
   line-height: 0;
   color: #636e72;
+  cursor: pointer;
 }
 
 .tab-navigation > button.active {
