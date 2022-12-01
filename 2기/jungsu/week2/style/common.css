@@ -21,7 +21,7 @@ button {
 }
 
 .wrap {
-  max-width: calc(120rem + 3.2rem + 3.2rem);
+  max-width: 120rem;
   min-height: 78.3rem;
   padding: 8.85rem 3.2rem;
   margin: 0 auto;
