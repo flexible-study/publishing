@@ -11,7 +11,7 @@
 
 .tab-container {
   display: flex;
-  height: 100%;
+  height: 78.3rem;
 }
 
 /* tab-navigation */
@@ -190,6 +190,10 @@
 }
 
 @media (max-width: 1023px) {
+  #gallery {
+    height: calc(100% - 5.6rem);
+  }
+
   #image-area {
     grid-template-columns: repeat(2, 1fr);
   }
