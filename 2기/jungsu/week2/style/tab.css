@@ -55,7 +55,7 @@
   }
 
   .tab-navigation {
-    order: 1;
+    order: initial;
     padding: 0.8rem;
 
     height: 5.6rem;
