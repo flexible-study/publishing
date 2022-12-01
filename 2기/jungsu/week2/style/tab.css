@@ -65,6 +65,10 @@
 }
 
 @media (max-width: 767px) {
+  .tab-container {
+    height: 100%;
+  }
+
   .tab-navigation {
     max-height: 5.6rem;
   }
@@ -200,6 +204,10 @@
 }
 
 @media (max-width: 767px) {
+  #gallery {
+    height: 100%;
+  }
+
   #image-area {
     grid-template-columns: repeat(1, 1fr);
     grid-auto-rows: 20rem;
