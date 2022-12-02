@@ -3,7 +3,7 @@
   background-color: #fff;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 102.3rem) {
   #main {
     flex: 1 1 45.3rem;
   }
@@ -50,7 +50,7 @@
   height: 2.4rem;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 102.3rem) {
   .tab-container {
     flex-direction: column;
   }
@@ -65,7 +65,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   .tab-container {
     height: 100%;
   }
@@ -98,7 +98,7 @@
   width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   .tab-wrapper {
     align-items: flex-start;
     min-height: 32rem;
@@ -150,7 +150,7 @@
   letter-spacing: 0.1em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   #profile .profile-content {
     height: 1.8rem;
     font-size: 1.2rem;
@@ -181,7 +181,7 @@
   overflow-y: auto;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   #gallery {
     overflow-y: initial;
   }
@@ -191,10 +191,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 25rem;
-  gap: 16px;
+  gap: 1.6rem;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 102.3rem) {
   #gallery {
     height: calc(100% - 5.6rem);
   }
@@ -204,7 +204,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   #gallery {
     height: 100%;
   }
@@ -238,7 +238,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 4px;
+  gap: 0.4rem;
 
   padding: 1rem;
   position: absolute;
@@ -249,7 +249,7 @@
   background: #fff;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 76.7rem) {
   .placeholder:hover .img-description-wrap {
     left: 1.434rem;
     right: 1.434rem;
