@@ -18,6 +18,7 @@ img {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
 
 .wrap {
