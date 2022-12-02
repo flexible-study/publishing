@@ -75,7 +75,7 @@
   }
 
   .tab-navigation button {
-    flex: 1 1 auto;
+    flex: 1 1 0;
   }
 }
 
@@ -119,7 +119,7 @@
 }
 
 .title::after {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   content: "";
   display: block;
   height: 0.1rem;
