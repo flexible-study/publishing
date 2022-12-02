@@ -127,7 +127,7 @@
 }
 
 #profile .profile-content > li {
-  height: 2rem;
+  min-height: 2rem;
   font-size: 1.3rem;
   line-height: 150%;
   margin-bottom: 1.6rem;
