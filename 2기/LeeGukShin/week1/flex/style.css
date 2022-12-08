@@ -1,12 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   padding: 0;
-}
-
-.header, .side-bar, .posting, .footer, .container, .main, .posting {
-  box-sizing: border-box;
 }
 
 .screen-reader-text {
@@ -29,7 +29,7 @@ body {
 
 .container {
   max-width: 960px;
-  height: 100vh;
+  min-height: 100vh;
 
   margin: 0 auto;
   padding: 30px 0;
@@ -48,7 +48,6 @@ body {
 .main {
   flex: 1 1 auto;
   display: flex;
-  flex-direction: row;
   margin-bottom: 16px;
 }
 
@@ -73,7 +72,7 @@ body {
 .posting {
   flex: 1 1 auto; 
   padding: 32px;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 
 .footer {
@@ -89,7 +88,7 @@ body {
 
   .posting {
     flex: 1 1 calc(50% - 64px);
-    height: 50%;
+    min-height: 50%;
   }
 }
 
