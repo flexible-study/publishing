@@ -7,7 +7,7 @@
 html,
 body {
   font-family: "Inter", sans-serif;
-  font-size: 10px;
+  font-size: 16px;
   background-color: #fafafa;
 }
 
@@ -22,9 +22,9 @@ button {
 }
 
 .wrap {
-  max-width: calc(120rem + 3.2rem + 3.2rem);
-  min-height: 78.3rem;
-  padding: 8.85rem 3.2rem;
+  max-width: calc(75rem + 2rem + 2rem);
+  min-height: 48.938rem;
+  padding: 5.531rem 2rem;
   margin: 0 auto;
 
   display: flex;
@@ -49,33 +49,33 @@ button {
 
 #header .name {
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 3.6rem;
+  font-size: 1.875rem;
+  line-height: 2rem;
 }
 
 #header .position {
   font-weight: 300;
-  font-size: 1.8rem;
-  line-height: 2.2rem;
+  font-size: 1.125rem;
+  line-height: 1.375rem;
 }
 
 #header .position strong {
   font-weight: 500;
 }
 
-@media (max-width: 102.3rem) {
+@media (max-width: 63.938em) {
   .wrap {
-    max-width: calc(70.4rem+ 3.2rem + 3.2rem);
-    min-height: 78.3rem;
-    padding: 12.05rem 3.2rem;
+    max-width: calc(44rem + 2rem + 2rem);
+    min-height: 48.938rem;
+    padding: 0.753 2rem;
   }
 
   #header {
-    flex: 1 1 25rem;
+    flex: 1 1 15.625rem;
   }
 }
 
-@media (max-width: 76.7rem) {
+@media (max-width: 47.938em) {
   .wrap {
     width: 100%;
     height: 100%;
@@ -84,12 +84,12 @@ button {
     flex-direction: column;
     justify-content: flex-start;
     overflow-y: auto;
-    min-height: 36.8rem;
+    min-height: 23rem;
   }
 
   #header {
-    flex: 1 1 20rem;
-    max-height: 20rem;
+    flex: 1 1 12.5rem;
+    max-height: 12.5rem;
   }
 }
 
