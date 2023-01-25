@@ -1,8 +1,8 @@
 Wanderland
 > https://wanderlandfestival.com/
-¼½¼Çº° Á¦¸ñ°ú ³»¿ë ¿µ¿ªÀÌ ±¸º°µÇ¾î ÀÖ¾î¼­ h2+div·Î ³ª´©¾ú¾î¿ä.
+ì„¹ì…˜ë³„ ì œëª©ê³¼ ë‚´ìš© ì˜ì—­ì´ êµ¬ë³„ë˜ì–´ ìžˆì–´ì„œ h2+divë¡œ ë‚˜ëˆ„ì—ˆì–´ìš”.
 
-¿ÍµðÁî
+ì™€ë””ì¦ˆ
 > https://www.wadiz.kr/web/main
-article ¿µ¿ª¿¡ ÄÜÅÙÃ÷°¡ ¾Æ´Ñ ¹è³Ê·Î ¿µ¿ªÀ» ÀâÀº ºÎºÐµµ °°Àº ÇìµùÅÂ±×¸¦ »ç¿ëÇß´Âµ¥ ¸ÂÀ»±î¿ä?
-ex) section ÃëÇâ ¸ÂÃã ÃßÃµ ÇÁ·ÎÁ§Æ® > article h3 ±âÈ¹Àü ºÎºÐ
+article ì˜ì—­ì— ì½˜í…ì¸ ê°€ ì•„ë‹Œ ë°°ë„ˆë¡œ ì˜ì—­ì„ ìž¡ì€ ë¶€ë¶„ë„ ê°™ì€ í—¤ë”©íƒœê·¸ë¥¼ ì‚¬ìš©í–ˆëŠ”ë° ë§žì„ê¹Œìš”?
+ex) section ì·¨í–¥ ë§žì¶¤ ì¶”ì²œ í”„ë¡œì íŠ¸ > article h3 ê¸°íšì „ ë¶€ë¶„
