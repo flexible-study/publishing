@@ -5,11 +5,13 @@
 }
 
 * {
+  box-sizing: border-box;
+}
+
+html {
   font-weight: 400;
   font-size: 20px;
   line-height: 1;
-
-  box-sizing: border-box;
 }
 
 body {
