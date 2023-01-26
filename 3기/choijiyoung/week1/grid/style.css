@@ -1,14 +1,14 @@
-@charset "utf-8";
-
 :root {
   --gray: #d9d9d9;
 }
 
-* {
+html {
   font-weight: 400;
   font-size: 20px;
   line-height: 1;
+}
 
+* {
   box-sizing: border-box;
 }
 
@@ -22,16 +22,16 @@ body {
   grid-template-rows: auto 100px;
   max-width: 960px;
   min-width: 320px;
+  /* FIX: height or min-height */
   height: 900px;
   margin: 0 auto;
   gap: 16px;
 }
 
 /* header */
-header {
+.header {
   grid-row: span 2;
-  width: 250px;
-  height: 100%;
+  width: 100%;
   padding: 32px;
   background-color: var(--gray);
 }
@@ -45,7 +45,6 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  height: 100%;
   padding: 32px;
   gap: 16px;
   background-color: var(--gray);
@@ -77,14 +76,13 @@ header {
 }
 
 /* footer */
-footer {
-  height: 100px;
+.footer {
   padding: 32px;
   background-color: var(--gray);
 }
 
 /* 반응형 - 태블릿 */
-@media screen and (max-width: 1023px) {
+@media (max-width: 1023px) {
   .posts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -119,7 +117,7 @@ footer {
 }
 
 /* 반응형 - 모바일 */
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   #app {
     display: flex;
     flex-wrap: wrap;
@@ -133,7 +131,6 @@ footer {
   .posts {
     display: block;
     width: 100%;
-    height: 100%;
   }
   .post__item {
     display: none;
