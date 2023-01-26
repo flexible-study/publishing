@@ -1,0 +1,105 @@
+* {
+  /* box-sizing: content-box;->기본 속성 */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+}
+
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 960px;
+  min-height: 100vh;
+
+  margin: 0 auto;
+  padding: 30px 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  height: 100px;
+  padding: 32px;
+  margin-bottom: 16px;
+  background-color: #d9d9d9;
+}
+
+.main {
+  flex: 1 1 auto;
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.side-bar {
+  width: 200px;
+  padding: 32px;
+  margin-right: 16px;
+  background-color: #d9d9d9;
+}
+
+.posting-section {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 32px;
+  background-color: #d9d9d9;
+}
+
+.posting {
+  flex: 1 1 auto;
+  padding: 32px;
+  background-color: #fff;
+}
+
+.footer {
+  padding: 32px;
+  background-color: #d9d9d9;
+}
+
+@media (max-width: 1023px) {
+  .posting-section {
+    /* 기본값 : flex-wrap:nowrap */
+    flex-wrap: wrap;
+
+    flex-direction: row;
+  }
+
+  .posting {
+    flex: 1 1 calc(50% - 64px);
+    min-height: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .side-bar {
+    display: none;
+  }
+
+  .posting-section {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+}
