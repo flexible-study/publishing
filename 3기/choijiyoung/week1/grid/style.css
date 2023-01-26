@@ -22,7 +22,7 @@ body {
   grid-template-rows: auto 100px;
   max-width: 960px;
   min-width: 320px;
-  height: 900px;
+  min-height: 900px;
   margin: 0 auto;
   gap: 16px;
 }
