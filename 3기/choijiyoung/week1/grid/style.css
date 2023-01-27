@@ -23,7 +23,7 @@ body {
   max-width: 960px;
   min-width: 320px;
   /* FIX: height or min-height */
-  height: 900px;
+  min-height: 900px;
   margin: 0 auto;
   gap: 16px;
 }
