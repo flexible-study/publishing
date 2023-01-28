@@ -5,40 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Mission01</title>
+    <title>CHOIJI's portfolio</title>
 
     <!-- core -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
-    <!--
-    아래 구조를 각각의 의미에 맞게 시멘틱 마크업으로 변경하고
-    문서화 구조를 지킬 수 있게 헤딩 태그를 맞춰가며 미션을 진행해주세요!
-  -->
     <div id="wrap">
-      <div id="header">
-        <div class="title">타이틀</div>
+      <header id="header">
+        <h1 class="title">CHOIJI</h1>
 
-        <div class="navigation">
-          <button type="button">탭 네비게이션</button>
-        </div>
-      </div>
+        <nav class="tab-nav">
+          <div class="tab-container">
+            <button data-tab-target="#tab1" class="button" type="button">
+              ABOUT
+            </button>
+            <button data-tab-target="#tab2" class="button" type="button">
+              TIMELINE
+            </button>
+          </div>
+        </nav>
+      </header>
 
-      <div id="main">
-        <div class="about">About</div>
+      <main id="main">
+        <section id="tab1" class="tab-content tab1-content">
+          <h2 class="screen-reader-text">About</h2>
+          <p class="description">안녕하세요! 프론트엔드 개발자 최지영입니다</p>
+        </section>
 
-        <div class="timeline">
-          <ol id="timeline-list">
-            hi
-          </ol>
-        </div>
-      </div>
+        <section id="tab2" class="tab-content tab2-content">
+          <h2 class="about">TimeLine</h2>
+          <ol id="timeline-list"></ol>
+        </section>
+      </main>
+
+      <footer class="footer">copyright 2023 @choijiyoung</footer>
     </div>
 
     <script>
-      // 스크립트의 처리는 원하는대로 마음껏 처리해보세요.
-
       // timeline
       fetch('./json/timeline.json')
         .then((response) => response.json())
