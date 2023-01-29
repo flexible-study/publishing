@@ -1,80 +1,82 @@
 body {
-  /* font */
-  font-family: "Spoqa Han Sans Neo";
-  font-size: 20px;
-  line-height: 25px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  height: 100vh;
+}
+
+#wrap {
+  display: flex;
+  max-width: 960px;
+  min-height: 900px;
+  width: 100%;
   gap: 16px;
 }
 
-header,
-footer,
-main {
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+h1,
+h2,
+p {
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 20px;
+  line-height: 25px;
+  padding: 32px;
+}
+
+.box-item {
   background-color: #d9d9d9;
 }
 
+article {
+  background-color: #ffffff;
+}
+
 header {
-  height: 100%;
-  max-height: 900px;
-  width: 250px;
-}
-
-.container {
-  width: 100%;
-  height: 100%;
-  max-width: 694px;
-  max-height: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-main {
-  display: grid;
-  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
-  gap: 16px;
-  padding: 32px;
-  max-width: 744px;
-  height: 100%;
-}
-
-.posting:nth-child(1) {
-  grid-column: 3 / span 1;
-  grid-row: 1 / span 2;
+  width: 200px;
 }
 
 footer {
   height: 100px;
 }
 
-p, h1, h2 {
+main {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 16px;
+  height: 100%;
   padding: 32px;
-  margin: 0;
-  font-size: 20px;
 }
 
-.posting {
-  background-color: #ffffff;
+article:nth-child(1) {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
 }
 
 @media (max-width: 1023px) {
+  #wrap {
+    padding: 0 16px;
+  }
+
   main {
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   }
 
-  .posting:nth-child(1) {
+  article:nth-child(1) {
     grid-column: 1 / span 2;
     grid-row: 1;
   }
 }
+
 @media (max-width: 767px) {
-  body {
+  #wrap {
     flex-direction: column;
+    padding: 0 16px;
   }
 
   header {
@@ -82,15 +84,19 @@ p, h1, h2 {
     width: 100%;
   }
 
-  .posting:nth-child(2),
-  .posting:nth-child(3),
-  .posting:nth-child(4),
-  .posting:nth-child(5) {
+  article:nth-child(2),
+  article:nth-child(3),
+  article:nth-child(4),
+  article:nth-child(5) {
     display: none;
   }
 
-  .posting:nth-child(1) {
-    grid-column: 1 / span 2;
-    grid-row: 1 / span 3;
+  main {
+    display: flex;
+    min-height: 668px;
+  }
+
+  article {
+    width: 100%; /* 또는 flex-grow: 1;을 추가해서 늘어나는 것을 허용 */
   }
 }
