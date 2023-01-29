@@ -4,20 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <header class="item"><h1>Header</h1></header>
-    <div class="item container">
-      <aside><h2>Sidebar</h2></aside>
-      <main id="posting-container">
-        <div class="posting"><p>Posting1</p></div>
-        <div class="posting"><p>Posting2</p></div>
-        <div class="posting"><p>Posting3</p></div>
-        <div class="posting"><p>Posting4</p></div>
-      </main>
+    <div id="wrap">
+      <header class="box-item"><h1>Header</h1></header>
+      <div id="container">
+        <aside class="box-item"><h2>Sidebar</h2></aside>
+        <main class="box-item">
+          <article><p>Posting1</p></article>
+          <article><p>Posting2</p></article>
+          <article><p>Posting3</p></article>
+          <article><p>Posting4</p></article>
+        </main>
+      </div>
+      <footer class="box-item"><h2>Footer</h2></footer>
     </div>
-    <footer class="item"><h2>Footer</h2></footer>
   </body>
 </html>
