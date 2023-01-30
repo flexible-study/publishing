@@ -18,7 +18,7 @@
 
         <nav class="tab-nav">
           <div class="tab-container">
-            <button data-tab-target="#tab1" class="button" type="button">
+            <button data-tab-target="#tab1" class="button active" type="button">
               ABOUT
             </button>
             <button data-tab-target="#tab2" class="button" type="button">
@@ -29,7 +29,7 @@
       </header>
 
       <main id="main">
-        <section id="tab1" class="tab-content tab1-content">
+        <section id="tab1" class="tab-content tab1-content active">
           <h2 class="screen-reader-text">About</h2>
           <p class="description">안녕하세요! 프론트엔드 개발자 최지영입니다</p>
         </section>
@@ -44,6 +44,25 @@
     </div>
 
     <script>
+      // tab
+      const main = document.querySelector('#main');
+      const tabNavigation = document.querySelectorAll('.tab-container .button');
+      tabNavigation.forEach((navigation, idx) => {
+        navigation.addEventListener('click', () => {
+          if (!navigation.classList.contains('active')) {
+            const tabId = navigation.dataset.tabTarget;
+
+            navigation.parentNode
+              .querySelector('.active')
+              .classList.remove('active');
+            navigation.classList.add('active');
+
+            main.querySelector('.active').classList.remove('active');
+            main.querySelector(tabId).classList.add('active');
+          }
+        });
+      });
+
       // timeline
       fetch('./json/timeline.json')
         .then((response) => response.json())
@@ -65,7 +84,7 @@
                 </button>
                 <div class="description"></div>
                 </li>
-                
+
                 `;
 
             const listElemment = template.content.firstElementChild;
