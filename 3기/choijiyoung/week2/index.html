@@ -16,7 +16,7 @@
       <header id="header">
         <h1 class="title">CHOIJI</h1>
 
-        <nav class="tab-nav">
+        <nav class="nav">
           <div class="tab-container">
             <button data-tab-target="#tab1" class="button active" type="button">
               ABOUT
@@ -30,17 +30,53 @@
 
       <main id="main">
         <section id="tab1" class="tab-content tab1-content active">
-          <h2 class="screen-reader-text">About</h2>
-          <p class="description">안녕하세요! 프론트엔드 개발자 최지영입니다</p>
+          <h2 class="screen-reader-text about__title">About</h2>
+          <div class="about__description">
+            <h3 class="about__description-title">I'm Frontend Developer</h3>
+            안녕하세요! 프론트엔드 개발자 최지영입니다
+          </div>
+          <div class="about__skills">
+            <img
+              src="./images/tab1-HTML5.png"
+              class="about__skills-icon"
+              alt="HTML5"
+            />
+            <img
+              src="./images/tab1-CSS3.png"
+              class="about__skills-icon"
+              alt="CSS3"
+            />
+            <img
+              src="./images/tab1-JavaScript.png"
+              class="about__skills-icon"
+              alt="JavaScript"
+            />
+            <img
+              src="./images/tab1-typescript.png"
+              class="about__skills-icon"
+              alt="typescript"
+            />
+            <img
+              src="./images/tab1-react.png"
+              class="about__skills-icon"
+              alt="react"
+            />
+          </div>
         </section>
 
         <section id="tab2" class="tab-content tab2-content">
-          <h2 class="about">TimeLine</h2>
-          <ol id="timeline-list"></ol>
+          <article class="inner">
+            <h2 class="timeline__title">
+              TimeLine <strong>수상 및 활동</strong>
+            </h2>
+            <ol class="timeline__list"></ol>
+          </article>
         </section>
       </main>
 
-      <footer class="footer">copyright 2023 @choijiyoung</footer>
+      <footer id="footer">
+        Copyright 2023 @<strong> Jiyoung Choi </strong>
+      </footer>
     </div>
 
     <script>
@@ -67,14 +103,15 @@
       fetch('./json/timeline.json')
         .then((response) => response.json())
         .then((data) => {
-          const timeLineList = document.querySelector('#timeline-list');
+          const timeLineList = document.querySelector('.timeline__list');
 
           data.forEach((project, idx) => {
             const template = document.createElement('template');
             template.innerHTML = `
-            <li>
+            <li class="timeline__list-item">
               <button class="button">
-                <span class="period"></span>
+                <div class="period"></div>
+                <div class="content">
                 <span class="title"></span>
                 <img
                 class="arrow"
@@ -83,6 +120,7 @@
                 />
                 </button>
                 <div class="description"></div>
+              </div>
                 </li>
 
                 `;
@@ -109,7 +147,7 @@
 
           // timeline 토글 기능 추가
           document
-            .querySelector('#timeline-list')
+            .querySelector('.timeline__list')
             .addEventListener('click', (e) => {
               const button = e.target.closest('.button');
 
