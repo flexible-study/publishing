@@ -1,0 +1,107 @@
+html,
+body {
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 16px;
+  color: #000;
+  line-height: 160%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#wrap {
+  display: flex;
+  max-width: 960px;
+  min-height: 900px;
+  width: 100%;
+  gap: 16px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 16px;
+}
+
+h1,
+h2,
+p {
+  padding: 32px;
+}
+
+.box-item {
+  background-color: #d9d9d9;
+}
+
+article {
+  background-color: #fff;
+}
+
+header {
+  width: 200px;
+}
+
+footer {
+  height: 100px;
+}
+
+main {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 16px;
+  height: 100%;
+  padding: 32px;
+}
+
+article:nth-child(1) {
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 2;
+}
+
+@media (max-width: 1023px) {
+  #wrap {
+    padding: 0 16px;
+  }
+
+  main {
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  }
+
+  article:nth-child(1) {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  #wrap {
+    flex-direction: column;
+    padding: 0 16px;
+  }
+
+  header {
+    height: 100px;
+    width: 100%;
+  }
+
+  article:nth-child(2),
+  article:nth-child(3),
+  article:nth-child(4),
+  article:nth-child(5) {
+    display: none;
+  }
+
+  main {
+    display: flex;
+    min-height: 668px;
+  }
+
+  article {
+    width: 100%; /* 또는 flex-grow: 1;을 추가해서 늘어나는 것을 허용 */
+  }
+}
