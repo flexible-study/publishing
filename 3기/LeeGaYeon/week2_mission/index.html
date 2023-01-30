@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Mission01</title>
+    <title>Mission01</title>
 
-  <!-- core -->
-  <link rel="stylesheet" href="./css/style.css">
-</head>
+    <!-- core -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
-  <!--
+  <body>
+    <!--
     아래 구조를 각각의 의미에 맞게 시멘틱 마크업으로 변경하고
     문서화 구조를 지킬 수 있게 헤딩 태그를 맞춰가며 미션을 진행해주세요!
   -->
-  <div id="wrap">
-    <div id="header">
-      <div class="title">타이틀</div>
+    <div id="wrap">
+      <header>
+        <h1>GA YEON</h1>
 
-      <div class="navigation">
-        <button type="button">탭 네비게이션</button>
-      </div>
+        <nav>
+          <button type="button">About</button>
+          <button type="button">Timeline</button>
+        </nav>
+      </header>
+
+      <main>
+        <div class="about">About</div>
+
+        <div class="timeline">Timeline</div>
+      </main>
+      <footer>
+        <p class="footer-content">Copyright 2023 Gayeon Allrights Reserved.</p>
+      </footer>
     </div>
 
-    <div id="main">
-      <div class="about">About</div>
+    <script>
+      // 스크립트의 처리는 원하는대로 마음껏 처리해보세요.
 
-      <div class="timeline">Timeline</div>
-    </div>
-  </div>
-
-  <script>
-    // 스크립트의 처리는 원하는대로 마음껏 처리해보세요.
-
-    fetch('./json/timeline.json')
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
-  </script>
-</body>
+      fetch('./json/timeline.json')
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data)
+        })
+    </script>
+  </body>
 </html>

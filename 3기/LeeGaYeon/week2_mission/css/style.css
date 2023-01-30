@@ -1,4 +1,6 @@
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
 }
 
@@ -9,4 +11,52 @@ body {
   font-family: 'AppleSDGothicNeo', 'Malgun Gothic', sans-serif;
   font-size: 16px;
   line-height: 160%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrap {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+  min-height: 100px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  background-color: #2d3436;
+}
+
+.footer-content {
+  color: #dfe4ea;
+}
+
+main {
+  flex: 1;
+}
+
+nav {
+  display: flex;
+  gap: 40px;
+}
+
+button {
+  border: none;
+  background-color: #fff;
 }
