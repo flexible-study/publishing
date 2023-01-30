@@ -1,3 +1,11 @@
+html,
+body {
+  font-family: 'Spoqa Han Sans Neo';
+  font-size: 16px;
+  color: #000;
+  line-height: 160%;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -26,9 +34,6 @@ body {
 h1,
 h2,
 p {
-  font-family: 'Spoqa Han Sans Neo';
-  font-size: 20px;
-  line-height: 25px;
   padding: 32px;
 }
 
@@ -37,7 +42,7 @@ p {
 }
 
 article {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 header {
