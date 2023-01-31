@@ -67,7 +67,7 @@
         <section id="tab2" class="tab-content tab2-content">
           <article class="inner">
             <h2 class="timeline__title">
-              TimeLine <strong>수상 및 활동</strong>
+              TIMELINE <strong>수상 및 활동</strong>
             </h2>
             <ol class="timeline__list"></ol>
           </article>
@@ -109,17 +109,10 @@
             const template = document.createElement('template');
             template.innerHTML = `
             <li class="timeline__list-item">
-              <button class="button">
                 <div class="period"></div>
                 <div class="content">
-                <span class="title"></span>
-                <img
-                class="arrow"
-                src="./images/arrow_forward_ios.svg"
-                aria-hidden="true"
-                />
-                </button>
-                <div class="description"></div>
+                <h3 class="title"></h3>
+                <p class="description"></p>
               </div>
                 </li>
 
@@ -146,23 +139,23 @@
           });
 
           // timeline 토글 기능 추가
-          document
-            .querySelector('.timeline__list')
-            .addEventListener('click', (e) => {
-              const button = e.target.closest('.button');
+          // document
+          //   .querySelector('.timeline__list')
+          //   .addEventListener('click', (e) => {
+          //     const button = e.target.closest('.button');
 
-              if (button !== null) {
-                const ol = button.parentNode.parentNode;
-                const li = button.parentNode;
-                li.classList.toggle('active');
+          //     if (button !== null) {
+          //       const ol = button.parentNode.parentNode;
+          //       const li = button.parentNode;
+          //       li.classList.toggle('active');
 
-                const nowId = button.dataset.accordionTarget.replace('#', '');
-                const prevLi = ol.querySelector('.active');
-                if (prevLi !== null && prevLi.getAttribute('id') !== nowId) {
-                  prevLi.classList.remove('active;');
-                }
-              }
-            });
+          //       const nowId = button.dataset.accordionTarget.replace('#', '');
+          //       const prevLi = ol.querySelector('.active');
+          //       if (prevLi !== null && prevLi.getAttribute('id') !== nowId) {
+          //         prevLi.classList.remove('active;');
+          //       }
+          //     }
+          //   });
         });
     </script>
   </body>
