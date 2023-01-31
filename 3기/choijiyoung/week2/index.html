@@ -9,6 +9,7 @@
 
     <!-- core -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
 
   <body>
@@ -16,6 +17,7 @@
       <header id="header">
         <h1 class="title">CHOIJI</h1>
 
+        <button class="responsive__menu"></button>
         <nav class="nav">
           <div class="tab-container">
             <button data-tab-target="#tab1" class="button active" type="button">
@@ -75,7 +77,7 @@
       </main>
 
       <footer id="footer">
-        Copyright 2023 @<strong> Jiyoung Choi </strong>
+        Copyright 2023 <strong> @Jiyoung Choi </strong>
       </footer>
     </div>
 
@@ -108,15 +110,15 @@
           data.forEach((project, idx) => {
             const template = document.createElement('template');
             template.innerHTML = `
-            <li class="timeline__list-item">
-                <div class="period"></div>
-                <div class="content">
-                <h3 class="title"></h3>
-                <p class="description"></p>
-              </div>
-                </li>
+               <li class="timeline__list-item">
+                   <div class="period"></div>
+                   <div class="content">
+                   <h3 class="title"></h3>
+                   <p class="description"></p>
+                 </div>
+                   </li>
 
-                `;
+                   `;
 
             const listElemment = template.content.firstElementChild;
             listElemment.setAttribute('id', `accordion${idx + 1}`);
@@ -137,25 +139,22 @@
 
             timeLineList.insertAdjacentElement('beforeend', listElemment);
           });
+          document
+            .querySelector('.responsive__menu')
+            .addEventListener('click', (e) => {
+              const button = e.target;
 
-          // timeline 토글 기능 추가
-          // document
-          //   .querySelector('.timeline__list')
-          //   .addEventListener('click', (e) => {
-          //     const button = e.target.closest('.button');
+              if (button !== null) {
+                button.classList.toggle('active');
+                document.querySelector('.nav').classList.toggle('active');
 
-          //     if (button !== null) {
-          //       const ol = button.parentNode.parentNode;
-          //       const li = button.parentNode;
-          //       li.classList.toggle('active');
-
-          //       const nowId = button.dataset.accordionTarget.replace('#', '');
-          //       const prevLi = ol.querySelector('.active');
-          //       if (prevLi !== null && prevLi.getAttribute('id') !== nowId) {
-          //         prevLi.classList.remove('active;');
-          //       }
-          //     }
-          //   });
+                //    const nowId = button.dataset.accordionTarget.replace('#', '');
+                //    const prevLi = ol.querySelector('.active');
+                //    if (prevLi !== null && prevLi.getAttribute('id') !== nowId) {
+                //      prevLi.classList.remove('active;');
+                //    }
+              }
+            });
         });
     </script>
   </body>
