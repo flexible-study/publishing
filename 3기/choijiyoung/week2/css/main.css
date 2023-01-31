@@ -1,6 +1,4 @@
 /* main */
-#main {
-}
 
 /* tab-content */
 .tab-content {
@@ -127,8 +125,6 @@
   font-size: 18px;
   color: var(--primary);
   border-right: 1px solid var(--secondary);
-}
-.timeline__list-item .content {
 }
 
 .timeline__list-item .title {
