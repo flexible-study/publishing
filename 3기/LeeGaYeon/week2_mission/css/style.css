@@ -4,11 +4,22 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css) format(('woff'));
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap') format('woff');
+  unicode-range: U+0041-005A, U+0061-007A;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  font-family: 'AppleSDGothicNeo', 'Malgun Gothic', sans-serif;
+  font-family: 'Inter';
   font-size: 16px;
   line-height: 160%;
 }
@@ -33,6 +44,10 @@ header {
   align-items: center;
   padding: 0 120px;
   min-height: 100px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
 }
 
 footer {
@@ -49,6 +64,28 @@ footer {
 
 main {
   flex: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.about {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.about::before {
+  content: '';
+  background-image: url('../images/background-img.png');
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
 }
 
 nav {
@@ -59,4 +96,33 @@ nav {
 button {
   border: none;
   background-color: #fff;
+}
+
+strong {
+  color: coral;
+  font-weight: 900;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px;
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.timeline {
+  width: 0px;
+  height: 0px;
+  display: flex;
+}
+
+.active {
+  background-color: #2d3436;
+  z-index: 1;
 }
