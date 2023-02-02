@@ -1,17 +1,14 @@
-const $aboutBtn = document.querySelector('#aboutBtn')
-const $timelineBtn = document.querySelector('#timelineBtn')
-const $about = document.querySelector('.about')
-const $timeline = document.querySelector('.timeline')
+const $btnList = document.querySelectorAll('button')
+const $articleList = document.querySelectorAll('article')
 
-$aboutBtn.addEventListener('click', () => {
-  $timeline.classList.remove('active')
-  $about.classList.add('active')
-  $aboutBtn.style.fontWeight = 700
-})
+$btnList.forEach($btn => {
+  $btn.addEventListener('click', e => {
+    $btnList.forEach($btn => $btn.classList.remove('active'))
+    $articleList.forEach($article => $article.classList.remove('active'))
 
-$timelineBtn.addEventListener('click', () => {
-  $about.classList.remove('active')
-  $timeline.classList.add('active')
-  $timeline.style.width = '100%'
-  $timeline.style.height = '100%'
+    const $targetArticle = document.querySelector(`article.${Array.from(e.target.classList)[0]}`)
+    $targetArticle.classList.add('active')
+    console.log($targetArticle)
+    e.target.classList.add('active')
+  })
 })

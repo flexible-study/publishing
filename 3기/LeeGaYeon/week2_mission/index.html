@@ -19,13 +19,13 @@
         <h1>GAYEON</h1>
 
         <nav>
-          <button id="aboutBtn" type="button">About</button>
-          <button id="timelineBtn" type="button">Timeline</button>
+          <button class="about active" type="button">ABOUT</button>
+          <button class="timeline" type="button">TIMELINE</button>
         </nav>
       </header>
 
       <main>
-        <div class="about checked">
+        <article class="tab about active">
           <div class="introduce">
             <h2>I'm <strong>Frontend Developer</strong></h2>
             <p>안녕하세요. 프론트엔트 개발자 이가연입니다.</p>
@@ -36,24 +36,20 @@
             <img src="images/icons/JavaScript.svg" width="35px" height="35px" alt="JavaScript" />
             <img src="images/icons/typescript.svg" width="35px" height="35px" alt="typescript" />
           </div>
-        </div>
+        </article>
 
-        <div class="timeline">Timeline</div>
+        <article class="tab timeline">
+          <div class="timeline-title">
+            <h2>수상 및 활동</h2>
+            <p class="timeline-p">TIMELINE</p>
+          </div>
+          <div class="timeline-content">test</div>
+        </article>
       </main>
       <footer>
         <p class="footer-content">Copyright 2023 Gayeon Allrights Reserved.</p>
       </footer>
     </div>
     <script src="index.js"></script>
-    <!-- <script>
-      // 스크립트의 처리는 원하는대로 마음껏 처리해보세요.
-      
-
-      fetch('./json/timeline.json')
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data)
-        })
-    </script> -->
   </body>
 </html>
