@@ -50,6 +50,10 @@ header {
   z-index: 1;
 }
 
+h1 {
+  font-size: 20px;
+}
+
 footer {
   display: flex;
   justify-content: center;
@@ -88,6 +92,22 @@ article.about::before {
   left: 0;
 }
 
+.introduce {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.introduce h2,
+.introduce p {
+  margin: 0;
+}
+
+.skills {
+  display: flex;
+  gap: 16px;
+}
+
 article.timeline {
   background-color: #fafafa;
   flex: 1;
@@ -98,7 +118,6 @@ article.timeline {
 .timeline-p {
   color: #ff7f50;
   margin: 0;
-  font-size: 16px;
 }
 
 .timeline-title h2 {
