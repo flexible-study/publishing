@@ -1,58 +1,75 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Mission01</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-    </style>
-    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <body>
-    <div id="wrap">
-      <header>
-        <h1>GAYEON</h1>
+  <title>Mission01</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+  </style>
+  <link rel="stylesheet" as="style" crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
 
-        <nav>
-          <button class="about active" type="button">ABOUT</button>
-          <button class="timeline" type="button">TIMELINE</button>
-        </nav>
-      </header>
+<body>
+  <div id="wrap">
+    <header>
+      <h1>GAYEON</h1>
 
-      <main>
-        <article class="tab about active">
-          <div class="introduce">
-            <h2>👋🏻<br />I'm <strong>Frontend Developer</strong></h2>
-            <p>
-              안녕하세요.<br />
-              프론트엔트 개발자 이가연입니다.
-            </p>
-          </div>
-          <div class="skills">
-            <img src="images/icons/HTML5.svg" width="35px" height="35px" alt="html5" />
-            <img src="images/icons/CSS3.svg" width="35px" height="35px" alt="css3" />
-            <img src="images/icons/JavaScript.svg" width="35px" height="35px" alt="JavaScript" />
-            <img src="images/icons/typescript.svg" width="35px" height="35px" alt="typescript" />
-          </div>
-        </article>
+      <nav>
+        <button class="about active" type="button">ABOUT</button>
+        <button class="timeline" type="button">TIMELINE</button>
+      </nav>
+    </header>
 
-        <article class="tab timeline">
-          <div class="timeline-title">
-            <h2>수상 및 활동</h2>
-            <p class="timeline-p">TIMELINE</p>
-          </div>
-          <div class="timeline-content">test</div>
-        </article>
-      </main>
-      <footer>
-        <p class="footer-content">Copyright 2023 Gayeon Allrights Reserved.</p>
-      </footer>
-    </div>
-    <script src="index.js"></script>
-  </body>
+    <main>
+      <article class="tab about active">
+        <div class="introduce">
+          <h2>👋🏻<br />I'm <strong>Frontend Developer</strong></h2>
+          <p>
+            안녕하세요.<br />
+            프론트엔트 개발자 이가연입니다.
+          </p>
+        </div>
+        <div class="skills">
+          <img src="images/icons/HTML5.svg" width="35px" height="35px" alt="html5" />
+          <img src="images/icons/CSS3.svg" width="35px" height="35px" alt="css3" />
+          <img src="images/icons/JavaScript.svg" width="35px" height="35px" alt="JavaScript" />
+          <img src="images/icons/typescript.svg" width="35px" height="35px" alt="typescript" />
+        </div>
+      </article>
+
+      <article class="tab timeline">
+        <div class="timeline-title">
+          <h2>수상 및 활동</h2>
+          <p class="timeline-p">TIMELINE</p>
+        </div>
+        <div class="timeline-content"></div>
+      </article>
+    </main>
+    <footer>
+      <p class="footer-content">Copyright 2023 Gayeon Allrights Reserved.</p>
+    </footer>
+  </div>
+  <script>
+    fetch('./json/timeline.json')
+      .then((response) => response.json())
+      .then((data) => {
+        const $content = document.querySelector('.timeline-content')
+        const $ul = document.createElement('ul')
+        data.forEach(d => {
+          $ul.innerHTML += `<div class="content"><p class="period">${d.period}</p><div class="main-content"><h2>${d.title}</h2><p class="desc">${d.description || ''}</p></div></div>`
+        })
+
+        $content.appendChild($ul)
+      })
+
+  </script>
+  <script src="tab.js"></script>
+</body>
+
 </html>

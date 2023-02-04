@@ -6,12 +6,14 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css) format(('woff'));
+  src: url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css)
+    format(('woff'));
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap') format('woff');
+  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap')
+    format('woff');
   unicode-range: U+0041-005A, U+0061-007A;
 }
 
@@ -22,6 +24,7 @@ body {
   font-family: 'Inter';
   font-size: 16px;
   line-height: 160%;
+  overflow: overlay;
 }
 
 body {
@@ -84,6 +87,8 @@ article.about {
 article.about::before {
   content: '';
   background-image: url('../images/background-img.png');
+  background-size: cover;
+  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -111,8 +116,7 @@ article.about::before {
 article.timeline {
   background-color: #fafafa;
   flex: 1;
-  display: flex;
-  justify-content: space-around;
+  padding: 100px 120px;
 }
 
 .timeline-p {
@@ -130,6 +134,49 @@ article.timeline {
   display: flex;
   flex-direction: column;
   align-items: left;
+  width: 100%;
+}
+
+.timeline-content {
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 0;
+}
+
+.content {
+  display: grid;
+  font-size: 16px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.period {
+  color: #2d3436;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.main-content {
+  border-left: 1px solid;
+  border-color: #636e72;
+  padding: 0 16px;
+}
+
+.main-content > h2,
+p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.desc {
+  color: #636e72;
 }
 
 nav {
