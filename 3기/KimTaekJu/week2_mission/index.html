@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission01</title>
+
+  <!-- core -->
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/font.css">
+</head>
+
+<body>
+  <!--
+    아래 구조를 각각의 의미에 맞게 시멘틱 마크업으로 변경하고
+    문서화 구조를 지킬 수 있게 헤딩 태그를 맞춰가며 미션을 진행해주세요!
+  -->
+	<div class="box">
+		<header id="header">
+			<div class="header-wrapper">
+
+				<h1 class="header-wrapper__title">KIMTAEKJU</h1>
+	
+				<nav class="navigation">
+					<button
+						class="navigation__about navigation--btn" 
+						type="button"
+						onClick="handleClickNavigation(event)"
+					>
+						<h2 class="navigation__text navigation__text--bold">About</h2>
+					</button>
+
+					<button 
+						class="navigation__timeline navigation--btn"
+						type="button"
+						onClick="handleClickNavigation(event)"
+					>
+						<h2 class="navigation__text">Timeline</h2>
+					</button>
+				</nav>
+
+				<button
+					class="header-wrapper__btn"
+					type="button"
+					onclick="handleClickNavigationNotDesktop(event)"
+				>
+					<img 
+						class="header-wrapper__menu" 
+						src="./assets/images/icon/menu.svg"
+					/>
+				</button>
+			
+			</div>
+		</header>
+
+		<main class="main">
+			<div class="about-container">
+				<section class="introduce">
+					<div class="introduce__title-box">
+						<img 
+							class="introduce__icon" 
+							src="./assets/images/icon/clap.svg"
+						/>
+						<h2 class="introduce__title">
+							I'm <span class="introduce__bold introduce__bold--color">Frontend Developer</span>
+						</h2>
+					</div>
+					<h3 class="introduce__content">
+						안녕하세요.
+						<br/>
+						프론트엔드 개발자 김택주입니다.
+					</h3>
+				</section>
+
+				<section class="skil">
+					<div class="skil-icon">
+		
+							<img class="skil-icon__icon" src="./assets/images/icon/HTML5.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/CSS3.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/JavaScript.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/Figma.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/vue.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/react.svg"/>
+							<img class="skil-icon__icon" src="./assets/images/icon/svelt.svg"/>
+					</div>
+				</section>
+			</div>
+
+			<div class="timeline-container">
+				<div class="timeline-wrapper">
+					<article class="timeline-wrapper-title"> 
+						<h3 class="timeline-wrapper-title__sub-title">TIMELINE</h3>
+						<h2 class="timeline-wrapper-title__main-title">수상 및 활동</h2>
+					</article>
+
+					<div class="timeline-wrapper-history">
+						
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer">
+			<h2 class="footer__text">
+				Copyright 2023 
+				<span class="footer__span">
+					&nbsp;KIMTAEKJU&nbsp; 
+				</span> 
+				Allrights Reserved.
+			</h2>
+		</footer>
+
+		<nav class="navigation-mobile">
+			<img 
+				class="navigation-mobile__close" 
+				src="./assets/images/icon/close.svg"
+				onclick="handleClickNavigationMobileClose(event)"
+			/>
+			<div style="border: 1px solid red;">
+				<h2 class="navigation-mobile__text navigation-mobile__text--bold">ABOUT</h2>
+			</div>
+			<div>
+				<h2 class="navigation-mobile__text">TIMELINE</h2>
+			</div>
+		</nav>
+	</div>
+
+  <script>
+
+	const handleClickNavigationMobileClose = function(e) {
+		const box = document.getElementsByClassName("box")[0];
+		const header = document.getElementById("header");
+		const naviMobile = document.getElementsByClassName("navigation-mobile")[0];
+
+		box.style.background = null;
+		header.style.zIndex = "1";
+		naviMobile.style.display = "none";
+	}
+
+	const handleClickNavigationNotDesktop = function(e) {
+		const box = document.getElementsByClassName("box")[0];
+		const header = document.getElementById("header");
+		const naviMobile = document.getElementsByClassName("navigation-mobile")[0];
+
+		box.style.background = "rgba(45,52,54,0.8)";
+		header.style.zIndex = "-1";
+		naviMobile.style.display = "flex";
+	};
+
+    // 스크립트의 처리는 원하는대로 마음껏 처리해보세요.
+	const handleClickNavigation = function(e) {
+
+		const { target, pointerType } = e;
+		const classList = getClassList(e);
+
+		if (classList && classList.length === 1) {
+
+			const isClickAbout = target.innerText.toUpperCase().indexOf('ABOUT') >= 0;
+			classList.add('navigation__text--bold');
+	
+			if (isClickAbout) {
+				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
+				document.getElementsByClassName('about-container')[0].style.display = 'flex';
+				document.getElementsByClassName('timeline-container')[0].style.display = 'none';
+			} else {
+				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
+				document.getElementsByClassName('about-container')[0].style.display = 'none';
+				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
+			}
+		}
+	}
+
+	const getClassList = function(e) {
+
+		if (e.pointerType === 'mouse') {
+			return e.srcElement.classList;
+		} else {
+			return e.srcElement.children[0].classList;
+		}
+	}
+
+    fetch('http://127.0.0.1:8080/3기/KimtaekJu/week2_mission/json/timeline.json')
+      .then(response => response.json())
+      .then(data => {
+
+		const historyWrapper = document.getElementsByClassName('timeline-wrapper-history')[0];
+
+		for (let i = 0, len = data.length; i < len; i++) {
+			const yearArticle = document.createElement('article');
+			const contentsArticle = document.createElement('article');
+			const yearH3 = document.createElement('h3');
+			const contentTitleH3 = document.createElement('h3');
+			const contentH4 = document.createElement('h4');
+
+			yearH3.innerHTML = data[i].period;
+			contentTitleH3.innerHTML = data[i].title;
+			contentH4.innerHTML = data[i].description;
+
+			contentTitleH3.classList = ['timeline-wrapper-history__title'];
+			contentH4.classList = ['timeline-wrapper-history__content'];
+			yearArticle.classList = ['timeline-wrapper-history__year'];
+			contentsArticle.classList = ['timeline-wrapper-history__contents'];
+
+			yearArticle.appendChild(yearH3);
+			contentsArticle.appendChild(contentTitleH3);
+			contentsArticle.appendChild(contentH4);
+
+			historyWrapper.appendChild(yearArticle);
+			historyWrapper.appendChild(contentsArticle);
+		}
+
+      });
+  </script>
+</body>
+</html>

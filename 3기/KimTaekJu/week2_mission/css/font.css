@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500, 700, 900;
+  font-display: fallback;
+  src: url("../assets/fonts/Inter-Normal.woff2") format("woff2"), url("../assets/fonts/Inter-Normal.woff") format("woff"), url("../assets/fonts/Inter-Normal.ttf") format("truetype"), url("../assets/fonts/Inter-Normal.otf") format("opentype"), url("../assets/fonts/Inter-Normal.eot") format("embeded-opentype");
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-display: fallback;
+  src: url("../assets/fonts/Pretendard-Bold.woff2") format("woff2"), url("../assets/fonts/Pretendard-Bold.woff") format("woff"), url("../assets/fonts/Pretendard-Bold.ttf") format("truetype"), url("../assets/fonts/Pretendard-Bold.otf") format("opentype"), url("../assets/fonts/Pretendard-Bold.eot") format("embeded-opentype");
+}
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-display: fallback;
+  src: url("../assets/fonts/Pretendard-Regular.woff2") format("woff2"), url("../assets/fonts/Pretendard-Regular.woff") format("woff"), url("../assets/fonts/Pretendard-Regular.ttf") format("truetype");
+}/*# sourceMappingURL=font.css.map */
