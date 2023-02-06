@@ -101,6 +101,7 @@ body {
 }
 #header .navigation ul::after {
   content: '';
+  display: none;
   position: absolute;
   top: 0;
   right: 100%;
@@ -138,10 +139,9 @@ body {
   }
 
   #header .navigation ul {
-    display: none;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 100%;
     z-index: 10;
     flex-direction: column;
     padding: 100px 0;
@@ -149,6 +149,8 @@ body {
     width: 250px;
     height: 100vh;
     background-color: #fff;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
   }
 
   #header .navigation li button {
@@ -165,6 +167,9 @@ body {
   }
 
   html.sidebar-active #header .navigation ul {
+    transform: translate3d(-100%, 0, 0);
+  }
+  html.sidebar-active #header .navigation ul::after {
     display: block;
   }
 
