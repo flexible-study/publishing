@@ -102,22 +102,6 @@
 			</div>
 		</main>
 
-		<div class="mobile-main">
-
-			<div class="timeline-container-mobile">
-				<div class="timeline-wrapper-mobile">
-					<article class="timeline-wrapper-title"> 
-						<h3 class="timeline-wrapper-title__sub-title">TIMELINE</h3>
-						<h2 class="timeline-wrapper-title__main-title">수상 및 활동</h2>
-					</article>
-	
-					<div class="timeline-wrapper-history">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-
 		<footer class="footer">
 			<h2 class="footer__text">
 				Copyright 2023 
@@ -184,12 +168,19 @@
 				document.getElementsByClassName('about-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
-				document.getElementsByClassName('main')[0].style.display = 'none';
-				document.getElementsByClassName('mobile-main')[0].style.display = 'flex';
 
+				if (document.getElementsByClassName('box')[0].clientWidth <= 320) {
+					document.getElementsByClassName('box')[0].style.height = '1056px';
+				}
 			}
 		}
 	}
+
+	window.addEventListener('resize', () => {
+		if (document.getElementsByClassName('box')[0].clientWidth >= 768) {
+			document.getElementsByClassName('box')[0].style.height = '';
+		}
+	});
 
 	const handleClickNavigationMobileClose = function(e) {
 		const box = document.getElementsByClassName("box")[0];
