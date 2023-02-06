@@ -106,6 +106,10 @@
           wrap.querySelector('#main .tab-content.active').classList.remove('active');
           wrap.querySelector(`#main .${tabId}`).classList.add('active');
         }
+
+        if ( document.documentElement.classList.contains('sidebar-active') ) {
+          document.documentElement.classList.remove('sidebar-active')
+        }
       })
     });
 
