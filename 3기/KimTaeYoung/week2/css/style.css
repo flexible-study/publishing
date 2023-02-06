@@ -324,6 +324,130 @@ body {
   }
 }
 
+
+/* timeline */
+.timeline {
+  padding: 100px 0;
+}
+
+.timeline .container {
+  display: flex;
+  gap: 16px;
+}
+
+.timeline .title-block {
+  flex: 1 1 0;
+}
+.timeline .title-block .subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  color: #FF7F50;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+.timeline .title-block .title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 160%;
+}
+
+.timeline .content-block {
+  flex: 1 1 0;
+}
+
+.timeline .content-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.timeline .content-block li {
+  display: flex;
+  gap: 16px;
+}
+.timeline .content-block li:not(:first-child) {
+  margin-top: 32px;
+}
+.timeline .content-block .date {
+  flex: 0 0 auto;
+  padding: 4px 0;
+  width: 150px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  border-right: 1px solid #636E72;
+  white-space: pre-line;
+}
+.timeline .content-block .content {
+  padding: 4px 0;
+}
+.timeline .content-block .title {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+}
+.timeline .content-block .description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.02em;
+  color: #636E72;
+  white-space: pre-line;
+}
+
+@media (max-width: 1023px) {
+  .timeline {
+    padding-top: 82px;
+  }
+
+  .timeline .container {
+    display: block;
+  }
+
+  .timeline .title-block .subtitle {
+    font-size: 14px;
+  }
+
+  .timeline .title-block .title {
+    font-size: 24px;
+  }
+
+  .timeline .content-block {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .timeline .content-block li {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timeline .content-block li:not(:first-child) {
+    padding-top: 32px;
+    border-top: 1px solid #DFE4EA;
+  }
+
+  .timeline .content-block .date {
+    padding: 0;
+    width: initial;
+    border-right: none;
+    white-space: normal;
+  }
+
+  .timeline .content-block .date br {
+    display: none;
+  }
+
+  .timeline .content-block .content {
+    padding: 0;
+  }
+}
+
+
 /* footer */
 #footer {
   flex: 0 0 auto;

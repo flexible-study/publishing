@@ -61,7 +61,16 @@
       </section>
 
       <section class="tab-content timeline">
-        <div class="container">Timeline</div>
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Timeline</small>
+            <h2 class="title">수상 및 활동</h2>
+          </div>
+
+          <div class="content-block">
+            <ul id="fetch-timeline"></ul>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -76,14 +85,46 @@
   </div>
 
   <script>
+    // 모바일 사이드바 토글
     document.querySelector('.toggle-sidebar').addEventListener('click', () => {
       document.documentElement.classList.toggle('sidebar-active');
     });
 
+    // 탭 기능
+    const wrap = document.querySelector('#wrap');
+    const tabButtons = wrap.querySelectorAll('.navigation [data-tab]');
+
+    tabButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        // 불필요한 실행 방지를 위한 active 체크
+        if ( ! button.parentNode.classList.contains('active') ) {
+          const tabId = button.dataset.tab;
+
+          button.parentNode.parentNode.querySelector('.active').classList.remove('active');
+          button.parentNode.classList.add('active');
+
+          wrap.querySelector('#main .tab-content.active').classList.remove('active');
+          wrap.querySelector(`#main .${tabId}`).classList.add('active');
+        }
+      })
+    });
+
+    // 타임라인 통신
     fetch('./json/timeline.json')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        const timelineLists = document.querySelector('#fetch-timeline');
+        const item = data.map((item) => {
+          console.log(item);
+          return `<li>
+                    <div class="date">${item.period}</div>
+                    <div class="content">
+                      <h3 class="title">${item.title}</h3>
+                      <p class="description">${item.description}</p>
+                    </div>
+                  </li>`
+        }).join('');
+        timelineLists.innerHTML = item;
       });
   </script>
 </body>
