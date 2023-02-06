@@ -102,6 +102,22 @@
 			</div>
 		</main>
 
+		<div class="mobile-main">
+
+			<div class="timeline-container-mobile">
+				<div class="timeline-wrapper-mobile">
+					<article class="timeline-wrapper-title"> 
+						<h3 class="timeline-wrapper-title__sub-title">TIMELINE</h3>
+						<h2 class="timeline-wrapper-title__main-title">수상 및 활동</h2>
+					</article>
+	
+					<div class="timeline-wrapper-history">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<footer class="footer">
 			<h2 class="footer__text">
 				Copyright 2023 
@@ -109,6 +125,10 @@
 					&nbsp;KIMTAEKJU&nbsp; 
 				</span> 
 				Allrights Reserved.
+			</h2>
+
+			<h2 class="footer__text-mobile">
+				@KIMTAEKJU
 			</h2>
 		</footer>
 
@@ -118,16 +138,58 @@
 				src="./assets/images/icon/close.svg"
 				onclick="handleClickNavigationMobileClose(event)"
 			/>
-			<div style="border: 1px solid red;">
-				<h2 class="navigation-mobile__text navigation-mobile__text--bold">ABOUT</h2>
-			</div>
-			<div>
-				<h2 class="navigation-mobile__text">TIMELINE</h2>
-			</div>
+			<button 
+				class="navigation-mobile__box"
+				onClick="handleClickNavigationMobile(event)"
+			>
+				<h2 
+					class="navigation-mobile__text navigation-mobile__text--bold navigation-mobile__text--about"
+				>
+					ABOUT
+				</h2>
+			</button>
+			<button 
+				class="navigation-mobile__box"
+				onClick="handleClickNavigationMobile(event)"
+			>
+				<h2 
+					class="navigation-mobile__text navigation-mobile__text--timeline"
+				>
+					TIMELINE
+				</h2>
+			</button>
 		</nav>
 	</div>
 
   <script>
+
+	const handleClickNavigationMobile = function(e) {
+
+		const { target, pointerType } = e;
+		const classList = getClassList(e);
+
+		if (classList && classList.length === 2) {
+
+			const isClickAbout = target.innerText.toUpperCase().indexOf('ABOUT') >= 0;
+			classList.add('navigation-mobile__text--bold');
+
+			if (isClickAbout) {
+				document.getElementsByClassName('navigation-mobile__text')[1].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('about-container')[0].style.display = 'flex';
+				document.getElementsByClassName('timeline-container')[0].style.display = 'none';
+				document.getElementsByClassName('main')[0].classList.remove('main-no-background');
+
+			} else {
+				document.getElementsByClassName('navigation-mobile__text')[0].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('about-container')[0].style.display = 'none';
+				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
+				document.getElementsByClassName('main')[0].classList.add('main-no-background');
+				document.getElementsByClassName('main')[0].style.display = 'none';
+				document.getElementsByClassName('mobile-main')[0].style.display = 'flex';
+
+			}
+		}
+	}
 
 	const handleClickNavigationMobileClose = function(e) {
 		const box = document.getElementsByClassName("box")[0];
@@ -161,13 +223,17 @@
 			classList.add('navigation__text--bold');
 	
 			if (isClickAbout) {
+				classList.add('navigation__text--about');
 				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
 				document.getElementsByClassName('about-container')[0].style.display = 'flex';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'none';
+				document.getElementsByClassName('main')[0].classList.remove('main-no-background');
 			} else {
+				classList.add('navigation__text--timeline');
 				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
 				document.getElementsByClassName('about-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
+				document.getElementsByClassName('main')[0].classList.add('main-no-background');
 			}
 		}
 	}
