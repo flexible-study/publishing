@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission01</title>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./fonts/pretendard.css">
+
+  <!-- core -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container">
+        <h1 class="title">Casper</h1>
+
+        <div class="navigation">
+          <button class="toggle-sidebar"></button>
+
+          <ul>
+            <li class="active"><button class="tab-button" data-tab="about" type="button">About</button></li>
+            <li><button class="tab-button" data-tab="timeline" type="button">Timeline</button></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="tab-content about active">
+        <div class="container">
+          <div style="height: 200vh;">와아아</div>
+        </div>
+      </div>
+
+      <div class="tab-content timeline">
+        <div class="container">Timeline</div>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <h2 class="screen-reader-text">사이트 푸터</h2>
+
+      <div class="container">
+        <span class="desktop">Copyright 2023 <strong class="copy">Casper</strong> Allrights Reserved.</span>
+        <span class="mobile">© <b class="copy">Casper</></span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.querySelector('.toggle-sidebar').addEventListener('click', () => {
+      document.documentElement.classList.toggle('sidebar-active');
+    });
+
+    fetch('./json/timeline.json')
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
+  </script>
+</body>
+</html>
