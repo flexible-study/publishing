@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission01</title>
+
+  <!-- core -->
+  <link rel="stylesheet" href="./css/style-week2.css">
+  <link rel="stylesheet" href="./css/style-week3.css">
+  <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="script/index.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+                <h1 class="title">NEOMI.SEO</h1>
+                <nav id="navigation">
+                        <button type="button" id="nav_btn" aria-label="탭 네비게이션">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul id="gnb">
+                           <li class="gnb_tab1"><a href="#" role="button">ABOUT</a></li>
+                           <li class="gnb_tab2"><a href="#" role="button">TIMELINE</a></li>
+                           <li class="gnb_tab3"><a href="#" role="button">PORTFOLIO</a></li>
+                           <li class="gnb_tab4"><a href="#" role="button">CONTACT</a></li>
+                        </ul>
+                </nav>
+                <div id="nav_bg"></div>
+        </header>
+
+        <main id="main">
+                <div class="about">
+                    <div class="about_contents">
+                          <div class="wrap">
+                              <div class="about_text">
+                                   <h2>I'm <span class="main_h2_color">Web Publisher</span></h2>
+                                    <p>안녕하세요.<br>웹퍼블리셔 서너미입니다.</p>
+                              </div>
+                                <ul class="about_language">
+                                    <li><img src="images/icon_html.png" alt="HTML아이콘"></li>
+                                    <li><img src="images/icon_css.png" alt="CSS아이콘"></li>
+                                    <li><img src="images/icon_js.png" alt="JS아이콘"></li>
+                                    <li><img src="images/icon_jquery.png" alt="Jquery아이콘"></li>
+                                    <li><img src="images/icon_figma.png" alt="Figma아이콘"></li>
+                                    <li><img src="images/icon_psd.png" alt="PSD아이콘"></li>
+                                    <li><img src="images/icon_ai.png" alt="Ai아이콘"></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div class="wrap">
+                        <div class="timeline_headtext headtext">
+                            <h2>TIMELINE</h2>
+                            <p class="timeline_head headp">지나온 길</p>
+                        </div>
+                        <ol id="timeline_area" class="contents_area">
+<!--
+                            <li id="timeline_list">
+                               <h3 class="title"></h3>
+                                <span class="period"></span>
+                                <div class="description"></div>
+                            </li>
+-->
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="portfolio">
+                    <div class="wrap">
+                        <div class="portfolio_headtext headtext">
+                            <h2>PORTFOLIO</h2>
+                            <p class="portfolio_head headp">포트폴리오</p>
+                        </div>
+                        <ol id="portfolio_area" class="contents_area">
+<!--
+                            <div class="portfolio_item">
+                                <img src="" alt="" class="portfolio_img">
+                                <div class="portfolio_detail">
+                                    <div class="portfolio_detail_top">
+                                        <h3></h3>
+                                        <button type="button" class="close_btn" aria-label="상세 내용 닫기"></button>
+                                        <ul>
+                                            <li>
+                                                <p></p>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <span></span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="portfolio_detail_bottom">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+-->
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="contact">
+                    <div class="wrap">
+                        <div class="contact_headtext headtext">
+                            <h2>GET IN TOUCH</h2>
+                            <p class="contact_head headp">연락하기</p>
+                        </div>
+                        <div id="contact_area" class="contents_area">
+                            <ul class="contact_info">
+                                <li><img src="images/contact_mail.png" alt="이메일아이콘"><a href="mailto:komaof1004@naver.com" class="underline">komaof1004@naver.com</a></li>
+                                <li><img src="images/contact_phone_enabled.png" alt="전화아이콘"><a href="tel:010-2278-0913" class="underline">010-2278-0913</a></li>
+                                <li><img src="images/contact_weblink.png" alt="링크아이콘"><a href="https://neomi-design-lab.tistory.com/" class="underline">https://neomi-design-lab.tistory.com/</a></li>
+                                <li><img src="images/contact_location_on.png" alt="장소아이콘"><a href="">서울시 중랑구</a></li>
+                            </ul>
+                            <div class="contact_form">
+                               <div class="form_area">
+                                   <ul class="form_list">
+                                        <li><input type="text" placeholder="NAME" required></li>
+                                        <li><input type="text" placeholder="EMAIL" required></li>
+                                        <li><textarea name="message" id="contact_msg" placeholder="MASSAGE" required></textarea></li>
+                                    </ul>
+                                    <button type="button" class="send_btn">SUBMIT →</button>
+                               </div>
+                                <div class="formimg_box">
+                                    <img src="images/contact_local_post_office.png" alt="우체통아이콘" class="formimg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+
+        <footer id="footer">
+            <div class="wrap">
+                <p class="footer_pctab">Copyright 2023 <strong>Neomi.seo</strong> Allrights Reserved.</p>
+                <p class="footer_mobile">ⓒ Neomi.seo</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        
+        fetch('../json/timeline.json')
+          .then((response) => response.json())
+          .then((result) => {
+            // result 순서 내림차순으로 변경
+            result = result.reverse()
+
+            // 빈 변수 생성해서 아이템 추가
+            let listItem = '';
+
+            result.forEach((element, index) => {
+              listItem += `<li id="timeline_list${index + 1}">
+                                <span class="period">${element.period}</span>
+                                <div class="timeline_cont">
+                              <h3 class="title">${element.title}</h3>
+                                <p class="description">${element.description}</p>
+                                </div>
+                          </li>`;
+            });
+
+            const timelineListArea = document.querySelector('#timeline_area');
+            timelineListArea.innerHTML = listItem;
+          });
+        
+        fetch('../json/portfolio.json')
+            .then(res => res.json())
+            .then(data => {
+            const sample = document.querySelector('#portfolio_area');
+            const html = data.map(item => {
+              console.log();
+              return `
+                	<li class="portfolio_item">
+                        <img src="${item.thumbnail}" alt="${item.title}" class="portfolio_img">
+                        <div class="portfolio_detail">
+                            <div class="portfolio_detail_area">
+                                <button type="button" class="close_btn" aria-label="상세 내용 닫기">
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <div class="p_img_area">
+                                    <img src="${item.thumbnail}" alt="${item.title}" class="portfolio_detail_img">
+                                </div>
+                                <div class="portfolio_detail_text">
+                                    <div class="portfolio_detail_top">
+                                        <h3 class="title">${item.title}</h3>
+                                        <ul>
+                                            <li><p>${item.date}</p></li>
+                                            <li><div class="languages">
+                                                ${item.languages.map(lang => `<span>${lang}</span>`).join(', ')}</div></li>
+                                        </ul>
+                                    </div>
+                                    <div class="portfolio_detail_bottom">
+                                        <p>${item.description}</p>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </li>
+                `    
+             }).join('');
+            sample.innerHTML = html;
+          });
+        
+        $(".portfolio_img").click(function(){
+             $(this).siblings('div').addClass("open");
+        });
+        
+//        $(".portfolio_item").click(function(){
+//             $(this).children('div').addClass("open");
+//        });
+        
+        $(".portfolio_detail").click(function(){
+            $(".portfolio_detail").removeClass("open");
+        });
+        
+        
+    </script>
+
+</body>
+</html>

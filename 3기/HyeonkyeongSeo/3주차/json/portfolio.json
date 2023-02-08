@@ -1,0 +1,38 @@
+[
+  {
+    "title": "소모임 앱 ‘뭉게’ 홍보 웹사이트",
+    "thumbnail": "./images/thumbnail1.png",
+    "date": "2022.12 ~ 2023.01",
+    "languages": [
+      "HTML", "CSS", "JavaScript", "jQuery"
+    ],
+    "description": "디자인 기획한 소모임 앱 ‘뭉게’를 홍보하는 웹사이트를 반응형으로 제작하였습니다.<br>관심사 해시태그, 스케줄링 기능, 맵 서치 등 앱에서 차별화한 기능들을 웹사이트 내에서 간략히 보여줄 수 있게끔 구현 하였습니다."
+  },
+  {
+    "title": "‘에듀윌’ 사회공헌 웹사이트",
+    "thumbnail": "./images/thumbnail2.png",
+    "date": "2023.01 ~ 2023.01",
+    "languages": [
+      "HTML", "CSS", "JavaScript", "jQuery"
+    ],
+    "description": "‘에듀윌’ 사회공헌 웹사이트를 CI 컬러와 최근 이미지 및 자료 등을 활용하여 반응형으로 리뉴얼 제작, 구현 하였습니다."
+  },
+  {
+    "title": "스포츠 브랜드 ‘INDIGO’ 웹사이트",
+    "thumbnail": "./images/thumbnail3.png",
+    "date": "2023.01 ~ 2023.01",
+    "languages": [
+      "HTML", "CSS", "JavaScript", "jQuery"
+    ],
+    "description": "스포츠 브랜드 ‘INDIGO’ 웹사이트를 CI 컬러와 최근 이미지 및 자료 등을 활용하여 반응형으로 제작, 구현 하였습니다."
+  },
+  {
+    "title": "장애인 취업 포탈 사이트 ‘파인트잡’ 웹사이트",
+    "thumbnail": "./images/thumbnail4.png",
+    "date": "2023.01 ~ 2023.02",
+    "languages": [
+      "HTML", "CSS", "JavaScript", "jQuery"
+    ],
+    "description": "장애인 취업 포탈 사이트 ‘파인트잡’ 의 서비스 의도와 디자인, 구성을 기획하였습니다.<br>기획한 디자인과 구성에 맞추어 반응형으로 웹사이트를 제작, 구현하였습니다."
+  }
+]
