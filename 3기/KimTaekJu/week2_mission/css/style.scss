@@ -22,6 +22,7 @@ h2, h3, h4 {
     display: flex;
     flex-flow: column wrap;
     position: relative;
+    background: #FAFAFA;
     //background-color: rgba(45,52,54,0.8);
     // z-index: 2;
 
@@ -423,20 +424,44 @@ h2, h3, h4 {
             align-items: center;
             justify-content: center;
 
+            @include mobile {
+                width: 320px;
+                // height: 1056px;
+                padding: 82px 16px 100px;
+            }
+
+            @include tablet {
+                width: 704px;
+                height: 591px;
+                gap: 32px;
+                padding: 0px;
+            }
             @include desktop {
                 width: 1440px;
                 height: 699px;
+                gap: 16px;
+                padding: 0px;
             }
 
             .timeline-wrapper {
                 
                 display: flex;
-                column-gap: 16px;
+                // column-gap: 16px;
+
+                @include mobile {
+                    display: block;
+                    width: 288px;
+                    height: 874px;
+                }
 
                 @include tablet {
                     display: block;
+                    width: 704px;
+                    height: 591px;
                 }
+
                 @include desktop {
+                    display: flex;
                     width: 1200px;
                     height: 499px;
                 }
@@ -496,15 +521,24 @@ h2, h3, h4 {
 
                 &-history {
 
-                    @include desktop {
-                        width: 592px;
+                    @include tablet {
+                        display: grid;
+                        width: 704px;
                         height: 499px;
+                        grid-template-columns: 150px 538px;
+                        grid-auto-rows: min-content;
+                        gap: 32px;
                     }
 
-                    display: grid;
-                    grid-template-columns: 150px 426px;
-                    grid-auto-rows: min-content;
-                    gap: 32px;
+                    @include desktop {
+                        display: grid;
+                        width: 592px;
+                        height: 499px;
+                        grid-template-columns: 150px 426px;
+                        grid-auto-rows: min-content;
+                        gap: 32px;
+                    }
+
 
                     &__year {
                         box-sizing: border-box;

@@ -169,9 +169,9 @@
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
 
-				if (document.getElementsByClassName('box')[0].clientWidth <= 320) {
-					document.getElementsByClassName('box')[0].style.height = '1056px';
-				}
+				// if (document.getElementsByClassName('box')[0].clientWidth <= 320) {
+				// 	document.getElementsByClassName('box')[0].style.height = '1056px';
+				// }
 			}
 		}
 	}
@@ -238,7 +238,7 @@
 		}
 	}
 
-    fetch('http://127.0.0.1:8080/3기/KimtaekJu/week2_mission/json/timeline.json')
+    fetch('http://127.0.0.1:5500/3기/KimtaekJu/week2_mission/json/timeline.json')
       .then(response => response.json())
       .then(data => {
 
