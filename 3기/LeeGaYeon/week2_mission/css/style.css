@@ -87,13 +87,14 @@ article.about::before {
   content: '';
   background-image: url('../images/background-img.png');
   background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
   opacity: 0.1;
   top: 0;
   left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .introduce {
@@ -255,6 +256,7 @@ article.tab.active {
   article.timeline {
     flex-direction: column;
     gap: 36px;
+    padding: 32px;
   }
 
   .header-btn {
