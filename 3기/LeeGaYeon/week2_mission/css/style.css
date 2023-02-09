@@ -6,15 +6,17 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css)
-    format(('woff'));
+  src: url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css) format(('woff'));
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap')
-    format('woff');
+  src: url('https://fonts.googleapis.com/css2?family=Inter&display=swap') format('woff');
   unicode-range: U+0041-005A, U+0061-007A;
+}
+
+h2 {
+  color: #2d3436;
 }
 
 html,
@@ -24,7 +26,6 @@ body {
   font-family: 'Inter';
   font-size: 16px;
   line-height: 160%;
-  overflow: overlay;
 }
 
 body {
@@ -50,7 +51,6 @@ header {
   position: sticky;
   top: 0;
   background-color: #fff;
-  z-index: 1;
 }
 
 h1 {
@@ -78,7 +78,6 @@ article.about {
   flex: 1;
   position: relative;
   display: flex;
-  align-items: center;
   align-items: center;
   justify-content: space-between;
   padding: 120px;
@@ -214,4 +213,105 @@ article.tab {
 article.tab.active {
   display: flex;
   flex: 1;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: #2d3436;
+}
+
+.side-menu {
+  display: none;
+  top: 100%;
+  left: 100%;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.side-nav {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+}
+
+@media (max-width: 1023px) {
+  .header {
+    padding: 32px;
+  }
+
+  article.timeline {
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .header-btn {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .close-container {
+    display: flex;
+    justify-content: end;
+    padding: 23px 32px;
+  }
+
+  .active-menu {
+    display: flex;
+  }
+
+  .side-btn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-btn > button {
+    text-align: left;
+    padding: 16px;
+    border-bottom: 1px solid #dfe4ea;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 16px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .main-content {
+    border: none;
+    padding: 0px;
+  }
+
+  article.about {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 64px;
+    padding: 16px;
+  }
+
+  article.timeline {
+    padding: 16px;
+  }
 }
