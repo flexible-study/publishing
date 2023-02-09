@@ -249,7 +249,7 @@ article.tab.active {
 }
 
 @media (max-width: 1023px) {
-  .header {
+  header {
     padding: 32px;
   }
 
