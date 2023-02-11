@@ -1,0 +1,79 @@
+@import './device.scss';
+
+@mixin portfolio-container {
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+
+    @include mobile {
+        width: 320px;
+        height: 1900px;
+        gap: 32px;
+        padding: 0px 16px;
+    }
+
+    @include tablet {
+        width: 704px;
+        height: 1156px;
+        gap: 32px;
+        padding: 0px;
+    }
+
+    @include desktop {
+        width: 1200px;
+        height: 719px;
+        gap: 32px;
+        padding: 0px;
+    }
+
+    &__title {
+
+        border: 1px solid sandybrown;
+
+        @include mobile {
+            width: 288px;
+            height: 60px;
+            padding: 0px;
+        }
+
+        @include tablet {
+            width: 704px;
+            height: 60px;
+            padding: 0px;            
+        }
+
+        @include desktop {
+            width: 1200px;
+            height: 71px;
+            padding: 0px;
+        }
+    }
+
+    .portfolio-section {
+        border: 1px solid yellow;
+
+        @include mobile {
+            width: 288px;
+            height: 1808px;
+            padding: 0px;
+            gap: 16px;
+        }
+
+        @include tablet {
+            width: 704px;
+            height: 1064px;
+            padding: 0px;
+            gap: 16px;
+        }
+
+        @include desktop {
+            width: 1200px;
+            height: 616px;
+            padding: 0px;
+            gap: 16px;
+        }
+    }
+
+
+}

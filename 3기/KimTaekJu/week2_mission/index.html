@@ -39,6 +39,22 @@
 					>
 						<h2 class="navigation__text">Timeline</h2>
 					</button>
+
+					<button 
+						class="navigation__portfolio navigation--btn"
+						type="button"
+						onClick="handleClickNavigation(event)"
+					>
+						<h2 class="navigation__text">PORTFOLIO</h2>
+					</button>
+
+					<button 
+						class="navigation__contact navigation--btn"
+						type="button"
+						onClick="handleClickNavigation(event)"
+					>
+						<h2 class="navigation__text">CONTACT</h2>
+					</button>
 				</nav>
 
 				<button
@@ -99,6 +115,19 @@
 						
 					</div>
 				</div>
+			</div>
+
+		</main>
+
+		<main class="portfolio-main">
+			<div class="portfolio-container">
+				<section class="portfolio-container__title">
+
+				</section>
+
+				<section class="portfolio-section">
+
+				</section>
 			</div>
 		</main>
 
@@ -211,6 +240,9 @@
 		if (classList && classList.length === 1) {
 
 			const isClickAbout = target.innerText.toUpperCase().indexOf('ABOUT') >= 0;
+			const isClickTimeLine = target.innerText.toUpperCase().indexOf('TIMELINE') >= 0;
+			const isClickPortFolio = target.innerText.toUpperCase().indexOf('PORTFOLIO') >= 0;
+
 			classList.add('navigation__text--bold');
 	
 			if (isClickAbout) {
@@ -218,12 +250,18 @@
 				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
 				document.getElementsByClassName('about-container')[0].style.display = 'flex';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
 				document.getElementsByClassName('main')[0].classList.remove('main-no-background');
-			} else {
+			} else if (isClickTimeLine) {
 				classList.add('navigation__text--timeline');
 				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
 				document.getElementsByClassName('about-container')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
+				document.getElementsByClassName('main')[0].classList.add('main-no-background');
+			} else {
+				document.getElementsByClassName('main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
 			}
 		}
