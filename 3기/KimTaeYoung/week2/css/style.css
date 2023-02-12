@@ -462,8 +462,6 @@ button {
   padding: 100px 0;
 }
 
-.portfolio .title-block {}
-
 .portfolio .title-block .subtitle {
   font-weight: 700;
   font-size: 16px;
@@ -494,7 +492,6 @@ button {
   grid-auto-rows: 300px;
   gap: 16px;
 }
-.portfolio .content-block li {}
 .portfolio .content-block .button {
   position: relative;
   z-index: 2;
@@ -504,7 +501,12 @@ button {
   height: 100%;
   background-color: transparent;
   border: 0;
+  cursor: pointer;
 }
+.portfolio .content-block .button:hover .overlay {
+  opacity: 0.95;
+}
+
 .portfolio .content-block .thumbnail {
   position: absolute;
   top: 0;
@@ -525,8 +527,9 @@ button {
   width: 100%;
   height: 100%;
   background: #fff;
-  opacity: 0.95;
   backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 .portfolio .content-block .overlay .title {
   font-weight: 700;
@@ -605,5 +608,136 @@ button {
 
   #footer .mobile {
     display: block;
+  }
+}
+
+
+/* modal */
+html,
+body {
+  overflow: hidden;
+}
+
+#modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  padding: 60px 32px;
+  width: 100%;
+  height: 100%;
+  background: rgba(45, 52, 54, 0.5);
+  overflow: hidden auto;
+}
+
+#modal .inner {
+  flex: 0 0 auto;
+  position: relative;
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 32px;
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+}
+
+#modal .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+#modal .close img {
+  width: 26px;
+  height: 26px;
+}
+
+#modal .thumbnail {
+  flex: 0 0 auto;
+  width: 300px;
+}
+#modal .thumbnail img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+#modal .content {
+  flex-grow: 1;
+}
+#modal .content .head {
+  padding: 16px;
+  background-color: #fafafa;
+}
+#modal .content .head .title {
+  padding-bottom: 8px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 160%;
+}
+#modal .content .head .info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 160%;
+  color: #636E72;
+}
+#modal .content .head .languages {}
+#modal .content .head .date {
+  margin-top: 4px;
+}
+
+#modal .content .body {
+  padding: 16px;
+  font-size: 14px;
+  line-height: 160%;
+}
+
+@media (max-width: 1023px) {
+  #modal .thumbnail {
+    width: 250px;
+  }
+}
+
+@media (max-width: 767px) {
+  #modal {
+    padding: 30px 16px;
+  }
+
+  #modal .inner {
+    padding: 0;
+  }
+
+  #modal .close {
+    top: 16px;
+    right: 16px;
+  }
+
+  #modal .close img {
+    width: 24px;
+    height: 24px;
+  }
+
+  #modal .thumbnail {
+    display: none;
+  }
+
+  #modal .content .head .title {
+    padding-right: 40px;
+  }
+
+  #modal .content .body {
+    padding-bottom: 32px;
   }
 }

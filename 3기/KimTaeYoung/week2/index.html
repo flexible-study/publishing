@@ -155,6 +155,40 @@
     </footer>
   </div>
 
+  <div id="modal">
+    <div class="inner">
+      <button class="close" type="button" aria-label="모달 닫기">
+        <img src="./svgs/close.svg" alt="닫기 아이콘">
+      </button>
+
+      <div class="thumbnail">
+        <img src="./images/sample.jpg" alt="OOO 프로젝트 대표 이미지">
+      </div>
+
+      <div class="content">
+        <div class="head">
+          <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.</div>
+
+          <div class="info languages">
+            <img src="./svgs/terminal.svg" alt="터미널 아이콘">
+            HTML, CSS, JavaScript, jQuery, PHP, MySQL
+          </div>
+
+          <div class="info date">
+            <img src="./svgs/calendar_today.svg" alt="날짜 아이콘">
+            2019.01 ~ 2019.02
+          </div>
+        </div>
+
+        <div class="body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script>
     // 모바일 사이드바 토글
     document.querySelector('.toggle-sidebar').addEventListener('click', () => {
@@ -200,6 +234,8 @@
         }).join('');
         timelineLists.innerHTML = item;
       });
+
+    // 모달 액션
   </script>
 </body>
 </html>
