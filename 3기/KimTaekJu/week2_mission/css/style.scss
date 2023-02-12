@@ -1,5 +1,6 @@
 @import './device.scss';
 @import './portfolio.scss';
+@import './contact.scss';
 
 *, ::before, ::after {
     box-sizing: border-box;
@@ -744,6 +745,31 @@ h2, h3, h4 {
 
         .portfolio-container {
             @include portfolio-container
+        }
+    }
+
+    .contact-main {
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background: #FAFAFA;
+        
+        @include mobile {
+            padding: 82px 0px 100px;
+        }
+
+        @include tablet {
+            padding: 82px 0px 100px;
+        }
+
+        @include desktop {
+            padding: 100px 0px;
+        }
+
+        .contact-container {
+            @include contact-container
         }
     }
 

@@ -1,0 +1,374 @@
+@import './device.scss';
+
+@mixin contact-container {
+
+    h2, h3, h4 {
+        margin: 0;
+        margin-block: 0;
+        margin-inline: 0;
+    }
+
+    border: 1px solid red;
+
+    @include mobile {
+        padding: 0px;
+        gap: 32px;
+        
+        width: 288px;
+        height: 1006px;
+
+        &__title {
+            width: 288px;
+            height: 60px;
+        }
+    }
+
+    @include tablet {
+        padding: 0px;
+        gap: 32px;
+
+        width: 704px;
+        height: 874px;
+
+        &__title {
+            width: 704px;
+            height: 68px;
+        }
+    }
+
+    @include desktop {
+        padding: 0px;
+        gap: 32px;
+
+        width: 1200px;
+        height: 735px;
+
+        &__title {
+            width: 1200px;
+            height: 71px;
+        }
+    }
+
+    &__sub-title {
+
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+
+        @include mobile {
+            font-size: 14px;
+            width: 101px;
+            height: 22px;
+        }
+
+        @include tablet {
+            font-size: 14px;
+            width: 101px;
+            height: 22px;
+        }
+    
+        @include desktop {
+            font-size: 16px;
+            width: 115px;
+            height: 26px;
+        }
+
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #FF7F50;
+    }
+
+    &__main-title {
+
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%;
+        text-transform: uppercase;
+        color: #2D3436;
+
+        @include mobile {
+            width: 83px;
+            height: 38px;
+            font-size: 24px;
+        }
+
+        @include tablet {
+            width: 83px;
+            height: 38px;
+            font-size: 24px;
+        }
+
+        @include desktop {
+            width: 97px;
+            height: 45px;
+            font-size: 28px;
+        }
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .form-container {
+
+        border: 1px solid green;
+        display: flex;
+        flex-direction: column;
+
+        @include mobile {
+            width: 288px;
+            height: 914px;
+            gap: 16px;
+        }
+
+        @include tablet {
+            width: 704px;
+            height: 782px;
+            gap: 16px;
+        }
+
+        @include desktop {
+            width: 1200px;
+            height: 632px;
+            gap: 32px;
+        }
+
+        .form-user-info {
+            display: grid;
+
+            border: 1px solid blue;
+
+            @include mobile {
+                padding: 0px;
+                gap: 16px;
+                
+                width: 288px;
+                height: 448px;
+
+                grid-template-columns: 288px;
+                grid-auto-rows: 100px;
+            }
+
+            @include tablet {
+                padding: 0px;
+                gap: 16px;
+
+                width: 704px;
+                height: 316px;
+
+                grid-template-columns: repeat(2, 344px);
+                grid-auto-rows: 150px;
+            }
+            @include desktop {
+                padding: 0px;
+                gap: 10px;
+
+                width: 1200px;
+                height: 150px;
+
+                grid-template-columns: repeat(4, 292.5px);
+
+            }
+
+            .user-info-box {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background: #FFFFFF;
+
+                @include mobile {
+                    padding: 0px;
+                    gap: 10px;
+                    
+                    width: 288px;
+                    height: 100px;
+
+                    &__icon {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+
+                @include tablet {
+                    padding: 0px;
+                    gap: 10px;
+
+                    width: 344px;
+                    height: 150px;
+
+                    &__icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                @include desktop {
+                    padding: 0px;
+                    gap: 10px;
+
+                    width: 292.5px;
+                    height: 150px;
+                    
+                    &__icon {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                &__text {
+                    font-family: 'Inter';
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: 160%;
+                    color: #636E72;
+
+                    @include mobile {
+                        font-size: 14px;
+                        height: 22px;
+                    }
+
+                    @include tablet {
+                        font-size: 18px;
+                        height: 29px;
+                    }
+
+                    @include desktop {
+                        font-size: 18px;
+                        height: 29px;
+                    }
+                }
+
+                &__text--underline {
+                    text-decoration-line: underline;
+                }
+
+            }
+        }
+
+        .form-data-info {
+            border: 1px solid palevioletred;
+
+            @include mobile {
+                padding: 0px;
+                gap: 16px;
+                
+                width: 288px;
+                height: 450px;
+            }
+
+            @include tablet {
+                padding: 0px;
+                gap: 16px;
+                
+                width: 704px;
+                height: 450px;
+                
+            }
+
+            @include desktop {
+                padding: 0px;
+                gap: 16px;
+
+                width: 1200px;
+                height: 450px;
+            }
+
+            .form-box {
+                border: 1px solid purple;
+                height: 100%;
+                gap: 16px;
+
+                @include mobile {
+                    display: flex;
+                    flex-direction: column;
+                    width: 288px;
+                }
+
+                @include tablet {
+                    display: flex;
+                    flex-direction: column;
+                    width: 704px;
+                }
+
+                @include desktop {
+                    width: 734px;
+                    display: grid;
+                    grid-template-columns: 734px 450px;
+                    grid-auto-rows: 60px 60px 228px;
+                    grid-template-areas: 
+                        'a b'
+                        'c b'
+                        'd b'
+                        'e b';
+                }
+                position: relative;
+
+
+                &__input-name {
+                    grid-area: a;
+                    padding: 0px 16px;
+                    width: 100%;
+                    height: 60px;
+                }
+
+                &__input-email {
+                    grid-area: c;
+                    padding: 0px 16px;
+                    width: 100%;
+                    height: 60px;
+                }
+
+                &__textarea {
+                    grid-area: d;
+                    padding: 16px;
+                    width: 100%;
+                    height: 228px;
+                }
+
+                &__submit {
+                    grid-area: e;
+                    padding: 0px;
+    
+                    width: 100%;
+                    height: 60px;
+    
+                    /* secondary */
+    
+                    background: #636E72;
+                    position: absolute;
+                    @include mobile {
+                        bottom: 0px;
+                    }
+
+                    @include tablet {
+                        bottom: 0px;
+                    }
+                    
+                    @include desktop {
+                        top: -8px;
+                    }
+                }
+            }
+
+
+            .mail-icon-box {
+                grid-area: b;
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: none;
+                }
+
+                @include desktop {
+                    display: block;
+                }
+            }
+        }
+    }
+}
