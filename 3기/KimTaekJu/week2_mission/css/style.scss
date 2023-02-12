@@ -13,6 +13,14 @@ html, body {
     line-height: 160%;
 }
 
+/**
+* 부모 스크롤 잠그기
+*/
+html.scroll-lock,
+html.scroll-lock body {
+    overflow: hidden;
+}
+
 h2, h3, h4 {
     margin: 0;
     margin-block: 0;
@@ -48,6 +56,7 @@ h2, h3, h4 {
 
     @include desktop {
         min-width: 1440px;
+        min-height: 1119px;
         // height: 960px;
     }
 
@@ -90,8 +99,6 @@ h2, h3, h4 {
                 width: 1200px;
                 height: 100px;
             }
-
-
 
             display: flex;
             justify-content: space-between;
@@ -648,7 +655,7 @@ h2, h3, h4 {
 
             @include mobile-height-402 {
                 width: 320px;
-                height: 402px;
+                height: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
@@ -664,7 +671,7 @@ h2, h3, h4 {
     
             @include mobile-height-616 {
                 width: 320px;
-                height: 616px;
+                height: 100%;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: cover;
@@ -681,7 +688,7 @@ h2, h3, h4 {
         
         @include tablet {
             width: 768px;
-            height: 855px;
+            height: 100%;
             left: calc(50% - 768px/2);
             top: calc(50% - 855px/2 + 0.5px);
             background-repeat: no-repeat;
@@ -698,7 +705,7 @@ h2, h3, h4 {
 
         @include desktop {
             width: 1440px;
-            height: 760px;
+            height: 100%;
             left: 0;
             top: 0;
             background-image: url("../assets/images/bg/bg.png");
@@ -722,6 +729,18 @@ h2, h3, h4 {
         justify-content: center;
         align-items: center;
         position: relative;
+
+        @include mobile {
+            padding: 82px 0px 100px;
+        }
+
+        @include tablet {
+            padding: 82px 32px 100px;
+        }
+
+        @include desktop {
+            padding: 100px 0px;
+        }
 
         .portfolio-container {
             @include portfolio-container

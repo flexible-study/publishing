@@ -6,9 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Mission01</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
   <!-- core -->
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/portfolio.css">
   <link rel="stylesheet" href="./css/font.css">
 </head>
 
@@ -122,13 +124,82 @@
 		<main class="portfolio-main">
 			<div class="portfolio-container">
 				<section class="portfolio-container__title">
-
+					<h3 class="portfolio-container__sub-title">PORTFOLIO</h3>
+					<h2 class="portfolio-container__main-title">포트폴리오</h2>
 				</section>
 
 				<section class="portfolio-section">
+					<div class="portfolio-layout">
+						<Button class="portfolio-layout__img portfolio-layout__img--item1">
+							<div class="portfolio-layout__img-modal-1"></div>
+						</Button>
 
+						<Button class="portfolio-layout__img portfolio-layout__img--item2">
+							<div class="portfolio-layout__img-modal-2"></div>
+						</Button>
+
+						<Button class="portfolio-layout__img portfolio-layout__img--item3">
+							<div class="portfolio-layout__img-modal-3"></div>
+						</Button>
+
+						<Button class="portfolio-layout__img portfolio-layout__img--item4">
+							<div class="portfolio-layout__img-modal-4"></div>
+						</Button>
+
+						<Button class="portfolio-layout__img portfolio-layout__img--item5">
+							<div class="portfolio-layout__img-modal-5"></div>
+						</Button>
+					</div>
+				</section>
+				<div class="modal" aria-hidden="true">
+					<div class="modal-wrapper">
+						<button class="close" aria-label="모달 닫기" autofocus onclick="closeModal('normal');">
+							<span class="material-symbols-outlined">close</span>
+						</button>
+				
+						<img
+							class="modal-wrapper__portfolio-img"
+						/>
+
+						<div class="modal-content">
+							<div class="content-info">
+								<div class="content-info__title">
+									<h2 class="content-info__title-font"></h2>
+								</div>
+								<div class="content-info__infomation">
+									<img 
+										class="content-info__info-icon" 
+										src="../week2_mission/assets/images/icon/terminal.svg"
+									/>
+									<h3 class="content-info__info-text">Barachiel</h3>
+									</br/>
+									<img 
+										class="content-info__info-icon" 
+										src="../week2_mission/assets/images/icon/calendar_today.svg"
+									/>
+									<h3 class="content-info__info-text">Barachiel</h3>
+								</div>
+							</div>
+
+							<div class="modal-content__description">
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+		</main>
+
+		<main class="contact-main">
+			<div class="contact-container">
+				<section class="contact-container__title">
+					<h3 class="contact-container__sub-title">GET IN TOUCH</h3>
+					<h2 class="contact-container__main-title">연락하기</h2>
 				</section>
 			</div>
+
 		</main>
 
 		<footer class="footer">
@@ -172,9 +243,13 @@
 				</h2>
 			</button>
 		</nav>
+
 	</div>
 
   <script>
+	
+	let portfolioItemList = [];
+	let lastFocus = undefined;
 
 	const handleClickNavigationMobile = function(e) {
 
@@ -259,10 +334,19 @@
 				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
-			} else {
+			} else if (isClickPortFolio) {
+				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
 				document.getElementsByClassName('main')[0].style.display = 'none';
 				document.getElementsByClassName('portfolio-main')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
+			} else {
+				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[2].classList = ['navigation__text'];
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'none';
+				document.getElementsByClassName('main')[0].style.display = 'none';
+
 			}
 		}
 	}
@@ -276,7 +360,7 @@
 		}
 	}
 
-    fetch('http://127.0.0.1:5500/3기/KimtaekJu/week2_mission/json/timeline.json')
+    fetch('http://127.0.0.1:5500/3기/KimtaekJu/week2_mission/assets/json/timeline.json')
       .then(response => response.json())
       .then(data => {
 
@@ -307,6 +391,43 @@
 		}
 
       });
+
+		fetch('http://127.0.0.1:5555/3기/KimtaekJu/week2_mission/assets/json/portfolio.json')
+		.then(response => response.json())
+		.then(data => {
+				portfolioItemList = data;
+				const portfolioElementList = document.getElementsByClassName("portfolio-layout__img");
+
+				for (let i = 0, len = portfolioElementList.length; i < len; i++) {
+					portfolioElementList[i].addEventListener('click', () => openModal(i, portfolioItemList, portfolioElementList));
+				}
+				document.getElementsByClassName("modal")[0].addEventListener('click', (event) => {
+					if ( event.target.classList.contains('modal') ) {
+						closeModal();
+					}
+				})
+				console.log(document.getElementsByClassName("portfolio-layout__img-modal-*"));
+		});
+
+	const openModal = function (i, portfolioItemList, portfolioElementList) {
+		document.getElementsByClassName("modal")[0].classList.add('modal--open');
+		document.documentElement.classList.add('scroll-lock');
+		lastFocus = portfolioElementList[i];
+		
+		document.getElementsByClassName("modal-wrapper__portfolio-img")[0].src = portfolioItemList[i].src;
+		document.getElementsByClassName("content-info__title-font")[0].innerHTML =  portfolioItemList[i].title;
+		document.getElementsByClassName("modal-content__description")[0].innerHTML = portfolioItemList[i].description;
+
+		const infoTextElementList = document.getElementsByClassName("content-info__info-text");
+		infoTextElementList[0].innerHTML = portfolioItemList[i].languages;
+		infoTextElementList[1].innerHTML = portfolioItemList[i].date;
+	}
+
+	const closeModal = function () {
+		document.getElementsByClassName("modal")[0].classList.remove('modal--open');
+		document.documentElement.classList.remove('scroll-lock');
+		lastFocus.focus();
+	}
   </script>
 </body>
 </html>
