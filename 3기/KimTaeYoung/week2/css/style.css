@@ -13,6 +13,10 @@ body {
   color: #2D3436;
 }
 
+button {
+  color: inherit;
+}
+
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);
@@ -451,6 +455,119 @@ body {
     padding: 0;
   }
 }
+
+
+/* prtfolio */
+.portfolio {
+  padding: 100px 0;
+}
+
+.portfolio .title-block {}
+
+.portfolio .title-block .subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  color: #FF7F50;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+
+.portfolio .title-block .title {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 160%;
+}
+
+.portfolio .content-block {
+  margin-top: 32px;
+}
+.portfolio .content-block ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  max-width: 932px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  gap: 16px;
+}
+.portfolio .content-block li {}
+.portfolio .content-block .button {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 0;
+}
+.portfolio .content-block .thumbnail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.portfolio .content-block .overlay {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 8px;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 0.95;
+  backdrop-filter: blur(5px);
+}
+.portfolio .content-block .overlay .title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  text-transform: uppercase;
+}
+.portfolio .content-block .overlay .arrow {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 1023px) {
+  .portfolio {
+    padding-top: 82px;
+  }
+
+  .portfolio .title-block .subtitle {
+    font-size: 14px;
+  }
+
+  .portfolio .title-block .title {
+    font-size: 24px;
+  }
+
+  .portfolio .content-block ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 344px;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolio .content-block ul {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 288px;
+  }
+}
+
 
 
 /* footer */

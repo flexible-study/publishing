@@ -27,15 +27,17 @@
           <button class="toggle-sidebar" aria-hidden="true" aria-label="모바일 메뉴 열기"></button>
 
           <ul>
-            <li class="active"><button class="tab-button" data-tab="about" type="button">About</button></li>
+            <li><button class="tab-button" data-tab="about" type="button">About</button></li>
             <li><button class="tab-button" data-tab="timeline" type="button">Timeline</button></li>
+            <li class="active"><button class="tab-button" data-tab="portfolio" type="button">Portfolio</button></li>
+            <li><button class="tab-button" data-tab="contact" type="button">Contact</button></li>
           </ul>
         </div>
       </div>
     </header>
 
     <main id="main">
-      <section class="tab-content about active">
+      <section class="tab-content about">
         <div class="container">
           <div class="content">
             <h2 class="title">
@@ -69,6 +71,75 @@
 
           <div class="content-block">
             <ul id="fetch-timeline"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content portfolio active">
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Portfilio</small>
+            <h2 class="title">포트폴리오</h2>
+          </div>
+
+          <div class="content-block">
+            <ul>
+              <li>
+                <button class="button" type="button">
+                  <img class="thumbnail" src="./images/sample.jpg" alt="만들면서 배우는 실전 퍼블리싱 포트폴리오 대표 이미지">
+
+                  <span class="overlay">
+                    <span class="title">만들면서 배우는 실전 퍼블리싱</span>
+
+                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button class="button" type="button">
+                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
+
+                  <span class="overlay">
+                    <span class="title">주니어 Java 개발자를 위한 코스</span>
+
+                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button class="button" type="button">
+                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
+
+                  <span class="overlay">
+                    <span class="title">주니어 Java 개발자를 위한 코스</span>
+
+                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button class="button" type="button">
+                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
+
+                  <span class="overlay">
+                    <span class="title">주니어 Java 개발자를 위한 코스</span>
+
+                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </span>
+                </button>
+              </li>
+              <li>
+                <button class="button" type="button">
+                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
+
+                  <span class="overlay">
+                    <span class="title">주니어 Java 개발자를 위한 코스</span>
+
+                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </span>
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -119,7 +190,6 @@
       .then(data => {
         const timelineLists = document.querySelector('#fetch-timeline');
         const item = data.map((item) => {
-          console.log(item);
           return `<li>
                     <div class="date">${item.period}</div>
                     <div class="content">
