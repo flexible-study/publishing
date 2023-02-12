@@ -83,63 +83,7 @@
           </div>
 
           <div class="content-block">
-            <ul>
-              <li>
-                <button class="button" type="button">
-                  <img class="thumbnail" src="./images/sample.jpg" alt="만들면서 배우는 실전 퍼블리싱 포트폴리오 대표 이미지">
-
-                  <span class="overlay">
-                    <span class="title">만들면서 배우는 실전 퍼블리싱</span>
-
-                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button">
-                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
-
-                  <span class="overlay">
-                    <span class="title">주니어 Java 개발자를 위한 코스</span>
-
-                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button">
-                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
-
-                  <span class="overlay">
-                    <span class="title">주니어 Java 개발자를 위한 코스</span>
-
-                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button">
-                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
-
-                  <span class="overlay">
-                    <span class="title">주니어 Java 개발자를 위한 코스</span>
-
-                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                  </span>
-                </button>
-              </li>
-              <li>
-                <button class="button" type="button">
-                  <img class="thumbnail" src="./images/sample2.png" alt="주니어 Java 개발자를 위한 코스 포트폴리오 대표 이미지">
-
-                  <span class="overlay">
-                    <span class="title">주니어 Java 개발자를 위한 코스</span>
-
-                    <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                  </span>
-                </button>
-              </li>
-            </ul>
+            <ul id="fetch-portfolio"></ul>
           </div>
         </div>
       </section>
@@ -155,36 +99,30 @@
     </footer>
   </div>
 
-  <div id="modal">
+  <div id="modal" aria-hidden="true">
     <div class="inner">
-      <button class="close" type="button" aria-label="모달 닫기">
+      <button class="close" type="button" aria-label="모달 닫기" onclick="modalClose();" autofocus>
         <img src="./svgs/close.svg" alt="닫기 아이콘">
       </button>
 
-      <div class="thumbnail">
-        <img src="./images/sample.jpg" alt="OOO 프로젝트 대표 이미지">
-      </div>
+      <div class="thumbnail"></div>
 
       <div class="content">
         <div class="head">
-          <div class="title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.</div>
+          <div class="title"></div>
 
           <div class="info languages">
             <img src="./svgs/terminal.svg" alt="터미널 아이콘">
-            HTML, CSS, JavaScript, jQuery, PHP, MySQL
+            <span></span>
           </div>
 
           <div class="info date">
             <img src="./svgs/calendar_today.svg" alt="날짜 아이콘">
-            2019.01 ~ 2019.02
+            <span></span>
           </div>
         </div>
 
-        <div class="body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus eos quia architecto, eum placeat quaerat, sunt minus quam sed culpa pariatur sapiente maxime eius recusandae quas error sint harum accusamus.
-        </div>
+        <div class="body"></div>
       </div>
     </div>
   </div>
@@ -235,7 +173,68 @@
         timelineLists.innerHTML = item;
       });
 
+    // 포트폴리오 통신
+    fetch('./json/portfolio.json')
+      .then(response => response.json())
+      .then(data => {
+        const timelineLists = document.querySelector('#fetch-portfolio');
+        const item = data.map((item) => {
+          return `<li>
+                    <button class="button" type="button" data-item-detail='${JSON.stringify(item)}'
+                      onclick="modalOpen(this);">
+                      <img class="thumbnail" src="${item.thumbnail}" alt="${item.title} 포트폴리오 대표 이미지">
+
+                      <span class="overlay">
+                        <span class="title">${item.title}</span>
+
+                        <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
+                      </span>
+                    </button>
+                  </li>`
+        }).join('');
+        timelineLists.innerHTML = item;
+      });
+
     // 모달 액션
+    function modalOpen(button) {
+      // 모달 영역 가져오기
+      const modal = document.querySelector('#modal');
+      const thumbnail = modal.querySelector('.thumbnail');
+      const title = modal.querySelector('.title');
+      const languages = modal.querySelector('.languages span');
+      const date = modal.querySelector('.date span');
+      const body = modal.querySelector('.body');
+
+      // 포트폴리오 데이터 가져오기
+      const item = JSON.parse(button.dataset.itemDetail);
+
+      // 부모 스크롤 잠그기
+      document.documentElement.classList.add('scroll-lock');
+
+      // 모달에 데이터 넣기
+      thumbnail.innerHTML = `<img src="${item.thumbnail}" alt="${item.title} 포트폴리오 대표 이미지">`;
+      title.innerHTML = item.title;
+      languages.innerHTML = item.languages.map(item => item).join(', ');
+      date.innerHTML = item.date;
+      body.innerHTML = item.description;
+
+      // 모달 보이기
+      modal.style.display = 'flex';
+
+      // 포커스 이동
+      modal.querySelector('[autofocus]').focus();
+    }
+
+    function modalClose() {
+      // 모달 영역 가져오기
+      const modal = document.querySelector('#modal');
+
+      // 모달 닫기
+      modal.style.display = 'none';
+
+      // 부모 스크롤 허용
+      document.documentElement.classList.remove('scroll-lock');
+    }
   </script>
 </body>
 </html>

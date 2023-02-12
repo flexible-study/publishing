@@ -6,7 +6,7 @@
     "languages": [
       "HTML", "CSS", "JavaScript", "jQuery", "PHP", "MySQL"
     ],
-    "description": "프로젝트 설명"
+    "description": "프로젝트 설명\n줄바꿈은?"
   },
   {
     "title": "주니어 Java 개발자를 위한 코스",

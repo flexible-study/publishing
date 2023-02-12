@@ -45,6 +45,12 @@ button {
   }
 }
 
+html.scroll-lock,
+html.scroll-lock body {
+  overflow: hidden;
+}
+
+
 /* wrap */
 #wrap {
   display: flex;
@@ -52,6 +58,7 @@ button {
   min-height: 100vh;
   background-color: #fafafa;
 }
+
 
 /* header */
 #header {
@@ -613,17 +620,12 @@ button {
 
 
 /* modal */
-html,
-body {
-  overflow: hidden;
-}
-
 #modal {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
-  display: flex;
+  display: none;
   justify-content: center;
   padding: 60px 32px;
   width: 100%;
@@ -702,6 +704,7 @@ body {
   padding: 16px;
   font-size: 14px;
   line-height: 160%;
+  white-space: pre-line;
 }
 
 @media (max-width: 1023px) {
