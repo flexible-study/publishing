@@ -29,8 +29,8 @@
           <ul>
             <li><button class="tab-button" data-tab="about" type="button">About</button></li>
             <li><button class="tab-button" data-tab="timeline" type="button">Timeline</button></li>
-            <li class="active"><button class="tab-button" data-tab="portfolio" type="button">Portfolio</button></li>
-            <li><button class="tab-button" data-tab="contact" type="button">Contact</button></li>
+            <li><button class="tab-button" data-tab="portfolio" type="button">Portfolio</button></li>
+            <li class="active"><button class="tab-button" data-tab="contact" type="button">Contact</button></li>
           </ul>
         </div>
       </div>
@@ -75,7 +75,7 @@
         </div>
       </section>
 
-      <section class="tab-content portfolio active">
+      <section class="tab-content portfolio">
         <div class="container">
           <div class="title-block">
             <small class="subtitle">Portfilio</small>
@@ -84,6 +84,74 @@
 
           <div class="content-block">
             <ul id="fetch-portfolio"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content contact active">
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Get in Touch</small>
+            <h2 class="title">연락하기</h2>
+          </div>
+
+          <div class="content-block">
+            <div class="infomation">
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/mail.svg" alt="이메일 아이콘">
+                </div>
+                <div class="value"><a href="mailto:kty0529@gmail.com">kty0529@gmail.com</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/phone_enabled.svg" alt="전화기 아이콘">
+                </div>
+                <div class="value"><a href="tel:010-6512-5882">010-6512-5882</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/github.svg" alt="Github 아이콘">
+                </div>
+                <div class="value"><a href="https://github.com/kty0529" target="_blank">https://github.com/kty0529</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/location_on.svg" alt="위치 아이콘">
+                </div>
+                <div class="value">서울시 관악구</div>
+              </div>
+            </div>
+
+            <div class="form">
+              <form novalidate onsubmit="return sendEmail(this);">
+                <div class="row name-row">
+                  <input class="comm" name="Name" type="text" placeholder="Name" required>
+                </div>
+
+                <div class="row email-row">
+                  <input class="comm" name="Email" type="email" placeholder="Email" required>
+                </div>
+
+                <div class="row message-row">
+                  <textarea class="comm" name="Message" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="row button-row">
+                  <button type="submit">
+                    Submit
+                    <img src="./svgs/arrow_forward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </button>
+                </div>
+              </form>
+
+              <div class="icon">
+                <img src="./svgs/local_post_office.svg" alt="우체통 아이콘" aria-hidden="true">
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -127,114 +195,6 @@
     </div>
   </div>
 
-  <script>
-    // 모바일 사이드바 토글
-    document.querySelector('.toggle-sidebar').addEventListener('click', () => {
-      document.documentElement.classList.toggle('sidebar-active');
-    });
-
-    // 탭 기능
-    const wrap = document.querySelector('#wrap');
-    const tabButtons = wrap.querySelectorAll('.navigation [data-tab]');
-
-    tabButtons.forEach((button, index) => {
-      button.addEventListener('click', () => {
-        // 불필요한 실행 방지를 위한 active 체크
-        if ( ! button.parentNode.classList.contains('active') ) {
-          const tabId = button.dataset.tab;
-
-          button.parentNode.parentNode.querySelector('.active').classList.remove('active');
-          button.parentNode.classList.add('active');
-
-          wrap.querySelector('#main .tab-content.active').classList.remove('active');
-          wrap.querySelector(`#main .${tabId}`).classList.add('active');
-        }
-
-        if ( document.documentElement.classList.contains('sidebar-active') ) {
-          document.documentElement.classList.remove('sidebar-active')
-        }
-      })
-    });
-
-    // 타임라인 통신
-    fetch('./json/timeline.json')
-      .then(response => response.json())
-      .then(data => {
-        const timelineLists = document.querySelector('#fetch-timeline');
-        const item = data.map((item) => {
-          return `<li>
-                    <div class="date">${item.period}</div>
-                    <div class="content">
-                      <h3 class="title">${item.title}</h3>
-                      <p class="description">${item.description}</p>
-                    </div>
-                  </li>`
-        }).join('');
-        timelineLists.innerHTML = item;
-      });
-
-    // 포트폴리오 통신
-    fetch('./json/portfolio.json')
-      .then(response => response.json())
-      .then(data => {
-        const timelineLists = document.querySelector('#fetch-portfolio');
-        const item = data.map((item) => {
-          return `<li>
-                    <button class="button" type="button" data-item-detail='${JSON.stringify(item)}'
-                      onclick="modalOpen(this);">
-                      <img class="thumbnail" src="${item.thumbnail}" alt="${item.title} 포트폴리오 대표 이미지">
-
-                      <span class="overlay">
-                        <span class="title">${item.title}</span>
-
-                        <img class="arrow" src="./svgs/arrow_outward.svg" alt="화살표 아이콘" aria-hidden="true">
-                      </span>
-                    </button>
-                  </li>`
-        }).join('');
-        timelineLists.innerHTML = item;
-      });
-
-    // 모달 액션
-    function modalOpen(button) {
-      // 모달 영역 가져오기
-      const modal = document.querySelector('#modal');
-      const thumbnail = modal.querySelector('.thumbnail');
-      const title = modal.querySelector('.title');
-      const languages = modal.querySelector('.languages span');
-      const date = modal.querySelector('.date span');
-      const body = modal.querySelector('.body');
-
-      // 포트폴리오 데이터 가져오기
-      const item = JSON.parse(button.dataset.itemDetail);
-
-      // 부모 스크롤 잠그기
-      document.documentElement.classList.add('scroll-lock');
-
-      // 모달에 데이터 넣기
-      thumbnail.innerHTML = `<img src="${item.thumbnail}" alt="${item.title} 포트폴리오 대표 이미지">`;
-      title.innerHTML = item.title;
-      languages.innerHTML = item.languages.map(item => item).join(', ');
-      date.innerHTML = item.date;
-      body.innerHTML = item.description;
-
-      // 모달 보이기
-      modal.style.display = 'flex';
-
-      // 포커스 이동
-      modal.querySelector('[autofocus]').focus();
-    }
-
-    function modalClose() {
-      // 모달 영역 가져오기
-      const modal = document.querySelector('#modal');
-
-      // 모달 닫기
-      modal.style.display = 'none';
-
-      // 부모 스크롤 허용
-      document.documentElement.classList.remove('scroll-lock');
-    }
-  </script>
+  <script src="./javascript/core-footer.js"></script>
 </body>
 </html>
