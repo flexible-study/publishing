@@ -206,21 +206,21 @@
 								class="user-info-box__icon"
 								src="../week2_mission/assets/images/icon/mail.svg"
 							/>
-							<h3 class="user-info-box__text user-info-box__text--underline">kty0529@gmail.com</h3>
+							<h3 class="user-info-box__text user-info-box__text--underline">test@gmail.com</h3>
 						</div>
 						<div class="user-info-box">
 							<img
 								class="user-info-box__icon"
 								src="../week2_mission/assets/images/icon/phone_enabled.svg"
 							/>
-							<h3 class="user-info-box__text user-info-box__text--underline">010-6512-5882</h3>
+							<h3 class="user-info-box__text user-info-box__text--underline"><a href="tel:010-1234-5678">010-1234-5678</a></h3>
 						</div>
 						<div class="user-info-box">
 							<img
 								class="user-info-box__icon"
 								src="../week2_mission/assets/images/icon/Frame.svg"
 							/>
-							<h3 class="user-info-box__text user-info-box__text--underline">https://github.com/kty0529</h3>
+							<h3 class="user-info-box__text user-info-box__text--underline"><a href="https://github.com/test11" target="_blank">https://github.com/test11</a></h3>
 						</div>
 						<div class="user-info-box">
 							<img
@@ -233,12 +233,31 @@
 
 					<div class="form-data-info">
 						<form class="form-box">
-							<input class="form-box__input-name"/>
-							<input class="form-box__input-email"/>
-							<textarea class="form-box__textarea"></textarea>
-							<button class="form-box__submit"></button>
+							<input 
+								class="form-box__input form-box__input--name" 
+								placeholder="NAME"
+								onchange="handleChangeInput(event)"
+							/>
+							<input 
+								class="form-box__input form-box__input--email"
+								placeholder="EMAIL"
+								onchange="handleChangeInput(event)"
+							/>
+							<textarea
+								name="MESSAGE"
+								class="form-box__textarea"
+								placeholder="MESSAGE"
+								onchange="handleChangeInput(event)"
+							></textarea>
+							<button type="button" class="form-box__submit" onclick="handleClickSubmit()">
+								<h3 class="form-box__submit-text">SUBMIT</h3>
+								<img 
+									class="form-box__submit-img"
+									src="../week2_mission/assets/images/icon/arrow_forward.svg" 
+								/>
+							</button>
 							<div class="mail-icon-box">
-								<img/>
+								<img src="../week2_mission/assets/images/icon/local_post_office.svg"/>
 							</div>
 						</form>
 					</div>
@@ -287,6 +306,26 @@
 					TIMELINE
 				</h2>
 			</button>
+			<button 
+				class="navigation-mobile__box"
+				onClick="handleClickNavigationMobile(event)"
+			>
+				<h2 
+					class="navigation-mobile__text navigation-mobile__text--timeline"
+				>
+					PORTFOLIO
+				</h2>
+			</button>
+			<button 
+				class="navigation-mobile__box"
+				onClick="handleClickNavigationMobile(event)"
+			>
+				<h2 
+					class="navigation-mobile__text navigation-mobile__text--timeline"
+				>
+					CONTACT
+				</h2>
+			</button>
 		</nav>
 
 	</div>
@@ -304,23 +343,60 @@
 		if (classList && classList.length === 2) {
 
 			const isClickAbout = target.innerText.toUpperCase().indexOf('ABOUT') >= 0;
+			const isClickTimeLine = target.innerText.toUpperCase().indexOf('TIMELINE') >= 0;
+			const isClickPortFolio = target.innerText.toUpperCase().indexOf('PORTFOLIO') >= 0;
+
 			classList.add('navigation-mobile__text--bold');
 
 			if (isClickAbout) {
 				document.getElementsByClassName('navigation-mobile__text')[1].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[2].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[3].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('main')[0].style.display = 'flex';
+
 				document.getElementsByClassName('about-container')[0].style.display = 'flex';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'none';
 				document.getElementsByClassName('main')[0].classList.remove('main-no-background');
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
+				document.getElementsByClassName('contact-main')[0].style.display = 'none';
 
-			} else {
+			} else if (isClickTimeLine) {
 				document.getElementsByClassName('navigation-mobile__text')[0].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[2].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[3].classList.remove('navigation-mobile__text--bold');
+
+				document.getElementsByClassName('main')[0].style.display = 'flex';
+
 				document.getElementsByClassName('about-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
+				document.getElementsByClassName('contact-main')[0].style.display = 'none';
 
-				// if (document.getElementsByClassName('box')[0].clientWidth <= 320) {
-				// 	document.getElementsByClassName('box')[0].style.height = '1056px';
-				// }
+			} else if (isClickPortFolio) {
+				document.getElementsByClassName('navigation-mobile__text')[0].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[1].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[3].classList.remove('navigation-mobile__text--bold');
+				
+				document.getElementsByClassName('main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'flex';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'flex';
+				document.getElementsByClassName('contact-main')[0].style.display = 'none';
+
+			} else {
+
+				document.getElementsByClassName('main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'none';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
+
+				document.getElementsByClassName('contact-main')[0].style.display = 'flex';
+
+				document.getElementsByClassName('navigation-mobile__text')[0].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[1].classList.remove('navigation-mobile__text--bold');
+				document.getElementsByClassName('navigation-mobile__text')[2].classList.remove('navigation-mobile__text--bold');
+				
 			}
 		}
 	}
@@ -375,6 +451,12 @@
 			} else if (isClickTimeLine) {
 				classList.add('navigation__text--timeline');
 				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[2].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[3].classList = ['navigation__text'];
+
+				document.getElementsByClassName('main')[0].style.display = 'flex';
+				document.getElementsByClassName('portfolio-main')[0].style.display = 'none';
+				document.getElementsByClassName('contact-main')[0].style.display = 'none';
 				document.getElementsByClassName('about-container')[0].style.display = 'none';
 				document.getElementsByClassName('portfolio-container')[0].style.display = 'none';
 				document.getElementsByClassName('timeline-container')[0].style.display = 'flex';
@@ -382,8 +464,11 @@
 			} else if (isClickPortFolio) {
 				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
 				document.getElementsByClassName('navigation__text')[1].classList = ['navigation__text'];
+				document.getElementsByClassName('navigation__text')[3].classList = ['navigation__text'];
 				document.getElementsByClassName('main')[0].style.display = 'none';
 				document.getElementsByClassName('portfolio-main')[0].style.display = 'flex';
+				document.getElementsByClassName('portfolio-container')[0].style.display = 'flex';
+				document.getElementsByClassName('contact-main')[0].style.display = 'none';
 				document.getElementsByClassName('main')[0].classList.add('main-no-background');
 			} else {
 				document.getElementsByClassName('navigation__text')[0].classList = ['navigation__text'];
@@ -438,7 +523,7 @@
 
       });
 
-		fetch('http://127.0.0.1:5555/3기/KimtaekJu/week2_mission/assets/json/portfolio.json')
+		fetch('http://127.0.0.1:5500/3기/KimtaekJu/week2_mission/assets/json/portfolio.json')
 		.then(response => response.json())
 		.then(data => {
 				portfolioItemList = data;
@@ -473,6 +558,45 @@
 		document.getElementsByClassName("modal")[0].classList.remove('modal--open');
 		document.documentElement.classList.remove('scroll-lock');
 		lastFocus.focus();
+	}
+
+	const handleClickSubmit = function () {
+		console.log('클릭');
+		const inputElementList = document.getElementsByClassName("form-box__input");
+		const textareaElement = document.getElementsByClassName("form-box__textarea")[0];
+
+		if (inputElementList[0].innerHTML === '') {
+			inputElementList[0].classList.add("form-box__input--border");
+			inputElementList[0].classList.add("form-box__input-placeholder--color");
+		}
+
+		if (inputElementList[1].innerHTML === '') {
+			inputElementList[1].classList.add("form-box__input--border");
+			inputElementList[1].classList.add("form-box__input-placeholder--color");
+		}
+
+		if (textareaElement.innerHTML === '') {
+			textareaElement.classList.add("form-box__textarea--border");
+			textareaElement.classList.add("form-box__textarea-placeholder--color");
+		}
+
+	}
+
+	const handleChangeInput = function (event) {
+
+		const inputElementList = document.getElementsByClassName("form-box__input");
+		const textareaElement = document.getElementsByClassName("form-box__textarea")[0];
+
+		if (event.target.placeholder === 'MESSAGE') {
+			event.target.classList.remove("form-box__textarea-placeholder--color");
+			event.target.classList.remove("form-box__textarea--border");
+		} else if (event.target.placeholder === 'NAME') {
+			event.target.classList.remove("form-box__input-placeholder--color");
+			event.target.classList.remove("form-box__input--border");
+		} else {
+			event.target.classList.remove("form-box__input-placeholder--color");
+			event.target.classList.remove("form-box__input--border");
+		}
 	}
   </script>
 </body>
