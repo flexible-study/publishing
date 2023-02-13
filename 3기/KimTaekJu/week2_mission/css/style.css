@@ -1429,7 +1429,6 @@ h2, h3, h4 {
   }
 }
 .box .contact-main .contact-container {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
 }
@@ -1545,7 +1544,6 @@ h2, h3, h4 {
   }
 }
 .box .contact-main .contact-container .form-container {
-  border: 1px solid green;
   display: flex;
   flex-direction: column;
 }
@@ -1572,7 +1570,6 @@ h2, h3, h4 {
 }
 .box .contact-main .contact-container .form-container .form-user-info {
   display: grid;
-  border: 1px solid blue;
 }
 @media (min-width: 320px) {
   .box .contact-main .contact-container .form-container .form-user-info {
@@ -1676,9 +1673,6 @@ h2, h3, h4 {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
 }
-.box .contact-main .contact-container .form-container .form-data-info {
-  border: 1px solid palevioletred;
-}
 @media (min-width: 320px) {
   .box .contact-main .contact-container .form-container .form-data-info {
     padding: 0px;
@@ -1704,7 +1698,6 @@ h2, h3, h4 {
   }
 }
 .box .contact-main .contact-container .form-container .form-data-info .form-box {
-  border: 1px solid purple;
   height: 100%;
   gap: 16px;
   position: relative;
