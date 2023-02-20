@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission01</title>
+
+  <!-- core -->
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="script/jquery-1.12.3.js"></script>
+  <script src="script/index.js"></script>
+</head>
+
+<body>
+  <!--
+    아래 구조를 각각의 의미에 맞게 시멘틱 마크업으로 변경하고
+    문서화 구조를 지킬 수 있게 헤딩 태그를 맞춰가며 미션을 진행해주세요!
+  -->
+    <div id="l_wrapper">
+        <header id="header">
+            <div id="wrap">
+                 
+                  <h1 class="title">NEOMI.SEO</h1>
+                      </div>
+                  <nav id="navigation">
+                       <div id="n_wrapper">
+                        <button type="button" id="nav_btn">탭 네비게이션
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <ul id="gnb">
+                           <li><a href="#">ABOUT</a></li>
+                           <li><a href="#">TIMELINE</a></li>
+                        </ul>
+                        </div>
+                  </nav>
+ 
+        </header>
+
+        <main id="main">
+                <div class="about">
+                    <div class="about_contents">
+                          <div id="wrap">
+                              <div class="about_text">
+                                   <h2>I'm <span class="main_h2_color">Web Publisher</span></h2>
+                                    <p>안녕하세요.<br>웹퍼블리셔 서너미입니다.</p>
+                              </div>
+                                <ul class="about_language">
+                                    <li><img src="images/icon_html.png" alt=""></li>
+                                    <li><img src="images/icon_css.png" alt=""></li>
+                                    <li><img src="images/icon_js.png" alt=""></li>
+                                    <li><img src="images/icon_jquery.png" alt=""></li>
+                                    <li><img src="images/icon_figma.png" alt=""></li>
+                                    <li><img src="images/icon_psd.png" alt=""></li>
+                                    <li><img src="images/icon_ai.png" alt=""></li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline">
+                    <div id="wrap">
+                        <div class="timeline_headtext">
+                            <h2>TIMELINE</h2>
+                            <p class="timeline_head">지나온 길</p>
+                        </div>
+                        <ol id="timeline_area">
+<!--
+                            <li id="timeline_list">
+                               <h4 class="title"></h4>
+                                <span class="period"></span>
+                                <div class="description"></div>
+                            </li>
+-->
+                        </ol>
+                    </div>
+                </div>
+        </main>
+
+        <footer id="footer">
+            <div id="wrap">
+                <p class="footer_pctab">Copyright 2023</p>
+                <p class="footer_pctab footer_bold">Neomi.seo</p>
+                <p class="footer_pctab">Allrights Reserved.</p>
+                <p class="footer_mobile">ⓒ Neomi.seo</p>
+            </div>
+        </footer>
+    </div>
+    
+    <script>
+        
+        fetch('./json/timeline.json')
+          .then((response) => response.json())
+          .then((result) => {
+            // result 순서 내림차순으로 변경
+            result = result.reverse()
+
+            // 빈 변수 생성해서 아이템 추가
+            let listItem = '';
+
+            result.forEach((element, index) => {
+              listItem += `<li id="timeline_list${index + 1}">
+                                <span class="period">${element.period}</span>
+                                <div class="timeline_cont">
+                              <h4 class="title">${element.title}</h4>
+                                <p class="description">${element.description}</p>
+                                </div>
+                          </li>`;
+            });
+
+            const timelineListArea = document.querySelector('#timeline_area');
+            timelineListArea.innerHTML = listItem;
+          });
+    
+    </script>
+
+</body>
+</html>

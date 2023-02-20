@@ -1,0 +1,393 @@
+/*추가 기본 설정*/
+
+
+button{
+    border: 0;
+    background-color: inherit;
+}
+
+input, button, textarea, select {
+  font-family: inherit;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+form fieldset:not(:first-child) {
+  margin-top: 100px;
+}
+
+form fieldset legend {
+  margin-bottom: 20px;
+}
+
+form fieldset[disabled] {
+  opacity: 0.5;
+  /* user-select: none; */
+  /* pointer-events: none; */
+  /* touch-action: none; */
+}
+
+
+
+/*모바일*/
+/*메인 영역*/
+
+#portfolio_area{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+}
+
+.portfolio_item{
+    position: relative;
+    width: 100%;
+}
+
+.portfolio_item::after{
+    display: block;
+    content: '';
+    padding-bottom: 100%;
+}
+
+.portfolio_img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+}
+
+.portfolio_detail{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 800;
+    padding: 30px 0;
+}
+
+/*  스크립트가 안먹혀서... */
+#portfolio_area>li:last-child>.portfolio_detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.portfolio_detail.open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+/*  스트림트 안 먹혀서 li 부모에 클래스 줘본 설정 */
+.portfolio_item.open>.portfolio_detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.portfolio_detail_area{
+    width: 90%;
+    background-color: white;
+    position: relative;
+}
+
+.close_btn{
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+.close_btn span{
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #2d3436;
+}
+
+.close_btn span:first-child{
+    transform: translateX(0px) translateY(2px) rotate(45deg);
+}
+.close_btn span:last-child{
+    transform: translateX(0px) translateY(0px) rotate(-45deg);
+}
+
+.close_btn:hover span{
+    background-color: #e0749d;
+}
+
+
+.portfolio_detail_top{
+    width: 100%;
+    background-color: #fafafa;
+    display: flex;
+    flex-flow: column;
+    padding: 16px;
+    gap: 8px;
+}
+
+.portfolio_detail_img{
+    display: none;
+}
+
+.portfolio_detail_top h3{
+    width: 90%;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+.portfolio_detail_top ul{
+    display: flex;
+    flex-flow: column;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #636E72;
+    line-height: 160%;
+}
+
+.portfolio_detail_bottom{
+    width: 100%;
+    background-color: white;
+    padding: 16px 16px 32px;
+    font-size: 14px;
+    line-height: 160%;
+}
+
+
+
+#contact_area{
+    gap: 16px;
+}
+
+.contact_info{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+}
+
+
+/* 이메일주소나 링크 주소가 길 경우를 대비해서 박스 사이즈를 고정하지 않았고, 패딩으로 간격을 띄워주었습니다. */
+
+.contact_info li{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 24px;
+    background-color: white;
+}
+
+.contact_info li img{
+    width: 20px;
+}
+
+.contact_info li a{
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: #636E72;
+}
+
+.contact_info li a.underline{
+    text-decoration: underline;
+}
+
+.contact_form{
+    width: 100%;
+}
+
+.form_area{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+
+.form_list{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: 16px;
+    margin-block-end: 0;
+}
+
+.form_list li{
+    width: 100%;
+}
+
+.form_list li input, .form_list li textarea, .form_area button{
+    width: 100%;
+}
+
+.form_list li input, .form_list li textarea{
+    font-size: 16px;
+    color: #636E72;
+    border: 1px solid #DFE4EA;
+    padding: 17px 16px;
+}
+
+.form_list li input::placeholder, .form_list li textarea::placeholder{
+    opacity: 0.5;
+}
+
+.form_list li textarea{
+    min-height: 228px;
+    resize: vertical;
+}
+
+.form_area button{
+    height: 60px;
+    background-color: #636e72;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+
+.form_area button:hover{
+    background-color: #E0749D;
+}
+
+.formimg{
+    display: none;
+}
+
+
+
+
+/*태블릿*/
+
+@media all and (min-width: 768px){
+    #portfolio_area{
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+    
+    .portfolio_detail_area{
+        max-height: 560px;
+        padding: 32px;
+        display: flex;
+        gap: 16px;
+    }
+    
+    .p_img_area{
+        width: 45%;
+        height: 100%;
+        overflow: auto;
+    }
+    
+/*  모달 내 콘텐츠가 스크롤되는 게 아니라 모달 전체가 스크롤되게 해달라 하셨는데,
+    제 콘텐츠의 이미지가 너무 크다보니 모달의 중앙 정렬이 의미가 없어져버려서
+    그럴 바에는 모달 내 콘텐츠가 스크롤 되는 것이 더 예쁘겠다 싶어서 아래 웹킷을
+    추가했습니다.  */
+    
+    .p_img_area::-webkit-scrollbar {
+        width: 15px;
+    }
+    
+    .p_img_area::-webkit-scrollbar-thumb{
+        background-color: #2d3436;;
+        cursor: pointer;
+    }
+    
+    .p_img_area::-webkit-scrollbar-track{
+        background-color: #d8d8d8;
+    }
+    
+    .portfolio_detail_img{
+        display: block;
+        width: 100%;
+    }
+    
+    .portfolio_detail_text{
+        width: 55%;
+    }
+    
+    .portfolio_detail_text .title{
+        width: 100%;
+    }
+    
+    .contact_info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact_info li{
+        padding: 40.5px;
+    }
+    
+    .contact_info li a{
+        font-size: 18px;
+    }
+}
+
+
+
+/*데스크탑*/
+
+@media all and (min-width: 1024px){
+    #portfolio_area{
+        grid-template-columns: repeat(3, 300px);
+        justify-content: center;
+    }
+    
+    .portfolio_detail_area{
+        max-height: 630px;
+    }
+    
+    .contact_info{
+        display: flex;
+        flex-flow: row;
+    }
+    
+    .contact_info li{
+        width: 25%;
+/*      여기서 갑자기 Email 부분 내용은 왜 넘칠까요...? 박스사이징이 되지 않고..  */
+    }
+    .contact_form{
+        display: grid;
+        grid-template-columns: auto 450px;
+    }
+    
+    .formimg_box{
+        width: 450px;
+        height: 450px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .formimg{
+        display: block;
+        width: 80px;
+    }
+    
+    
+}
