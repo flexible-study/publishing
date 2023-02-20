@@ -1,0 +1,582 @@
+@import './device.scss';
+
+@mixin portfolio-container {
+
+    h2, h3, h4 {
+        margin: 0;
+        margin-block: 0;
+        margin-inline: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    @include mobile {
+        width: 320px;
+        height: 1900px;
+        gap: 32px;
+        padding: 0px 16px;
+    }
+
+    @include tablet {
+        width: 704px;
+        height: 1156px;
+        gap: 32px;
+        padding: 0px;
+    }
+
+    @include desktop {
+        width: 1200px;
+        height: 719px;
+        gap: 32px;
+        padding: 0px;
+    }
+
+    &__title {
+
+        @include mobile {
+            width: 288px;
+            height: 60px;
+            padding: 0px;
+        }
+
+        @include tablet {
+            width: 704px;
+            height: 60px;
+            padding: 0px;            
+        }
+
+        @include desktop {
+            width: 1200px;
+            height: 71px;
+            padding: 0px;
+        }
+    }
+
+    &__sub-title {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 160%;
+        /* identical to box height, or 26px */
+
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        /* Coral */
+
+        color: #FF7F50;
+    }
+
+    &__main-title {
+        font-family: 'Pretendard';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 160%;
+        /* identical to box height, or 45px */
+
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        /* primary */
+
+        color: #2D3436;
+
+    }
+
+    .portfolio-section {
+
+        @include mobile {
+            width: 288px;
+            height: 1808px;
+            padding: 0px;
+            gap: 16px;
+        }
+
+        @include tablet {
+            width: 704px;
+            height: 1064px;
+            padding: 0px;
+            gap: 16px;
+        }
+
+        @include desktop {
+            width: 1200px;
+            height: 616px;
+            padding: 0px;
+            gap: 16px;
+        }
+
+        .portfolio-layout {
+            
+            gap: 16px;
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                padding: 0px;
+            }
+
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(2, 344px);
+                grid-auto-rows: 344px;
+                padding: 0px;
+            }
+
+            @include desktop {
+                display: grid;
+                grid-template-columns: repeat(3, 300px);
+                grid-auto-rows: 300px;
+                padding: 0px 134px;
+            }
+
+            &__img {
+
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @include mobile {
+                    width: 288px;
+                    height: 288px;
+
+                    &--item1 {
+                        background-image: url('../assets/images/portfolio/mobile/item1.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item1.webp')) {
+                            background-image: url('../assets/images/portfolio/mobile/item1.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item1.avif')) {
+                            background-image: url('../assets/images/portfolio/mobile/item1.avif')
+                        }
+                    }
+
+                    &--item2 {
+                        background-image: url('../assets/images/portfolio/mobile/item2.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item2.webp')) {
+                            background-image: url('../assets/images/portfolio/mobile/item2.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item2.avif')) {
+                            background-image: url('../assets/images/portfolio/mobile/item2.avif')
+                        }
+                    }
+
+                    &--item3 {
+                        background-image: url('../assets/images/portfolio/mobile/item3.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item3.webp')) {
+                            background-image: url('../assets/images/portfolio/mobile/item3.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item3.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item3.avif')
+                        }
+                    }
+
+                    &--item4 {
+                        background-image: url('../assets/images/portfolio/mobile/item4.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item4.webp')) {
+                            background-image: url('../assets/images/portfolio/mobile/item4.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item4.avif')) {
+                            background-image: url('../assets/images/portfolio/mobile/item4.avif')
+                        }
+                    }
+
+                    &--item5 {
+                        background-image: url('../assets/images/portfolio/mobile/item5.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item5.webp')) {
+                            background-image: url('../assets/images/portfolio/mobile/item5.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/mobile/item5.avif')) {
+                            background-image: url('../assets/images/portfolio/mobile/item5.avif')
+                        }
+                    }
+                }
+
+                @include tablet {
+                    width: 344px;
+                    height: 344px;
+
+                    &--item1 {
+                        background-image: url('../assets/images/portfolio/tablet/item1.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item1.webp')) {
+                            background-image: url('../assets/images/portfolio/tablet/item1.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item1.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item1.avif')
+                        }
+                    }
+
+                    &--item2 {
+                        background-image: url('../assets/images/portfolio/tablet/item2.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item2.webp')) {
+                            background-image: url('../assets/images/portfolio/tablet/item2.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item2.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item2.avif')
+                        }
+                    }
+
+                    &--item3 {
+                        background-image: url('../assets/images/portfolio/tablet/item3.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item3.webp')) {
+                            background-image: url('../assets/images/portfolio/tablet/item3.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item3.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item3.avif')
+                        }
+                    }
+
+                    &--item4 {
+                        background-image: url('../assets/images/portfolio/tablet/item4.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item4.webp')) {
+                            background-image: url('../assets/images/portfolio/tablet/item4.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item4.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item4.avif')
+                        }
+                    }
+
+                    &--item5 {
+                        background-image: url('../assets/images/portfolio/tablet/item5.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item5.webp')) {
+                            background-image: url('../assets/images/portfolio/tablet/item5.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/tablet/item5.avif')) {
+                            background-image: url('../assets/images/portfolio/tablet/item5.avif')
+                        }
+                    }
+                }
+
+                @include desktop {
+                    width: 300px;
+                    height: 300px;
+
+                    &--item1 {
+                        background-image: url('../assets/images/portfolio/pc/item1.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item1.webp')) {
+                            background-image: url('../assets/images/portfolio/pc/item1.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item1.avif')) {
+                            background-image: url('../assets/images/portfolio/pc/item1.avif')
+                        }
+                    }
+
+                    &--item2 {
+                        background-image: url('../assets/images/portfolio/pc/item2.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item2.webp')) {
+                            background-image: url('../assets/images/portfolio/pc/item2.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item2.avif')) {
+                            background-image: url('../assets/images/portfolio/pc/item2.avif')
+                        }
+                    }
+
+                    &--item3 {
+                        background-image: url('../assets/images/portfolio/pc/item3.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item3.webp')) {
+                            background-image: url('../assets/images/portfolio/pc/item3.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item3.avif')) {
+                            background-image: url('../assets/images/portfolio/pc/item3.avif')
+                        }
+                    }
+
+                    &--item4 {
+                        background-image: url('../assets/images/portfolio/pc/item4.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item4.webp')) {
+                            background-image: url('../assets/images/portfolio/pc/item4.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item4.avif')) {
+                            background-image: url('../assets/images/portfolio/pc/item4.avif')
+                        }
+                    }
+
+                    &--item5 {
+                        background-image: url('../assets/images/portfolio/pc/item5.png');
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item5.webp')) {
+                            background-image: url('../assets/images/portfolio/pc/item5.webp')
+                        }
+    
+                        @supports (background-image: url('../assets/images/portfolio/pc/item5.avif')) {
+                            background-image: url('../assets/images/portfolio/pc/item5.avif')
+                        }
+                    }
+                }
+            }
+
+            @for $i from 1 to 6 {
+
+                &__img--item#{$i}:hover {
+                    cursor: pointer;
+                    background-color: red;
+                    .portfolio-layout__img-modal-#{$i} {
+                        display: block;
+                    }
+                }
+            }
+
+            @for $i from 1 to 6 {
+                &__img-modal-#{$i} {
+                    display: none;
+                    @include mobile {
+                        width: 256px;
+                        height: 256px;
+                    }
+
+                    @include tablet {
+                        width: 312px;
+                        height: 312px;
+                    }
+
+                    @include desktop {
+                        width: 268px;
+                        height: 268px;
+                    }
+                    opacity: 0.95;
+                    position: absolute;
+                    background-image: url('../assets/images/portfolio/hover.png');
+                }
+            }
+        }
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 64px 32px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        overflow-y: auto;
+        z-index: 1000;
+
+        &--open {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &-wrapper {
+            position: relative;
+            
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            overflow-y: scroll;
+    
+            @include mobile {
+                max-width: 288px;
+                max-height: 401px;
+                padding: 0px 0px 32px;
+            }
+    
+            @include tablet {
+                max-width: 704px;
+                max-height: 534px;
+                padding: 32px;
+            }
+    
+            @include desktop {
+                max-width: 800px;
+                max-height: 628px;
+                padding: 32px;
+            }
+    
+            width: 100%;
+            min-height: 350px;
+            background-color: #fff;
+            border-radius: 4px;
+          
+            /*
+              양이 많아 늘어나고 부모의 height 100% 제한으로 인해
+              하단 기준으로 보여져서 상단이 잘리는 콘텐츠를
+              정상적으로 스크롤 범위 안으로 들어오게 처리
+            */
+            // align-self: flex-start;
+
+            &__portfolio-img {
+
+                @include mobile {
+                    display: none;
+                }
+
+                @include tablet {
+                    display: block;
+                    width: 250px;
+                    height: 470px;
+                }
+
+                @include desktop {
+                    display: block;
+                    width: 300px;
+                    height: 564px;
+                }
+
+            }
+
+            .modal-content {
+
+                @include mobile {
+                    max-width: 288px;
+                }
+
+                @include tablet {
+                    max-width: 374px;
+                }
+
+                @include desktop {                    
+                    max-width: 420px;
+                }
+
+                height: 100%;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 0px;
+                gap: 16px;
+
+                .content-info {
+                    padding: 16px;
+
+                    &__title {
+                        padding: 0px;
+                        height: 29px;
+                    }
+
+                    &__infomation {
+                        padding: 0px;
+                        gap: 4px;
+                        height: 42px;
+                    }
+
+                    @include mobile {
+                        &__title {
+                            max-width: 216px;
+                        }
+
+                        &__infomation {
+                            max-width: 256px;
+                        }
+                    }
+                    @include tablet {
+                        &__title {
+                            max-width: 342px;
+                        }
+
+                        &__infomation {
+                            max-width: 342px;
+                        }
+                    }
+                    @include desktop {
+
+                        &__title {
+                            max-width: 388px;
+                        }
+
+                        &__infomation {
+                            max-width: 388px;
+                        }
+                    }
+
+                    &__title-font {
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 160%;
+                        /* identical to box height, or 29px */
+
+
+                        /* primary */
+
+                        color: #2D3436;
+                    }
+
+                    &__info-icon {
+                        display: inline-block;
+                    }
+
+                    &__info-text {
+                        display: inline-block;
+                        font-family: 'Inter';
+                        font-style: normal;
+                        font-weight: 700;
+                        font-size: 12px;
+                        line-height: 160%;
+
+                        color: #636E72;
+                    }
+                }
+
+                &__description {
+                    padding: 0px 16px;
+
+                    @include mobile {
+                        max-width: 288px;
+                    }
+
+                    @include tablet {
+                        max-width: 374px;
+                    }
+                    
+                    @include desktop {
+                        max-width: 420px;
+                    }
+                }
+            }
+        }
+
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            margin: 0;
+            padding: 0;
+            width: 26px;
+            height: 26px;
+            border: 0;
+            color: #2D3436;
+            background-color: rgb(255, 255, 255, 0.3);
+            cursor: pointer;
+        }
+    }
+
+}

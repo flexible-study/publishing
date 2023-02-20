@@ -1,0 +1,39 @@
+$desktop: 1024px;
+$tablet: 768px;
+$mobile: 320px;
+$mobile-height-402: 402px;
+$mobile-height-616: 616px;
+
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin mobile-height-402 {
+    @media (min-height: 402px) {
+        @content;
+    }
+}
+
+@mixin mobile-height-616 {
+    @media (min-height: 616px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin test {
+    
+}
