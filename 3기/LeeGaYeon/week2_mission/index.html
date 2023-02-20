@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mission02</title>
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./fonts/pretendard.css" />
+
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div id="wrap">
+      <header>
+        <h1>GAYEON</h1>
+
+        <nav>
+          <div class="header-btn">
+            <button class="about active" type="button">ABOUT</button>
+            <button class="timeline" type="button">TIMELINE</button>
+          </div>
+
+          <img class="menu-icon" src="./images/icons/menu.svg" width="24px" height="24px" />
+        </nav>
+      </header>
+
+      <main>
+        <article class="box tab about active">
+          <div class="introduce">
+            <h2>👋🏻<br />I'm <strong>Frontend Developer</strong></h2>
+            <p>
+              안녕하세요.<br />
+              프론트엔트 개발자 이가연입니다.
+            </p>
+          </div>
+          <div class="skills">
+            <img src="images/icons/HTML5.svg" width="35px" height="35px" alt="html5" />
+            <img src="images/icons/CSS3.svg" width="35px" height="35px" alt="css3" />
+            <img src="images/icons/JavaScript.svg" width="35px" height="35px" alt="JavaScript" />
+            <img src="images/icons/typescript.svg" width="35px" height="35px" alt="typescript" />
+          </div>
+        </article>
+
+        <article class="box tab timeline">
+          <div class="timeline-title">
+            <h2>수상 및 활동</h2>
+            <p class="timeline-p">TIMELINE</p>
+          </div>
+          <div class="timeline-content"></div>
+        </article>
+      </main>
+      <footer>
+        <p class="footer-content">Copyright 2023 Gayeon Allrights Reserved.</p>
+        <p class="mobile-footer-content">© Gayeon</p>
+      </footer>
+
+      <div class="overlay"></div>
+      <nav class="side-nav">
+        <div class="close-container">
+          <img class="close-icon" src="./images/icons/close.svg" width="18px" height="12px" />
+        </div>
+
+        <div class="side-btn">
+          <button class="about" type="button">ABOUT</button>
+          <button class="timeline" type="button">TIMELINE</button>
+        </div>
+      </nav>
+    </div>
+    <script>
+      fetch('./json/timeline.json')
+        .then((response) => response.json())
+        .then((data) => {
+          const $content = document.querySelector('.timeline-content')
+          const $ul = document.createElement('ul')
+          data.forEach((d) => {
+            $ul.innerHTML += `<div class="content"><p class="period">${d.period}</p><div class="main-content"><h2>${d.title}</h2><p class="desc">${d.description || ''}</p></div></div>`
+          })
+
+          $content.appendChild($ul)
+        })
+    </script>
+    <script src="tab.js"></script>
+  </body>
+</html>
