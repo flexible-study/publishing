@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mission01</title>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./fonts/pretendard.css">
+
+  <!-- core -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <header id="header">
+      <div class="container">
+        <h1 class="title">Casper</h1>
+
+        <div class="navigation">
+          <button class="toggle-sidebar" aria-hidden="true" aria-label="모바일 메뉴 열기"></button>
+
+          <ul>
+            <li><button class="tab-button" data-tab="about" type="button">About</button></li>
+            <li><button class="tab-button" data-tab="timeline" type="button">Timeline</button></li>
+            <li><button class="tab-button" data-tab="portfolio" type="button">Portfolio</button></li>
+            <li class="active"><button class="tab-button" data-tab="contact" type="button">Contact</button></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="tab-content about">
+        <div class="container">
+          <div class="content">
+            <h2 class="title">
+              <span>👋🏻</span>
+              I’m <strong>Frontend Developer</strong>
+            </h2>
+
+            <p class="description">
+              안녕하세요.
+              <br>프론트엔트 개발자 캐스퍼입니다.
+            </p>
+          </div>
+
+          <div class="languages">
+            <div class="row">
+              <img src="./images/HTML5.png" alt="HTML5 아이콘">
+              <img src="./images/CSS3.png" alt="CSS3 아이콘">
+              <img src="./images/JavaScript.png" alt="JavaScript 아이콘">
+              <img src="./images/Figma.png" alt="Figma 아이콘">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content timeline">
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Timeline</small>
+            <h2 class="title">수상 및 활동</h2>
+          </div>
+
+          <div class="content-block">
+            <ul id="fetch-timeline"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content portfolio">
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Portfilio</small>
+            <h2 class="title">포트폴리오</h2>
+          </div>
+
+          <div class="content-block">
+            <ul id="fetch-portfolio"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="tab-content contact active">
+        <div class="container">
+          <div class="title-block">
+            <small class="subtitle">Get in Touch</small>
+            <h2 class="title">연락하기</h2>
+          </div>
+
+          <div class="content-block">
+            <div class="infomation">
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/mail.svg" alt="이메일 아이콘">
+                </div>
+                <div class="value"><a href="mailto:kty0529@gmail.com">kty0529@gmail.com</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/phone_enabled.svg" alt="전화기 아이콘">
+                </div>
+                <div class="value"><a href="tel:010-6512-5882">010-6512-5882</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/github.svg" alt="Github 아이콘">
+                </div>
+                <div class="value"><a href="https://github.com/kty0529" target="_blank">https://github.com/kty0529</a></div>
+              </div>
+
+              <div class="item">
+                <div class="icon">
+                  <img src="./svgs/location_on.svg" alt="위치 아이콘">
+                </div>
+                <div class="value">서울시 관악구</div>
+              </div>
+            </div>
+
+            <div class="form">
+              <form novalidate onsubmit="return sendEmail(this);">
+                <div class="row name-row">
+                  <input class="comm" name="Name" type="text" placeholder="Name" required>
+                </div>
+
+                <div class="row email-row">
+                  <input class="comm" name="Email" type="email" placeholder="Email" required>
+                </div>
+
+                <div class="row message-row">
+                  <textarea class="comm" name="Message" placeholder="Message" required></textarea>
+                </div>
+
+                <div class="row button-row">
+                  <button type="submit">
+                    Submit
+                    <img src="./svgs/arrow_forward.svg" alt="화살표 아이콘" aria-hidden="true">
+                  </button>
+                </div>
+              </form>
+
+              <div class="icon">
+                <img src="./svgs/local_post_office.svg" alt="우체통 아이콘" aria-hidden="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <h2 class="screen-reader-text">사이트 푸터</h2>
+
+      <div class="container">
+        <span class="desktop">Copyright 2023 <strong class="copy">Casper</strong> Allrights Reserved.</span>
+        <span class="mobile">© <b class="copy">Casper</b></span>
+      </div>
+    </footer>
+  </div>
+
+  <div id="modal" aria-hidden="true">
+    <div class="inner">
+      <button class="close" type="button" aria-label="모달 닫기" onclick="modalClose();" autofocus>
+        <img src="./svgs/close.svg" alt="닫기 아이콘">
+      </button>
+
+      <div class="thumbnail"></div>
+
+      <div class="content">
+        <div class="head">
+          <div class="title"></div>
+
+          <div class="info languages">
+            <img src="./svgs/terminal.svg" alt="터미널 아이콘">
+            <span></span>
+          </div>
+
+          <div class="info date">
+            <img src="./svgs/calendar_today.svg" alt="날짜 아이콘">
+            <span></span>
+          </div>
+        </div>
+
+        <div class="body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./javascript/core-footer.js"></script>
+</body>
+</html>

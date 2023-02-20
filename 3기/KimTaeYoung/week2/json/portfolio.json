@@ -1,0 +1,20 @@
+[
+  {
+    "title": "만들면서 배우는 실전 퍼블리싱",
+    "thumbnail": "../images/sample.jpg",
+    "date": "2019.01 ~ 2019.02",
+    "languages": [
+      "HTML", "CSS", "JavaScript", "jQuery", "PHP", "MySQL"
+    ],
+    "description": "프로젝트 설명\n줄바꿈은?"
+  },
+  {
+    "title": "주니어 Java 개발자를 위한 코스",
+    "thumbnail": "../images/sample2.png",
+    "date": "2019.01 ~ 2019.02",
+    "languages": [
+      "HTML", "CSS", "Java"
+    ],
+    "description": "프로젝트 설명"
+  }
+]
